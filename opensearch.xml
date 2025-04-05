@@ -1,0 +1,13 @@
+---
+---
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+	<ShortName>Unreal Garden Search</ShortName>
+	<LongName>{{ site.title }} Search</LongName>
+	<Description>{{ site.description }}</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+	<Image width="16" height="16" type="image/x-icon">{{ '/favicon.ico' | absolute_url }}</Image>
+	<Url type="text/html" method="get" template="{{ site.url }}{% link _pages/search.md %}?q={searchTerms}"/>
+	<moz:SearchForm>{{ site.url }}{% link _pages/search.md %}</moz:SearchForm>
+</OpenSearchDescription>
+

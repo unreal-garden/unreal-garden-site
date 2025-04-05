@@ -1,0 +1,186 @@
+# Site Settings
+title                    : "unreal&#x1F331;garden"
+title_separator          : "&#183;"
+subtitle                 : "tutorials and docs"
+name                     : &name "unreal garden" # &name is a YAML anchor which can be *referenced later
+description              : &description "Unreal Engine tutorials site"
+url                      : https://unreal-garden.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
+logo                     : "/assets/unrealgarden_logotype-white.svg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.webp"
+masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+discord_url              : https://discord.unreal-garden.com/
+
+search                   : true
+search_full_content      : true
+lunr:
+  search_within_pages    : true
+
+# SEO Related
+google_site_verification : "" # Replace this with your ID, or delete
+
+og_image                 : "/assets/site-logo.webp" # Open Graph/Twitter default site image
+# For specifying social profiles, used in _includes/seo.html
+# - https://developers.google.com/structured-data/customize/social-profiles
+
+# Analytics
+analytics:
+    provider               : "custom"
+
+breadcrumbs: false
+
+
+# Site Author
+author:
+  name             : *name # *name is a YAML reference pointing to the &anchor earlier
+  #avatar           : "/assets/about/ben-small.webp"
+  bio              : *description
+  home             : '/'
+  #links:
+  #- label: "Twitter"
+  #icon: "fab fa-fw fa-twitter-square"
+  #url: "https://twitter.com/_benui"
+
+
+# Site Footer
+footer:
+  links:
+
+# Reading Files
+include:
+  - .htaccess
+  - .well-known/atproto-did
+  - _pages
+  - assets/data/UE-Specifier-Docs/images
+  - assets/bits/site-previews
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - run.bat
+  - assets/js/plugins
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - README.md
+  - tmp
+  - raw
+  - assets/data/navigation.yml
+  - assets/data/UE-Specifier-Docs/Example
+  - assets/data/UE-Specifier-Docs/tests
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..4
+  smart_quotes: ["apos","apos","quot","quot"]
+  enable_coderay: false
+
+# Defaults
+defaults:
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+  - scope:
+      path: "_pages/docs"
+      type: pages
+    values:
+      layout: single
+      toc: true
+      toc_sticky: true
+  - scope:
+      path: "_posts/tutorials"
+      type: posts
+    values:
+      toc_sticky: true
+      category: tutorials
+      layout: single
+      author: benui # default
+      header:
+        teaser: /assets/unreal/default-title-small.webp
+  # _about
+  - scope:
+      path: ""
+      type: about
+    values:
+      layout: single
+      classes: wide
+      toc_sticky: true
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+
+data_dir: /assets/data/
+
+search_path: /search/
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# Outputting
+permalink: /:categories/:title/
+
+plugins:
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-redirect-from
+#- jekyll_picture_tag
+
+# mimic GitHub Pages with --safe
+whitelist:
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-redirect-from
+
+compress_html:
+  clippings: all
+  comments: all
+  ignore:
+    envs: development
+
+webrick:
+  headers:
+    Permissions-Policy: "interest-cohort=()"
+
+picture:
+  ignore_missing_images: true

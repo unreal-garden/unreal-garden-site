@@ -1,0 +1,209 @@
+.masthead
+{
+	position: relative;
+	z-index: 20;
+}
+
+@media (min-width: 48em)
+{
+	.masthead
+	{
+		position: sticky;
+		position: -webkit-sticky;
+		top: 0;
+		z-index: 9999;
+	}
+}
+
+.masthead__primary
+{
+	border-bottom: 1px solid #484848;
+	background-color: #0d0d0d;
+}
+
+// Subheaders like UPROPERTY
+.masthead__secondary
+{
+	border-bottom: 1px solid #484848;
+	background-color: #141414;
+	font-size: 0.75em;
+	
+	.masthead__menu-item
+	{
+		vertical-align: middle;
+	}
+
+	.masthead__menu-item a
+	{
+		padding: 0.2em;
+	}
+
+	.masthead__menu-item a::before
+	{
+		background: none;
+	}
+}
+
+.masthead__inner-wrap
+{
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0.5em 1em;
+	max-width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+
+	&::after
+	{
+		clear: both;
+		content: "";
+		display: table;
+	}
+	nav
+	{
+		z-index: 10;
+	}
+
+	a
+	{
+		text-decoration: none;
+	}
+}
+
+@media (min-width: 101.25em)
+{
+	.masthead__inner-wrap
+	{
+		max-width: 1620px;
+	}
+}
+
+a.site-logo
+{
+	img
+	{
+		max-height: 2rem;
+	}
+}
+
+.masthead__menu
+{
+	float: left;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	clear: both;
+
+}
+#site-nav
+{
+	margin-left: 0;
+
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	min-height: 2em;
+}
+
+ul.visible-links
+{
+	li.masthead__menu-item
+	{
+		margin: 0 0.5em;
+		a
+		{
+			margin: 0;
+			text-align: center;
+		}
+	}
+	ul.sublinks
+	{
+		display: flex;
+		li.masthead__menu-subitem
+		{
+			font-size: 0.8rem;
+			display: inline;
+			a
+			{
+				margin: 0 0.5em;
+			}
+			&:first-child
+			{
+				a
+				{
+					margin-left: 0
+				}
+			}
+			&:last-child
+			{
+				a
+				{
+					margin-right: 0
+				}
+			}
+		}
+	}
+}
+
+
+ul.visible-links
+{
+	display: flex;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	overflow: hidden;
+
+	li.masthead__menu-item
+	{
+		margin: 0 0.5em;
+		a
+		{
+			margin: 0;
+			text-align: center;
+		}
+		&:last-child
+		{
+			margin-right: 0;
+		}
+	}
+	ul.sublinks
+	{
+		display: flex;
+		li.masthead__menu-subitem
+		{
+			font-size: 0.8rem;
+			display: inline;
+			a
+			{
+				margin: 0 0.5em;
+			}
+			&:first-child
+			{
+				a
+				{
+					margin-left: 0
+				}
+			}
+			&:last-child
+			{
+				a
+				{
+					margin-right: 0
+				}
+			}
+		}
+	}
+}

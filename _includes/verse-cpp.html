@@ -1,0 +1,23 @@
+<table class="code-comparison">
+	<tr>
+		<th>{% if include.verse %}Verse{% endif %}</th>
+		<th>{% if include.cpp %}C++{% endif %}</th>
+	</tr>
+	<tr>
+		<td class="highlighter-rouge">
+{% if include.verse %}
+{%- highlight rust -%}
+{{ include.verse }}
+{%- endhighlight -%}
+{% endif %}
+		</td>
+		<td class="highlighter-rouge">
+{% if include.cpp %}
+{%- highlight cpp -%}
+{{ include.cpp }}
+{%- endhighlight -%}
+{% endif %}
+		</td>
+	</tr>
+</table>
+

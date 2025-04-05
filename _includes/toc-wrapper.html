@@ -1,0 +1,7 @@
+{% if page.toc %}
+  <aside class="sidebar sticky">
+    <nav class="toc">
+      {% include toc.html sanitize=true html=content h_min=1 h_max=4 class="toc__menu" %}
+    </nav>
+  </aside>
+{% endif %}

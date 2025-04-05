@@ -1,0 +1,123 @@
+
+#ux-example-result-good, #ux-example-result-bad {
+	opacity: 0;
+}
+
+.size-b
+{
+	width: 200px;
+	height: 200px;
+}
+.motion-b
+{
+	animation: wobble 2s ease infinite;
+	background-color: #fff;
+}
+@keyframes wobble {
+	0% {
+		transform: rotate(20deg);
+	}
+	50% {
+		transform: rotate(-20deg);
+	}
+	100% {
+		transform: rotate(20deg);
+	}
+}
+
+.affordance-invite
+{
+	color: #20aaff;
+}
+.affordance-react
+{
+	color: #ffa132;
+}
+.affordance-confirm
+{
+	color: #5bff8d;
+}
+button.ux-example
+{
+	font-size: 2em;
+	font-weight: bold;
+	color: #fff;
+	margin: 0;
+	padding: 0.3em 0.5em;
+	border-radius: 10px;
+}
+button.ux-example-bad
+{
+	border: 0;
+	background-color: transparent;
+	&:hover
+	{
+		cursor: default;
+	}
+	&:active
+	{
+		cursor: default;
+	}
+	&:focus
+	{
+		outline: none;
+	}
+}
+
+button.ux-example-good
+{
+	border-top: 4px solid #fff;
+	border-left: 8px solid #fff;
+	border-right: 8px solid #fff;
+	border-bottom: 15px solid #fff;
+	background-color: #222;
+	&:hover
+	{
+		background-color: #555;
+	}
+	&:active
+	{
+		background-color: #000;
+		border-bottom: 4px solid #fff;
+		margin-top: 11px;
+	}
+	&:focus
+	{
+		outline: none;
+	}
+}
+
+.priority-box
+{
+	vertical-align: middle;
+
+	.priority
+	{
+		display: inline-block;
+		margin: 1em;
+		width: 100px;
+		height: 100px;
+		background-color: #fff;
+		color: #000;
+		border-radius: $border-radius;
+		text-align: center;
+		vertical-align: middle;
+		font-weight: bold;
+		.text
+		{
+			display: none;
+		}
+	
+	}
+	
+	.colour-b
+	{
+		background-color: #ff5555;
+	}
+	
+	.position-b
+	{
+		transform: translateY(50px);
+	}
+}
+

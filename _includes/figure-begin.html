@@ -1,0 +1,7 @@
+<figure>
+{%if include.text or include.title %}
+<figcaption>
+	{%if include.title %}<p class="figure-title">{{ include.title }}</p>{%- endif -%}{%- if include.text -%}<p>{{ include.text }}</p>{% endif %}
+</figcaption>
+{% endif %}
+<div class="figcontent" markdown="1">{%- if include.code -%}<button class="copy" onclick="copyFigureCode(this);">{{ site.data.icons.copy }}Copy</button>{%- endif -%}

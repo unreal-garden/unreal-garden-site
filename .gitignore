@@ -1,0 +1,10 @@
+_site
+!/.gitignore
+Thumbs.db
+*.exe
+*.love
+*.bat
+Gemfile.lock
+assets/data/UE-Specifier-Docs/Example
+assets/data/UE-Specifier-Docs/.github
+assets/data/UE-Specifier-Docs/tests

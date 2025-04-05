@@ -1,0 +1,96 @@
+id: umeta
+###############################################################################
+# UMETA
+
+specifiers:
+  
+  - name: DisplayName
+    group: Display
+    position: main
+    type: string
+    samples:
+      - |
+        UENUM(BlueprintType)
+        enum class UMetaExample : uint8
+        {
+          Cat UMETA(DisplayName="Kitty"),
+          Dog,
+          Rooster,
+        };
+    documentation:
+      text: This value's name will be the text provided here, rather than the code-generated name.
+      source: https://dev.epicgames.com/documentation/en-us/unreal-engine/metadata-specifiers-in-unreal-engine#enummetadataspecifiers
+  
+  - name: Hidden
+    group: Display
+    position: main
+    type: flag
+    samples:
+      - |
+        UENUM(BlueprintType)
+        enum class UMetaExample : uint8
+        {
+          Cat,
+          Dog,
+          Rooster,
+          Count UMETA(Hidden),
+        };
+    comment:
+      This can be used in conjunction with `ENUM_RANGE_BY_COUNT` to allow [iteration over `UENUM`](/unreal/iterate-over-enum-tenumrange).
+      
+      It looks like "Spacer" used to be an alternative name for this.
+    documentation:
+      text: This value will not appear in the Editor.
+      source: https://dev.epicgames.com/documentation/en-us/unreal-engine/metadata-specifiers-in-unreal-engine#enummetadataspecifiers
+  
+  - name: ToolTip
+    group: Display
+    position: main
+    type: string
+    samples:
+      - |
+        UENUM(BlueprintType)
+        enum class UMetaExample : uint8
+        {
+          Cat,
+          Dog,
+          Rooster UMETA(ToolTip="It's like a chicken"),
+          Count,
+        };
+    documentation:
+      text: Overrides the automatically generated tooltip from code comments.
+      source: https://dev.epicgames.com/documentation/en-us/unreal-engine/metadata-specifiers-in-unreal-engine#enummetadataspecifiers
+
+  - name: RowType
+    group: Display
+    position: main
+    type: string
+    samples:
+      - |
+        USTRUCT(BlueprintType)
+        struct FMyStruct
+        {
+          ...
+        };
+
+        UPROPERTY(EditAnywhere, meta = (RowType = "/Script/MyModule.MyStruct"))
+        FDataTableRowHandle RowHandleExample;
+    comment:
+      Allows the editor drop-down of a `FDataTableRowHandle` to only show data tables of a specific row type.
+
+      Currently undocumented but implemented in [`DataTableCustomization.cpp`](https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Editor/DetailCustomizations/Private/DataTableCustomization.cpp#L37).
+
+  - name: FilePathFilter
+    group: Display
+    position: main
+    type: string
+    samples:
+      - |
+        UPROPERTY(EditAnywhere, meta = (FilePathFilter = "Text Files (*.txt)|*.txt"))
+        FFilePath MyFilePath;
+    comment: |
+      Used by FFilePath properties. Indicates the path filter to display in the file picker.
+
+      The filter string follows the `Description|ExtensionList` format as used in many operating systems.
+      The following example filter would limit the file picker to show `*.txt` files only: `Text files (*.txt)|*.txt`
+      Multiple filters can be applied like this: `Text files (*.txt)|*.txt|Image files (*.png)|*.png|All files (*.*)|*.*`

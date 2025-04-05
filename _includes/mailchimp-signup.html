@@ -1,0 +1,28 @@
+{% assign title = "Get Notified When UI Course Releases" %}
+{% if include.title %}
+{% assign title = include.title %}
+{% endif %}
+
+{% capture body %}
+<p>I'm will be releasing a <strong><a href="{% link _pages/course.md %}">Complete Unreal Engine UI Course</a></strong> in 2025.</p>
+<p>Add your email address below to be notified!</p>
+{% endcapture %}
+{% if include.body %}
+{% assign body = include.body %}
+{% endif %}
+
+<form action="https://gmail.us16.list-manage.com/subscribe/post?u=49e2156dbc2cc5278e04fbd52&amp;id=a54db0eedb&amp;f_id=0070bce0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="signup" target="_self" novalidate="">
+	{% if title %}
+	<h2>{{ title }}</h2>
+	{% endif %}
+	{{ body }}
+	<input type="email" name="EMAIL" id="mce-EMAIL" required="" value="" placeholder="hello@email.com"/>
+	<div id="mce-responses" class="clear foot">
+		<div class="response" id="mce-error-response" style="display: none;"></div>
+		<div class="response" id="mce-success-response" style="display: none;"></div>
+	</div>
+	<div style="position: absolute; left: -5000px;" aria-hidden="true">
+		<input type="text" name="b_49e2156dbc2cc5278e04fbd52_a54db0eedb" tabindex="-1" value=""/>
+	</div>
+	<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button major" value="Subscribe" />
+</form>

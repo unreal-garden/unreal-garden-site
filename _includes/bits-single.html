@@ -1,0 +1,40 @@
+{% comment %}
+Get the teaser image or fallback to the site default teaser image
+{% endcomment %}
+{% if bit.header.teaser %}
+  {% capture teaser_image_url %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser_image_url = site.teaser %}
+{% endif %}
+
+<div class="archive__item">
+{% if teaser_image_url %}
+<div class="archive__item-left archive__item-teaser">
+  {% if bit.url %}
+  <a href="{{ bit.url | relative_url }}" rel="permalink">
+  {% endif %}
+  <img src="{{ teaser_image_url | relative_url }}" alt="{{ bit.title }}">
+  {% if bit.url %}
+  </a>
+  {% endif %}
+</div>
+{% endif %}
+ <div class="archive__item-right">
+ <h2 class="archive__item-title no_toc" itemprop="headline">
+  {% if bit.url %}
+   <a href="{{ bit.url | relative_url }}" rel="permalink">{{ bit.title }}</a>
+   {% else %}
+   {{ bit.title }}
+   {% endif %}
+ </h2>
+ {% if bit.description %}<p class="archive__item-excerpt" itemprop="description">{{ bit.description | markdownify }}</p>{% endif %}
+
+  {% if bit.source %}
+  <strong>Source:</strong> <a href="{{ bit.source }}">{{ bit.source }}</a>
+  {% endif %}
+{% if bit.posted_date %}
+  <p class="page__date"><time datetime="{{ bit.posted_date | date_to_xmlschema }}">{{ bit.posted_date | date: "%B %-d, %Y" }}</time></p>
+{% endif %}
+ {% include tag-list-new.html tags=bit.tags %}
+ </div>
+</div>

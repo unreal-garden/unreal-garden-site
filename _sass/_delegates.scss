@@ -1,0 +1,136 @@
+form.delegate-tool
+{
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	border: 1px solid #51555d;
+	border-radius: $border-radius;
+	padding: 0.5em;
+
+	table
+	{
+		background: none;
+		margin: 0;
+		padding: 0;
+	}
+	td
+	{
+		margin: 0;
+		padding: 0.3em 0;
+		border: none;
+		&.labels
+		{
+			width: 120px;
+		}
+		label
+		{
+			color: #bbb;
+		}
+	}
+
+	input[type="checkbox"]
+	{
+		border: 1px solid #51555d;
+		border-radius: $border-radius;
+		background-color: #333;
+		color: #333;
+		height: 1.5em;
+		width: 1.5em;
+		accent-color: $primary-color;
+	}
+	input[type="checkbox"]:checked
+	{
+		background-color: $primary-color;
+		color: $primary-color;
+		accent-color: $primary-color;
+	}
+
+	input[type="text"]
+	{
+		border: 1px solid #51555d;
+		border-radius: $border-radius;
+		background: #333;
+
+		&:hover
+		{
+			background: #222;
+			border: 1px solid #666;
+		}
+		&:focus
+		{
+			box-shadow: none;
+			border: 1px solid $primary-color;
+		}
+
+		&.code
+		{
+			font-family: $monospace;
+		}
+	}
+	.code-output
+	{
+		font-family: $monospace;
+		font-size: 0.8em;
+		margin: 0;
+		background-color: #333;
+		border-radius: 4px;
+		padding: 0.5em;
+		p
+		{
+			margin: 0;
+		}
+	}
+	input[type="button"]
+	{
+		font-weight: bold;
+		padding: 4px 8px;
+		&.major
+		{
+			border: 1px solid $primary_color;
+			border-radius: 4px;
+			padding: 8px;
+			&:hover
+			{
+				border: 1px solid $primary_color;
+				background: $primary-color;
+				color: #fff;
+			}
+		}
+		&:focus
+		{
+			box-shadow: none;
+		}
+		&:hover
+		{
+			background: #333;
+		}
+		&:disabled
+		{
+			background: #777;
+			color: #ddd;
+			border: 1px solid #777;
+		}
+	}
+
+	.delegatename
+	{
+		color: $base09;
+	}
+	.dynamic
+	{
+		color: $base0b;
+	}
+	.multicast
+	{
+		color: $base08;
+	}
+	.retval
+	{
+		color: $base0e;
+	}
+	.params
+	{
+		color: $base0d;
+	}
+}

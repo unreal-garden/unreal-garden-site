@@ -1,0 +1,65 @@
+main:
+  - title: "Tutorials"
+    url: /tutorials/
+  - title: "Bits"
+    url: /bits/
+  - title: "Docs"
+    url: /docs/
+    children:
+      - title: "UPROPERTY"
+        url: /docs/uproperty/
+      - title: "UFUNCTION"
+        url: /docs/ufunction/
+      - title: "UCLASS"
+        url: /docs/uclass/
+      - title: "USTRUCT"
+        url: /docs/ustruct/
+      - title: "UINTERFACE"
+        url: /docs/uinterface/
+      - title: "UPARAM"
+        url: /docs/uparam/
+      - title: "UENUM and UMETA"
+        url: /docs/uenum-umeta/
+  - title: "?"
+    url: /about/
+
+unreal:
+  - title: Topics
+    children:
+      - title: "C++"
+        url: /tags/#c
+      - title: "UMG"
+        url: /tags/#umg
+      - title: "Slate"
+        url: /tags/#slate
+      - title: "UFUNCTION, UPROPERTY, etc."
+        url: /tags/#specifiers
+      - title: "Blueprints"
+        url: /tags/#blueprint
+      - title: "Animation"
+        url: /tags/#animation
+      - title: "Text"
+        url: /tags/#text
+      - title: "Testing"
+        url: /tags/#testing
+      - title: "Video Tutorials"
+        url: /tags/#video
+  - title: UI C++ Tutorial Series
+    children:
+      - title: "1. Introduction"
+        url: /tutorials/ui-introduction
+      - title: "2. C++ Basics"
+        url: /tutorials/ui-cpp-basics
+      - title: "3. C++ UUserWidget"
+        url: /tutorials/ui-cpp-uuserwidget
+      - title: "4. C++ UWidget"
+        url: /tutorials/ui-cpp-uwidget
+      - title: "5. C++ Slate"
+        url: /tutorials/ui-cpp-slate
+
+popular:
+  - /tutorials/delegates-advanced/
+  - /tutorials/ui-bindwidget/
+  - /tutorials/data-driven-design/
+  - /tutorials/ui-cpp-uuserwidget/
+  - /tutorials/subsystem-singleton/

@@ -1,0 +1,197 @@
+.unreal__prop {
+	clear: both;
+}
+.prop__item {
+	clear: both;
+	margin-bottom: 2em;
+	.left {
+		font-size: 0.8em;
+		color: $unreal-left-color;
+		@media (min-width: $breakpoint-medium) {
+			float: left;
+			clear: both;
+			width: span(3 of 12);
+		}
+		.box
+		{
+			background-color: rgba(0,0,0,0.15);
+			border-radius: 5px;
+			padding: 5px;
+			margin: 0;
+			margin-bottom: 5px;
+			h5
+			{
+				font-size: 0.75em;
+				font-weight: normal;
+				color: $unreal-secondary-text-color;
+				margin: 0;
+				padding: 0;
+			}
+			p
+			{
+				color: $text-color;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+	.right {
+		.body {
+			display: block;
+			position: relative;
+		}
+		font-size: 0.8em;
+		clear: both;
+		@media (min-width: $breakpoint-medium) {
+			float: left;
+			clear: none;
+			width: span(9 of 12);
+			margin-left: gutter(1 of 12);
+		}
+		::after
+		{
+			clear: both;
+		}
+	}
+}
+
+ul.proplist
+{
+	margin: 0;
+	padding: 0;
+	clear: both;
+	list-style: none;
+	li
+	{
+		//font-size: 0.75em;
+		margin: 0 !important;
+		a
+		{
+			text-decoration: none;
+			//background-color: #333;
+			//border-radius: $border-radius;
+			//padding: 0.2em;
+		}
+	}
+}
+
+ul.incompatible
+{
+	li
+	{
+		color: $danger-color;
+		a
+		{
+			//background-color: #333;
+			//border-radius: $border-radius;
+			//padding: 0.2em;
+		}
+	}
+}
+
+
+.unreal__group, .unreal__subgroup {
+	clear: both;
+}
+
+.unreal__position
+{
+	border: 1px solid $unreal-left-color;
+	border-radius: 5px;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	font-size: 0.8em;
+	.entry
+	{
+		border-radius: $border-radius;
+		text-align: center;
+		display: inline-block;
+		width: calc(50% - 4px);
+		margin: 2px;
+		padding: 0;
+		border: 0;
+	}
+	.main {
+	}
+	.meta {
+	}
+	.selected
+	{
+		background-color: lighten($unreal-left-color, 5%);
+		color: #000;
+	}
+	.unselected
+	{
+		color: darken($unreal-left-color, 25%);
+	}
+}
+
+.unreal__prefix, .unreal__suffix
+{
+	color: $unreal-secondary-text-color !important;
+}
+.unreal__prefix
+{
+	text-align: right;
+	margin-top: 0.3em;
+}
+.unreal__suffix
+{
+	display: inline;
+
+}
+h3.unreal__prop
+{
+	display: inline;
+	font-size: 1.5em;
+	margin-top: 2em;
+}
+.unreal__type
+{
+	color: $unreal-left-color;
+	margin-bottom: 1em;
+	.fas
+	{
+		margin-right: 3px;
+		font-weight: 400;
+	}
+}
+
+figure.unreal-doc
+{
+	margin-top: 0;
+	background-image: url("/assets/unreal/unreal-watermark-small.webp");
+	background-repeat: no-repeat;
+	background-position: bottom right;
+
+	background-color: #1f242c;
+	border-left: 0.25em solid $primary-color;
+	padding: 1.0em;
+	blockquote
+	{
+		margin: 0;
+		padding: 0;
+		font-size: 0.9em;
+		border-left: none;
+		p
+		{
+			margin-bottom: 0;
+			color: $muted-text-color;
+		}
+	}
+	figcaption
+	{
+		margin: 0;
+		text-align: right;
+		font-size: 0.8em;
+	}
+
+}
+
+.unreal__outer
+{
+	h1,h2,h3,h4,h5,h6
+	{
+		clear: both;
+	}
+}

@@ -1,0 +1,26 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include skip-links.html %}
+    {% include masthead.html page_url=page.url %}
+
+    <div class="initial-content">
+      {{ content }}
+    </div>
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+  </body>
+</html>

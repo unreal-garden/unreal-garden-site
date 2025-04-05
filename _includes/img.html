@@ -1,0 +1,22 @@
+{% if include.text %}
+  {% assign image_description = include.text %}
+{% else %}
+  {% assign image_description = include.text %}
+{% endif %}
+
+{% include figure-begin.html text=include.text title=include.title %}
+<div>
+{% if include.no_link == null %}
+{% if include.link != null %}<a href='{{ include.link }}'>{% endif %}
+{% endif %}<img src='{{ site.baseurl }}/assets/{{ include.file }}' alt="{{ image_description | xml_escape }}"
+{% assign url = include.url | replace: "%20", "\ " %}
+{% assign url = url | replace: "./", page.url %}
+{% if include.css_class %}
+class="{{ include.css_class }}"
+{% endif %}
+/>
+{% if include.no_link == null %}
+{% if include.link != null %}</a>{% endif %}
+{% endif %}
+</div>
+{% include figure-end.html %}

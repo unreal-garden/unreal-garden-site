@@ -1,0 +1,2706 @@
+- title: Multithreading and Performance in Unreal
+  id: multithreading-performance
+  description: Huge forum post covering Runnables, Tasks, how to set them up in C++. An absolutely fantastic resource.
+  url: https://forums.unrealengine.com/t/multithreading-and-performance-in-unreal/1216417
+  posted_date: 2024-05-05 00:00:00 +0000
+  tags:
+  - cpp
+  - optimization
+- title: Drawing a custom widget in Unreal Engine settings class
+  id: custom-widget-in-settings
+  description: Alex covers how to do it in this Twitter thread.
+  url: https://twitter.com/OutoftheboxP/status/1720869286607208537
+  posted_date: 2023-11-04 00:00:00 +0000
+  tags:
+  - cpp
+  - editor
+- title: Set a conditional breakpoint on a TCHAR or FString
+  id: conditional-breakpoint-tchar
+  description: |
+    To set a conditional breakpoint in Visual Studio that only executes when a text matches
+    ```cpp
+    wcscmp((wchar_t*)SomeTchar.Data.AllocatorInstance.Data,L"Text I want to match") == 0
+    ```
+    `wcsstr` for string comparison
+  posted_date: 2024-05-01 00:00:00 +0000
+  tags:
+   - cpp
+   - debugging
+   - tip
+- title: 5.4 Slate Post Buffer UMG
+  id: slate-post-buffer-umg
+  description: Amazing video from Joyrok.
+  url: https://www.youtube.com/watch?v=4ga0DDK1t0c
+  posted_date: 2024-05-01 00:00:00 +0000
+  tags:
+  - ui
+  - material
+  - video
+- title: GameCrashReporter
+  id: iultimatelp-gamecrashreporter
+  description: C# crash reporter for sending Unreal crash reports.
+  url: https://github.com/iUltimateLP/GameCrashReporter
+  posted_date: 2020-02-16 00:00:00 +0000
+  tags:
+  - debugging
+  site_preview: 9983a3e4b9807e7a075e869f64c905f9.png
+- title: Mayday Crash Reporter
+  id: strangergwenn-mayday
+  description: A standalone crash reporter tool written in C++ that can upload Unreal
+    crash reports to a server of your choice.
+  url: https://github.com/strangergwenn/Mayday
+  posted_date: 2021-03-21 00:00:00 +0000
+  tags:
+  - debugging
+  site_preview: d5a1b39ed40184fd8a904f3c9cbcaa10.png
+- title: How to reduce Package Size for Unreal Engine Game Builds
+  id: reduce-package-size
+  description: Cobra Code goes over how to reduce an empty project from over 300MB to something nearly 50% of the original size. 
+  url: https://cobracode.notion.site/How-to-reduce-Package-Size-for-Unreal-Engine-Game-Builds-7993544e050041f9800512acd3500cfc
+  posted_date: 2024-04-27 00:00:00 +0000
+  tags:
+  - build
+  - optimization
+  site_preview: c3a3fff29e50218b728955278e26c904.png
+- title: Ari Arnbjörnsson's Blog
+  id: ari-blog
+  description: Ari's blog is full of videos, tutorials and other incredibly useful
+    information.
+  url: https://ari.games/
+  posted_date: 2023-07-16 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 93d96c6d06bcad15d03a1b46e0201286.png
+- title: Ari's Unreal Engine Notes
+  id: ari-unreal-engine-notes
+  description: Hundreds of tips on a huge variety of topics
+  url: https://flassari.notion.site/Ari-s-Unreal-Engine-Notes-1a75e43f4014464984d4fae0617e5cef
+  posted_date: 2023-07-16 00:00:00 +0000
+  tags:
+  - community
+  site_preview: eac285737b312cd5d39ce50745785e4e.png
+- title: 3 Tricks to Improve Pixel Art Rendering in UE4
+  id: improve-pixel-art-rendering
+  description: This tutorial is old but incredibly valuable. They share how they snap
+    vertices to pixels in their vertex shader, rotate sprites and keep them clean
+  url: https://weareludicrous.com/blog/2018/3-tricks-to-improve-pixel-art-rendering-in-ue4/
+  posted_date: 2018-08-20 00:00:00 +0000
+  tags:
+  - 2d
+  - material
+  site_preview: 44aaabb8b3a35f63d525d59f357da848.png
+- title: Pixel Sharp Graphics at Multiple Screen Resolutions
+  id: pixel-sharp-multiple-resolutions
+  description: How to set up an Unreal camera to work well with pixel art games.
+  url: https://weareludicrous.com/blog/2018/pixel-sharp-graphics-at-multiple-screen-resolutions/
+  posted_date: 2018-09-09 00:00:00 +0000
+  tags:
+  - 2d
+  - material
+  site_preview: 873d513d065157f1132b52af00cfd9b4.png
+- title: PSXFX
+  id: psxfx
+  description: An amazing set of materials and effects for emulating PS1-era graphics.
+  url: https://marcis.itch.io/psxfx
+  posted_date: 2020-10-11 00:00:00 +0000
+  tags:
+  - material
+  site_preview: d480d2f462819db7db203c235e3d9272.png
+- title: Orfeas Eleftheriou's Blog
+  id: orfeas-eleftheriou-blog
+  description: Orfeas has a huge number of blog posts on topics from Blueprint graphs to UMG and multithreading.
+  url: https://www.orfeasel.com/
+  posted_date: 2021-04-19 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 9e6a6464c2c9f01b504bf1a96cb5dca1.png
+- title: Creating Latent Blueprint Nodes with Multiple Execution Pins
+  id: orfeasel-latent-blueprint-node-with-multiple-exclusion-pins
+  description: In-depth Blueprint graph tutorial on latent nodes. Covers both multiple input execution pins and multiple output execution pins.
+  url: https://www.orfeasel.com/creating-latent-blueprint-nodes-with-multiple-execution-pins/
+  posted_date: 2021-04-19 00:00:00 +0000
+  tags:
+  - blueprint
+  - editor
+- title: Creating a File Picker
+  id: orfeasel-creating-a-file-picker
+  description: A short tutorial on how to spawn a file selection dialog window by
+    using `IDesktopPlatform::OpenFileDialog`. Could be useful when making a desktop
+    game or tool.
+  url: https://www.orfeasel.com/creating-a-file-picker/
+  posted_date: 2018-11-05 00:00:00 +0000
+  tags:
+  - ui
+- title: Performing HTTP Calls
+  id: orfeasel-performing-http-calls
+  description: Short tutorial that covers making a simple HTTP post request and getting
+    the result back using `FHttpModule`.
+  url: https://www.orfeasel.com/performing-http-calls/
+  posted_date: 2018-10-31 00:00:00 +0000
+  tags:
+  - multiplayer
+  - cpp
+- title: Saving and Loading Data
+  id: orfeasel-saving-and-loading-data
+  description: Introduction to saving and loading using the `<<` operator. Also explains
+    how to extend `FArchive`'s `<<` operator to allow it to serialize your own custom
+    classes.
+  url: https://www.orfeasel.com/saving-and-loading-your-progress/
+  posted_date: 2017-03-20 00:00:00 +0000
+  tags:
+  - save
+- title: Creating Functional Tests with the Automation System
+  id: orfeasel-functional-tests
+  description: How to create functional tests, for example testing that a character
+    can move around in the world.
+  url: https://www.orfeasel.com/functional-tests/
+  posted_date: 2021-04-07 00:00:00 +0000
+  tags:
+  - testing
+- title: Implementing Multithreading in UE4
+  id: orfeasel-orfeasel-implementing-multithreading
+  description: An simple example of how to use Unreal's `FNonAbandonableTask` class
+    to create threaded work.
+  url: https://www.orfeasel.com/implementing-multithreading-in-ue4/
+  posted_date: 2016-05-13 00:00:00 +0000
+  tags:
+  - cpp
+  - optimization
+- title: JSON Serialization Plugin
+  id: json-serialization-plugin
+  description: Minimal plugin that wraps Unreal's built-in JSON serialization code
+    and exposes it to Blueprints.
+  url: https://github.com/nicholas477/JsonSerialization/
+  posted_date: 2023-06-29 00:00:00 +0000
+  tags:
+  - data
+  - blueprint
+  - cpp
+  - save
+  site_preview: e8703529002e3d769c9ca5af281ec4c0.png
+- title: AI Waypoints Plugin
+  id: ai-waypoints-plugin
+  description: Simple plugin for helping set up waypoints for AI.
+  url: https://github.com/nicholas477/Waypoints
+  posted_date: 2021-11-15 00:00:00 +0000
+  tags:
+  - ai
+  - tools
+  site_preview: bc55c955859e9bd1ad111345498f9693.png
+- title: Using GPlayInEditorContextString To Find Multiplayer Context While Debugging
+    In Unreal
+  id: gplayineditorcontext-string
+  description: Have you ever wondered if the breakpoint you just hit is in code running
+    on the server or a client? There's a way to output this information in Visual
+    Studio and Rider.
+  url: https://www.kierannewland.co.uk/using-gplayineditorcontextstring-to-find-multiplayer-context-while-debugging-in-unreal/
+  posted_date: 2024-02-25 00:00:00 +0000
+  tags:
+  - debugging
+  - multiplayer
+  - ide
+  site_preview: 9a575d9841649a05fffa6ba4ec068e45.jpg
+- title: Romero Blueprints Blog
+  id: romero-blueprints-blog
+  description: Marcos Romero has detailed tutorials on Blueprints, Verse and C++.
+  url: https://romeroblueprints.blogspot.com/
+  posted_date: 2023-11-28 00:00:00 +0000
+  tags:
+  - community
+  site_preview: b2789353b71576b27806715056f0f4d4.png
+- title: Voithos Blog
+  id: voithos-blog
+  description: Zaven Muradyan's blog.
+  url: https://voithos.io/articles/
+  posted_date: 2023-03-22 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 7191f06151f40f475668c718e0e78f24.png
+- title: Enum Class Bitmasks
+  id: enum-class-bitmasks
+  description: How to use the ENUM_CLASS_FLAGS macro to set up bitmasks.
+  url: https://voithos.io/articles/enum-class-bitmasks/
+  posted_date: 2023-05-13 00:00:00 +0000
+  tags:
+  - cpp
+  site_preview: b2c83fdc58231dfae43c0e05cc3432b0.png
+- title: Generic BP Nodes
+  id: generic-bp-nodes
+  description: How to create a custom Blueprint node using CustomThunk.
+  url: https://dreamonastick.com/post/generic-bp-nodes
+  posted_date: 2024-01-28 00:00:00 +0000
+  tags:
+  - cpp
+  - editor
+  - blueprint
+  site_preview: 880e6e5e9142123a22f39446a138110c.png
+- title: Creating UObjects From Async Threads
+  id: creating-uobjects-from-async-threads
+  description: Unreal really doesn't like you creating UObjects outside of the main
+    thread. But Voithos explains how to do it, carefully.
+  url: https://voithos.io/articles/creating-uobjects-from-async-threads/
+  posted_date: 2023-05-06 00:00:00 +0000
+  tags:
+  - cpp
+  site_preview: 5bd8cea2ca1d1b6db745b094a63e293f.png
+- title: Multiple Controllers and UI
+  id: multiple-controllers-ui
+  description: What if you're making a couch co-op game and you want any of the players
+    to be able to control the menu?
+  url: https://dreamonastick.com/post/multiple-controllers-and-ui
+  posted_date: 2024-01-28 00:00:00 +0000
+  tags:
+  - ui
+  - multiplayer
+  - cpp
+  site_preview: f9708b4aa908cafc7d6a5ab032da01e5.png
+- title: Dream On A Stick's Engineering Blog
+  id: dream-on-a-stick-blog
+  description: Jan Machacek aka Dream On A Stick's blog covers game saves, crashes,
+    setting up Linux CI builds and a bunch more.
+  url: https://dreamonastick.com/cat/engineering
+  posted_date: 2024-02-08 00:00:00 +0000
+  tags:
+  - community
+  site_preview: f2eb091478b37d3d7f38803378b6d8b1.png
+- title: Game Saves and Concepts
+  id: game-saves-and-concepts
+  description: A multi-part beginnner-friendly C++ tutorial on how to set up saves
+    with USaveGame.
+  url: https://dreamonastick.com/post/game-saves-1-and-concepts
+  posted_date: 2024-02-05 00:00:00 +0000
+  tags:
+  - save
+  - cpp
+  site_preview: c0332401c5bde8ad97efdbc86ed07ffd.png
+- title: In-Game Tutorial
+  id: in-game-tutorial
+  description: How to engineer an unintrusive tutorial system that can detect what
+    tutorial step the player is on without locking them into specific steps. Seems
+    ideal for more open-ended simulation games that give the player a target and let
+    them solve it how they want.
+  url: https://dreamonastick.com/post/in-game-tutorial
+  posted_date: 2024-01-31 00:00:00 +0000
+  tags:
+  - cpp
+  - save
+  site_preview: c7836bd1f2243825fdc0ef6a42aa1252.png
+- title: Zomg's Unreal Engine Notes
+  id: zomg-unreal-engine-notes
+  description: A whole bunch of notes on Unreal Engine in a Wiki.
+  url: https://zomgmoz.tv/unreal/
+  posted_date: 2023-09-11 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 535d6983c493f2fb1625114f1c753a6f.png
+- title: Mark J. G.'s Programming Blog
+  id: mark-j-g-programming-blog
+  description: Just a huge number of in-depth programming articles.
+  url: https://markjg.com/
+  posted_date: 2023-10-16 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 29c448b40f06d3e420e60ddb62bf27cf.png
+- title: Intax's Blog
+  id: intax-blog
+  description: Intax has some very good in-depth articles on Blueprints and their
+    inner workings.
+  url: https://intaxwashere.github.io/
+  posted_date: 2023-06-21 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 58c72346adda3cbbb88b6ef87255f40c.png
+- title: Performance guideline for Blueprints and making sense of Blueprint VM.
+  id: intax-blueprint-performance
+  description: Intax has a great in-depth doc.
+  url: https://intaxwashere.github.io/blueprint-performance/
+  posted_date: 2023-06-21 00:00:00 +0000
+  tags:
+  - blueprint
+  - optimization
+  site_preview: 32ec5e7c77e7cf3f39a74fd5ff4ec661.png
+- title: How to support all controller options for JoyCons in Common Input Settings
+  id: joycon-options-common-input
+  description: Nintendo Switch controllers can be used in a bunch of different configurations.
+    Arisa covers how to support that using standard Unreal Common Input.
+  url: https://arisao.notion.site/How-to-support-all-controller-options-for-JoyCons-in-Common-Input-Settings-af1fac28071248a48b61c00559e3fd1e
+  posted_date: 2024-03-10 00:00:00 +0000
+  tags:
+  - input
+  - platform
+  site_preview: 296946c8fa76c050d62207bec1c7fe3d.png
+- title: Arisa's Blog
+  id: arisa-blog
+  description: Tutorials on UI programming.
+  url: https://arisao.notion.site/425f6509c99e4f46b909ffc0c860c9f3?v=b9ca117ea0bd4e2c9899e8f9c3193f8e
+  posted_date: 2024-02-08 00:00:00 +0000
+  tags:
+  - community
+  - ui
+  site_preview: 60d86041433e1b838a1ce38d9ecc47d3.png
+- title: Adding Custom Buttons to the Unreal Editor Toolbars and Menus
+  id: add-custom-buttons-editor-toolbar-menu
+  description: A very clean tutorial on how to add a custom button to the editor toolbar.
+  posted_date: 2024-01-07 00:00:00 +0000
+  url: https://minifloppy.it/posts/2024/adding-custom-buttons-unreal-editor-toolbars-menus/
+  tags:
+  - editor
+  site_preview: fb27b7da1514328ba940ca01dfdeb0e5.webp
+- title: Francesco's Blog
+  id: francesco-blog
+  description: Testing, editor customization, lots of interesting stuff.
+  url: https://minifloppy.it/
+  posted_date: 2024-01-07 00:00:00 +0000
+  tags:
+  - community
+  site_preview: d6d4aa8653563b613ee6dbc7370ee2d1.png
+- title: Alvaro Jover-Albarez's Blog
+  id: vorixo-blog
+  description: A lot of networking-specific tutorials from Vorixo.
+  posted_date: 2023-07-30 00:00:00 +0000
+  url: https://vorixo.github.io/devtricks/
+  tags:
+  - multiplayer
+  site_preview: 56b7d6b329c297a40ae226c36d380e7c.png
+- title: Fire any event in any Blueprint from the cheat console
+  id: fire-any-event-in-bp-from-cheat-console
+  description: ke * EventName ce EventName for level blueprints
+  source: https://twitter.com/ChrisZukoArt/status/1761074467147563233
+  posted_date: 2024-02-23 00:00:00 +0000
+  tags:
+  - blueprint
+  - debugging
+  - cheat
+- title: Coroutines in Unreal
+  id: coroutines-unreal
+  description: How to use UE5Coro and co_await with latent nodes.
+  url: https://duroxxigar.github.io/unreal/Coroutines-in-Unreal/
+  posted_date: 2024-03-16 00:00:00 +0000
+  tags:
+  - cpp
+  site_preview: 380aebad47b0cd8e47760dbaff3ab8ff.png
+- title: Jake's Blog
+  id: jake-blog
+  description: Jake Young aka Duroxxigar has some neat tutorials.
+  url: https://duroxxigar.github.io/
+  posted_date: 2024-02-22 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 380aebad47b0cd8e47760dbaff3ab8ff.png
+- title: Erlite's Blog
+  id: erlite-blog
+  description: A variety of C++-related Unreal Engine tutorials.
+  url: https://erlite.dev/
+  posted_date: 2024-02-21 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 080099ab285284362d838b5aff96ad93.png
+- title: Unreal MASS Sample Project
+  id: mass-sample-project
+  description: Small sample project that uses Unreal's experimental ECS plugin.
+  url: https://github.com/Megafunk/MassSample
+  posted_date: 2024-02-19 00:00:00 +0000
+  tags:
+  - cpp
+  site_preview: 90517406a35339137c4df655fdff1817.png
+- title: ECSProjectiles
+  id: empires-community-ecs-projectiles
+  description: This experimental UE plugin uses an ECS framework (FLECS in our case)
+    to simulate simple ballistic projects that use linetraces to collide with things
+    and Niagara to render.
+  url: https://github.com/EmpiresCommunity/ECSProjectiles
+  posted_date: 2024-02-19 00:00:00 +0000
+  tags:
+  - cpp
+  site_preview: 6976a7cd475883b08636dfe98e9228a3.png
+- title: Naotsun's Blog
+  id: naotsun-blog
+  description: Naotsun often posts interesting articles in Japanese. Use an online
+    translator to put them into your preferred language.
+  url: https://qiita.com/Naotsun
+  posted_date: 2024-01-03 00:00:00 +0000
+  tags:
+  - community
+  site_preview: ce9c0cbf1357ececae247c42efbb5a72.png
+- title: Extending Unreal 5's Status Bar
+  id: extending-unreal-status-bar
+  description: Naotsun's tutorial explains how to add a new button to Unreal 5's new
+    Status Bar widget that sits at the obttom of the screen.
+  url: https://qiita-com.translate.goog/Naotsun/items/cd81095ee63a2024001e?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp
+  posted_date: 2023-12-18 00:00:00 +0000
+  tags:
+  - slate
+  - ui
+  - editor
+  site_preview: 66236e928f402ab990be7357c639030a.png
+- title: Quod Soler Blog
+  id: quod-soler-blog
+  description: Focusing on gameplay programming, Quod Soler has very useful tutorials
+    on Gameplay Ability sytem
+  url: https://quodsoler.com/
+  posted_date: 2024-01-23 00:00:00 +0000
+  tags:
+  - community
+  - gameplay
+  - tutorial
+  site_preview: 232c90c494915660d47aaa417def0566.png
+- title: Sharundaar's Blog
+  id: sharundaar-blog
+  description: Sharundaar has a bunch of UI-related tutorials.
+  url: https://sharundaar.github.io/
+  posted_date: 2024-01-19 00:00:00 +0000
+  tags:
+  - community
+  - tutorial
+  - ui
+  site_preview: 040c91647c57f848ace0f8adc53aa6d5.png
+- title: Unreal UI Input Routing
+  id: unreal-ui-input-routing
+  description: Sharundaar steps through exactly what happens when the player clicks
+    on a button in the UI. What parts of the codebase handle what.
+  url: https://sharundaar.github.io/unreal-ui-input-routing.html
+  posted_date: 2022-11-13 00:00:00 +0000
+  tags:
+  - input
+  - ui
+  site_preview: ead29212a1f060463775b5702b4e7dc0.png
+- title: Matt's Game Dev Notebook
+  id: matt-game-dev-notebook
+  description: Matt aka Unrealist has a bunch of interesting tutorials including Lyra,
+    Common UI and the Unreal Header Tool.
+  url: https://unrealist.org
+  posted_date: 2023-10-13 00:00:00 +0000
+  tags:
+  - community
+  site_preview: e68aad3709bba6ee8badb910ceeba6cb.png
+- title: Extend the Unreal Header Tool with Plugins
+  id: extend-unreal-header-tool-with-plugins
+  description: Matt aka Unrealist shows how to make a new exporter to work with the
+    Unreal Header Tool.
+  url: https://unrealist.org/uht-plugins/
+  posted_date: 2024-01-18 00:00:00 +0000
+  tags:
+  - tools
+  - cpp
+  site_preview: f1191011336cf66f4fa3506cd7adaf82.png
+- title: Unreal Engine Startup Preload Screens
+  id: startup-preload-screens
+  description: Matt breaks down the four different stages where Unreal can show a
+    preloading screen.
+  url: https://unrealist.org/engine-startup-preload-screens/
+  posted_date: 2024-01-07 00:00:00 +0000
+  tags:
+  - ui
+  site_preview: 880f53785d17c5a6005484667d5dfcf3.png
+- title: Improving UE4 Blueprint Usability with Custom Nodes
+  id: blueprint-graph-custom-nodes
+  description: Huge in-depth tutorial that covers how to create a new custom Blueprint
+    graph node. Subclassing UK2Node, creating custom pins.
+  url: https://www.gamedev.net/tutorials/programming/engines-and-middleware/improving-ue4-blueprint-usability-with-custom-nodes-r5694/
+  posted_date: 2021-02-02 00:00:00 +0000
+  tags:
+  - editor
+  - blueprint
+  site_preview: 0247b12c6e7bec9313d3d5b012e6ad19.png
+- title: A Reference Guide to Custom Blueprint Nodes
+  id: reference-guide-custom-blueprint-nodes
+  description: Matt covers in great detail how to create a custom blueprint node from
+    scratch, including adding custom pins, allowing renaming, wildcard pins. Simply
+    the best in-depth tutorial for custom nodes.
+  posted_date: 2022-11-21 00:00:00 +0000
+  url: https://unrealist.org/custom-blueprint-nodes/
+  tags:
+  - editor
+  - blueprint
+  site_preview: 5b19793264f099d68914c3c7bde1683e.png
+- title: How to build an Unreal Save System in 10 minutes using only Blueprint
+  id: unreal-save-system
+  description: Unreal's save system can be kind of overwhelming but I found this tutorial an amazing introduction.
+  url: https://www.quodsoler.com/blog/how-to-build-an-unreal-save-system-in-10-minutes-using-only-blueprint
+  posted_date: 2024-01-22 00:00:00 +0000
+  tags:
+  - blueprint
+  - save
+  site_preview: f5fccb823800cf2bd466b19c68bd19b4.png
+- title: Impromptu Games Discord
+  id: impromptu-games-discord
+  description: Really helpful Discord community started by Joe Wintergreen. People
+    are very fun and friendly, mostly based in Australia it seems.
+  url: https://discord.com/invite/TyexPhe
+  posted_date: 2024-02-11 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 8164194d8fa72fe10e00ea8e4570ab22.jpg
+- title: Joe's Light Audit Tool
+  id: joes-light-audit-tool
+  description: A helper widget that you can use to find and remove expensive lights
+    in UE5.
+  url: https://impromptu-games.itch.io/lightaudit
+  posted_date: 2024-02-05 00:00:00 +0000
+  tags:
+  - lighting
+  - tools
+  site_preview: 3f57d692e9753b79deb50cbb5aee467d.png
+- title: Cobra Code Unreal 2D Intro Course
+  id: cobra-code-2d-intro-course
+  description: A rare course focused on making a 2D game in Unreal Engine.
+  url: https://www.udemy.com/course/unreal-2d-course/
+  posted_date: 2024-02-10 00:00:00 +0000
+  tags:
+  - 2d
+  site_preview: 823cdb0cc9f02f71b556757e5bd9b091.png
+- title: Cobra Code Unreal 2D Action Platformer Course
+  id: cobra-code-2d-action-course
+  description: Seems to be an advanced version of the other course offered by Cobra
+    Code.
+  url: https://www.udemy.com/course/ue-2d-action-platformer/
+  posted_date: 2024-02-10 00:00:00 +0000
+  tags:
+  - 2d
+  site_preview: 232e7ec973b1f0ac4c274d55b7bad005.png
+- title: Cobra Code 2D Side Scroller Template Project
+  id: cobra-code-2d-side-scroller-template
+  description: Example project showing how to create a 2D side scroller in Unreal.
+  url: https://github.com/CobraCodeDev/TP_2DSideScrollerBP
+  posted_date: 2023-10-04 00:00:00 +0000
+  tags:
+  - 2d
+  site_preview: 953e23b9862c5c90ef11ee1abe039f28.png
+- title: UMG Deferred Painter
+  id: umg-deferred-painter
+  description: Shows how to implement a deferred paint container. Perfect for drawing
+    widgets over others so they look "highlighted" during tutorials.
+  url: https://github.com/Sharundaar/DeferredPainter/
+  posted_date: 2024-01-31 00:00:00 +0000
+  tags:
+  - cpp
+  - umg
+  - ui
+  site_preview: 07f144fcce7717101f58f3b07d407653.png
+- title: Georgy Treshchev's Blog
+  id: georgy-treshchev-blog
+  description: Interesting blog.
+  url: https://georgy.dev/
+  posted_date: 2024-02-01 00:00:00 +0000
+  tags:
+  - community
+  site_preview: b1caa1ca122c90e380671cfdd01a103b.png
+- title: FreetimeCoder's Blog
+  id: freetimecoder-blog
+  description: Localization and Common UI tutorials from Pascal Krabbe
+  url: https://freetimecoder.net/tag/Tutorial/
+  posted_date: 2024-01-06 00:00:00 +0000
+  tags:
+  - community
+  site_preview: ccf32d1a73bc1f5a1afdeb8f40339b96.png
+- title: Adventures in Localization
+  id: adventures-in-localization
+  description: Pascale Krabbe documented his experiences in localizing his game, including
+    working with .po files an an external text editor.
+  url: https://freetimecoder.net/unreal/Adventures-In-Localization/
+  posted_date: 2023-12-19 00:00:00 +0000
+  tags:
+  - localization
+  - text
+  - editor
+  - cpp
+  - script
+  site_preview: 91581c608e615417e08decdd122785ce.png
+- title: 'Sounds Good: Unreal Engine Audio | Unreal Fest 2023'
+  id: sounds-good-unreal-fest-2023
+  description: Using the latest stuff in the audio system in Unreal Engine.
+  url: https://www.youtube.com/watch?v=rOZrE-MkhM8
+  youtube: rOZrE-MkhM8
+  posted_date: 2023-12-19 00:00:00 +0000
+  tags:
+  - video
+  - audio
+  site_preview: e77f3d41977f2ef3d366da021654df99.jpg
+- title: 'Building Mobile Games with UE5 | Unreal Fest 2023'
+  id: building-mobile-games-with-ue5-unreal-fest-2023
+  description: Velin Tchalakov, Senior Mobile Gameplay Programmer on Fortnite, talks
+    about the workflows, lessons, hacks, and mindset you should keep when developing
+    for mobile in UE.
+  url: https://www.youtube.com/watch?v=kfZ9BxrmYBU
+  youtube: kfZ9BxrmYBU
+  posted_date: 2023-12-19 00:00:00 +0000
+  tags:
+  - video
+  - platform
+  site_preview: 82a1fbf3489e15cefc46538bc6d3e327.jpg
+- title: 'Collision Data in UE5: Practical Tips for Managing Collision Settings &
+    Queries | Unreal Fest 2023'
+  id: collision-data-in-ue5
+  description: 'Collision data is largely defined by content creators, but its users
+    are mostly systems written by programmers. Big games have more collision data,
+    and more systems using it. Unreal Engine provides a great framework for collision,
+    but problems can emerge at scale.
+
+    In this talk, George Prosser will share some of the lessons learned developing
+    ''Hogwarts Legacy'', and the strategies Studio Gobo have employed on their latest
+    project. The talk will include best practices for managing collision settings,
+    and tips for writing collision queries more effectively, giving an overview of
+    much of Unreal Engine''s collision framework in the process.'
+  url: https://www.youtube.com/watch?v=xIQI6nXFygA
+  youtube: xIQI6nXFygA
+  posted_date: 2023-12-19 00:00:00 +0000
+  tags:
+  - video
+  - gameplay
+  site_preview: dfb2cb75d2795eb65b1e4db54fef1580.jpg
+- title: 'GPU Crash Debugging in Unreal Engine: Tools, Techniques, and Best Practices
+    | Unreal Fest 2023'
+  id: gpu-crash-debugging
+  description: Debugging GPU crashes on PC can be challenging. We'll go over best
+    practices and the tools available in Unreal Engine to debug such crashes. This
+    includes a new GPU breadcrumbs system, which provides the equivalent of a GPU
+    “callstack.” Additionally, we'll examine case studies and discuss classification
+    tools we use internally to automate crash grouping in Jira. This approach allows
+    us to focus on the most critical crashes, eliminating the need for manual digging
+    through logs.
+  url: https://www.youtube.com/watch?v=CyrGLMmVUAI
+  youtube: CyrGLMmVUAI
+  posted_date: 2023-12-19 00:00:00 +0000
+  tags:
+  - video
+  - debugging
+  site_preview: 3f671f77b3f8e004056f20b63f0aab8e.jpg
+- title: 'Creating an Interactive Never-ending Procedural Music Album with MetaSounds
+    | Unreal Fest 2023'
+  id: creating-interactive-procedural-music
+  description: Unreal Fest video talk on using MetaSounds and Quartz to make procedurally-generated music.
+  url: https://www.youtube.com/watch?v=GFvR1v5smpY
+  youtube: GFvR1v5smpY
+  posted_date: 2023-12-01 00:00:00 +0000
+  tags:
+  - video
+  - audio
+  site_preview: e7bd69a20bb774a72e171ab6b9fba40f.jpg
+- title: A Gearbox Plugin for Codeless Automated Tests | Unreal Fest 2023
+  id: codeless-automated-tests
+  description: 'The ever-increasing ambitions of the AAA videogame industry come with
+    exploding design complexity, and keeping quality in check requires ever more ingenuity.
+    That’s why Gearbox created Polaris, an Unreal Engine 5 plugin for automating tests,
+    empowering the people who make the game with user-friendly QA tools so they can
+    create tests that will live throughout the development process.
+
+    Polaris enables QA professionals, designers, artists or developers to simulate
+    in-game behavior via automated agents. By running these tests periodically in
+    build pipelines, the team can keep tabs on advancement and regressions over the
+    entire development process.
+
+    Polaris is fully integrated within the Unreal Engine ecosystem and project-agnostic.
+    It has a friendly Slate-based GUI and relies on the FTEST system. It integrates
+    well with build systems, including console builds.
+
+    These automated agents have already demonstrated that their potential extends
+    beyond QA. We believe they also constitute a strong basis for future applications
+    including in-game data generation, and reinforcement learning (RL)-based agents
+    able to extend the coverage of tests. In fact, the tool is being developed with
+    these future features in mind.'
+  url: https://www.youtube.com/watch?v=wu5cOM7L5vs
+  youtube: wu5cOM7L5vs
+  posted_date: 2023-11-20 00:00:00 +0000
+  tags:
+  - video
+  - testing
+  site_preview: 8191cf17f65615caa05da632b3b19e07.jpg
+- title: Using the Network Prediction Plugin
+  id: using-network-prediction-plugin
+  description: How to use Unreal's built-in Network Prediction plugin to improve your
+    multiplayer game.
+  url: https://www.kierannewland.co.uk/using-the-network-prediction-plugin/
+  posted_date: 2023-12-18 00:00:00 +0000
+  tags:
+  - multiplayer
+  site_preview: 41b80fd6a798a601538f12eda703aa8d.jpg
+- title: The Problems With Unreal Engine's Default Networking
+  id: problems-unreal-default-networking
+  description: This tutorial from Kieran Newland has a great introduction to networking in games in general, before going into depth in a subsequent post on how to use Unreal's Network Prediction plugin.
+  url: https://www.kierannewland.co.uk/unreal-engines-default-networking/
+  posted_date: 2023-10-17 00:00:00 +0000
+  tags:
+  - multiplayer
+  site_preview: e2dd48c00b537847ac53ee7cb60ee409.jpg
+- title: Kieran Newland's Blog
+  id: kieran-newland-blog
+  description: Kieran Newland has so many incredibly useful networking and multiplayer
+    articles on his blog.
+  url: https://www.kierannewland.co.uk/blog/
+  posted_date: 2023-10-17 00:00:00 +0000
+  tags:
+  - community
+  site_preview: f35a5a539cc8c2d4dd41ff37c2ad43b0.jpg
+- title: Stop Escape from Stopping Editor
+  id: stop-escape-stopping
+  description: 'Sick of accidentally stopping Play In Editor when you press Esc to
+    open the menu?
+
+    Rebind Stop to Shift+Esc (or anything really).
+
+    Search for "stop" in Editor Preferences, then rebind "Play World (PIE/SIE)" from
+    Esc to Shift+Esc.'
+  images:
+  - GA17w_TbQAYpvbt.webp
+  posted_date: 2023-10-16 00:00:00 +0000
+  tags:
+  - tip
+  - editor
+- title: Fix C++ Garbage Collector Crashes
+  id: fix-cpp-gc-crashes
+  description: Enigma tutorials has a great video on how to deal with GC-caused crashes.
+    I hit this a lot when first starting out with Unreal.
+  url: https://www.youtube.com/watch?v=fYktCdC_4IM
+  youtube: fYktCdC_4IM
+  posted_date: 2023-12-09 00:00:00 +0000
+  tags:
+  - video
+  - cpp
+  site_preview: 8f464e2b896c984bd67c08abab095cfa.jpg
+- title: Procedural Waterfall Generation Tool! Demo & Technical Breakdown
+  id: procgen-waterfall
+  description: Ghislain Girardot has another incredibly detailed tutorial on how to
+    procedurally generate waterfalls.
+  url: https://www.youtube.com/watch?v=O2BLqPK5SLg
+  youtube: O2BLqPK5SLg
+  posted_date: 2023-12-07 00:00:00 +0000
+  tags:
+  - video
+  - material
+  - vfx
+  site_preview: 6e7cd181f43d496744fdc0fe4b73e96d.jpg
+- title: Recovering a Corrupt Blueprint
+  id: recover-corrupt-blueprint
+  description: 'It''s sometimes posible to end up with a corrupt Blueprint. Unreal
+    can show an error like this when starting the editor "The summary for the package
+    {Your Blueprint} is invalid. Check that the file is of the expected type and not
+    corrupted"
+
+    There''s a `/Saved/Autosaves/` directory that may have an autosave version of
+    the file that you need.'
+  posted_date: 2023-12-04 00:00:00 +0000
+  tags:
+  - blueprint
+  - editor
+- title: Sparks from fire shader
+  id: sparks-fire-shader
+  description: 2D shader showing a fire with sparks.
+  url: https://www.shadertoy.com/view/MlKSWm
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - material
+  - ui
+  site_preview: 92687f1ab3fa104deac313db7c9d82d6.png
+- title: Sparks shader
+  id: sparks-shader
+  description: More 2D sparky shadertoy stuff
+  url: https://www.shadertoy.com/view/wl2Gzc
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - material
+  - ui
+  site_preview: 0bd1392b88ec9a547abc1cd296abaf1d.png
+- title: Unreal Slackers
+  id: unreal-slackers
+  description: Great Discord server for learning and asking questions. It renamed
+    itself Unreal Source.
+  url: https://unrealslackers.org/
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 6de882cd370ed29d4898d8236b26431e.jpg
+- title: BUI Cheat Manager
+  id: bui-cheat-manager
+  description: Cheat manager base class that adds support for adding cheat shortcuts
+  url: https://github.com/benui-dev/UE-BUICheatManager
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - cheat
+  - cpp
+  site_preview: 4757f34f7927acfd1a027715772f468f.png
+- title: BUI UITween
+  id: bui-tween
+  description: Tweening library for UMG written in C++
+  url: https://github.com/benui-dev/ue-uitween
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - umg
+  - ui
+  site_preview: d29e74ed6098f67da8322785686afa61.png
+- title: UE BYG Localization
+  id: ue-byg-localization
+  description: Alternative localization plugin that uses plain CSV files.
+  url: https://github.com/BraceYourselfGames/UE-BYGLocalization
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - localization
+  - text
+  - plugin
+  site_preview: e68b546689554c6de63c2dc96e6013a0.png
+- title: UE BYG Text to Speech
+  id: ue-byg-text-to-speech
+  description: Uses the Windows Speech API to speak text.
+  url: https://github.com/BraceYourselfGames/UE-BYGTextToSpeech
+  posted_date: 2023-04-20 00:00:00 +0000
+  tags:
+  - accessibility
+  - text
+  - plugin
+  site_preview: 4de57ab09155fcb7cd215e335d8ed95d.png
+- title: UE BYG Rich Text
+  id: byg-rich-text
+  description: Example of how to implement rich text and markdown-like text formatting.
+  url: https://github.com/BraceYourselfGames/UE-BYGRichText
+  posted_date: 2022-03-26 00:00:00 +0000
+  tags:
+  - text
+  - plugin
+  site_preview: 841fba8fc32d414e04687d2703eaba81.png
+- title: Niagara UI Renderer
+  id: niagara-ui-renderer
+  description: Render particles in UI. Also [available on Marketplace](https://www.unrealengine.com/marketplace/en-US/product/niagara-ui-renderer)
+  url: https://github.com/SourySK/NiagaraUIRenderer
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - umg
+  - slate
+  - vfx
+  - ui
+  site_preview: 4dc2aef7df2e6e661dc1996f1f6e73b6.png
+- title: Slate plugin resources
+  id: slate-plugin-resources
+  description: List of plugins to use as reference when learning Slate or making your
+    own plugin.
+  url: https://github.com/Sythenz/UE4-Plugin-Resources
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - slate
+  site_preview: 0d990233ba3399904634c153cc2c5137.png
+- title: Dialogue Editor
+  id: dialogue-editor
+  description: Editor plugin that has a nested tree structure.
+  url: https://github.com/dhk-room101/UE5DialogueEditor
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - slate
+  - editor
+  - writing
+  site_preview: b51e5350d96ea0f530262a40bc240ca0.png
+- title: Typewriter effect rich text plugin
+  id: typewriter-effect-rich-text-plugin
+  description: Prints out text character by character like a typewriter.
+  url: https://github.com/redxdev/UnrealRichTextDialogueBox
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - text
+  site_preview: 78d8e41d152ab6c70af4ffc2b93d79c4.png
+- title: Unreal Engine 4 development guide
+  id: ikrima-ue4-development-guide
+  description: Huge book-like reference.
+  url: https://ikrima.dev/ue4guide/
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - docs
+  site_preview: 3539b9da143ea647f20f13ded103eae9.png
+- title: Write HLSL outside the custom node
+  id: write-hlsl-outside-custom-node
+  description: Plugin and tutorial for how to edit HLSL code using an external editor.
+  url: https://www.youtube.com/watch?v=V3BVsYV7ge0
+  youtube: V3BVsYV7ge0
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - video
+  - material
+  site_preview: 2273eaac9e92baebff6de5cc2733e90f.png
+- title: How to add another client in the Editor
+  id: allow-late-joining
+  description: If you're testing a multiplayer game, Unreal has a great "Allow late
+    joining" experimental feature under Editor Preferences. It adds an "Add another
+    client" button that is shown when you run the game.
+  images:
+  - F_LCI23aMAA-Grn.webp
+  - F_LCVpQbIAArNB5.webp
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - multiplayer
+  - editor
+  - tip
+- title: Channel Packer
+  id: channel-packer
+  description: Marketplace plugin for packing data into multiple channels of a texture.
+  url: https://www.unrealengine.com/marketplace/en-US/product/texture-channel-packer-01
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - texture
+  - material
+  - marketplace
+  site_preview: 65a1a0b0bbacdc6bc054742678158a88.png
+- title: MDMetaDataEditor
+  id: md-meta-data-editor
+  description: Unreal Engine plugin to enable editing meta data of Blueprint Properties,
+    Functions, and Function and Event Parameters.
+  url: https://github.com/DoubleDeez/MDMetaDataEditor
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - blueprint
+  - editor
+  site_preview: b34ebe60900c20c3ba610be951eb3a9e.png
+- title: DetailsMetadataExtension
+  id: details-metadata-extension
+  description: Plugin that allows editing of any metadata on uproperty specifiers.
+  url: https://github.com/rfsheffer/DetailsMetadataExtension
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - blueprint
+  site_preview: 4307be2810dae1d96a67c5fcc6f0152c.png
+- title: Always Initialize FVectors
+  id: always-initialize-fvectors
+  description: Rememeber to always explicitly initialize your FVectors. The default
+    constructor does _not_ zero out X, Y, Z values. ❌ `FVector Position; // The value
+    of X, Y, Z is undefined!` ✅ `FVector Position = FVector::ZeroVector;`
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - cpp
+  - tip
+- title: Don't forget the Blueprint Debugger Window
+  id: blueprint-debugger
+  description: 'Usually when debugging a Blueprint I set a breakpoint and mouse over
+    values in the graph view.
+
+    However sometimes it shows "not in scope" or it''s hard to see how a variable
+    changes in real-time.
+
+    For this, use the Blueprint Debugger window. You can set it to show the live value
+    of variables on specific instances, and see the stack trace.'
+  url: https://twitter.com/ChrisZukoArt/status/1718752599162155041
+  posted_date: 2023-10-29 00:00:00 +0000
+  tags:
+  - blueprint
+  - debugging
+  - editor
+  site_preview: 1e2860c75af6f2c34ace4063c1538461.png
+- title: Project avalanche
+  id: project-avalanche
+  description: Preview of the Unreal Engine 5 motion graphics tool.
+  url: https://www.youtube.com/watch?v=vLdq9m93FLI
+  youtube: vLdq9m93FLI
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - video
+  - ui
+  site_preview: 775aa15c4347e59585587aa84f6da449.jpg
+- title: Celdevs Blog
+  id: celdevs-blog
+  description: A variety of tutorials from Salty Panda studios.
+  url: https://celdevs.com/
+  posted_date: 2023-09-27 00:00:00 +0000
+  tags:
+  - community
+  site_preview: cc61de32f4cbea4f3e696c174d4dbc51.jpg
+- title: Exposing templated properties to UPROPERTY
+  id: exposing-templated-properties-uproperty
+  description: Concrete tutorial on the steps required to add support for C++ template
+    properties so that they can be displayed and edited in Unreal Engine's editor.
+  url: https://celdevs.com/exposing-templated-properties-to-uproperty/
+  posted_date: 2023-09-27 00:00:00 +0000
+  tags:
+  - cpp
+  - editor
+  site_preview: 52b120943f118122462be3efd91a27c4.jpg
+- title: Unreal Engine, and the hidden pitfalls of Blueprints
+  id: hidden-pitfalls-of-blueprints
+  description: A detailed example of how pure nodes in Blueprints can be executed
+    multiple times. Definitely worth knowing for anyone that uses Blueprint.
+  url: https://celdevs.com/unreal-engine-and-the-hidden-pitfalls-of-blueprints/
+  posted_date: 2021-09-14 00:00:00 +0000
+  tags:
+  - blueprint
+  site_preview: e744bfaa4d86f512207bedc1912130da.jpg
+- title: PROTO Profiles & Options
+  id: proto-profiles-options
+  description: Options and user settings plugin.
+  url: https://www.unrealengine.com/marketplace/en-US/product/proto-profiles-options
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - marketplace
+  site_preview: f84ce590e61d9363af71e2b9c362117b.png
+- title: Idea for Making it Easy for Users to Give Bug Reports
+  id: making-it-easy-for-users-to-give-bug-reports
+  description: 'Make it easy for users to give accurate bug reports: 1. Add a "report
+    bug" button in-game. 2. Game opens a Google form, pre-filled with tech info from
+    your game: game version, user hardware specs, windows version. 3. Game also opens
+    the users'' save and log folders to attach.
+
+    To get the format for the pre-filled URL, use the ... from your google form. Replace
+    the example values you give with the info from your game. You''ll also need to
+    UrlEncode() the input text.
+
+    In Unreal, open the page using LaunchURL. See next links for how to open folders.
+
+    Some of this code can be found through my [Youtrack filler plugin](https://github.com/BraceYourselfGames/UE-BYGYouTrackFiller)
+
+    What I like about this approach is it''s flexible. You can add a screenshot in
+    the form showing users how to drag & drop their save file into the form. Or you
+    can add individual fields for map seed, exact coordinates in the game world and
+    not require a save.
+
+    Also you don''t have to use Google forms, any web form that supports pre-filling
+    from URL key/value pairs would work.'
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - tip
+- title: Project Optimise Tool
+  id: project-optimize-tool
+  description: Tool that can check for easy-to-fix performance problems in your Unreal
+    Engine project.
+  url: https://cbgamedev.itch.io/project-optimise-tool-unreal-engine
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - plugin
+  - tools
+  - editor
+  site_preview: 9ff265e7aba475a7802ae12fc3670171.png
+- title: Unreal Directive
+  id: unreal-directive
+  description: Unreal Directive has a huge number of tutorials.
+  url: https://www.unrealdirective.com/
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - community
+  site_preview: f9d07ddce718781680377aeb5443782b.png
+- title: Unreal Engine C++ Complete Guide
+  id: tom-looman-cpp-complete-guide
+  description: Very detailed single-page intro to using C++ in Unreal Engine. If you're
+    already familiar with C++ and are jumping into Unreal Engine, it's a great place
+    to start.
+  url: https://www.tomlooman.com/unreal-engine-cpp-guide/
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - cpp
+  site_preview: 378ec30259da9cca3bec38bf101b0db1.png
+- title: Professional Game Development in C++ and Unreal Engine
+  id: tom-looman-cpp-course
+  description: Tom Looman offers a professional C++ course that I really recommend.
+    It's a great blend of getting hands-on and making something, and backing that
+    up with the theory and what's happening under the hood. If you're interested in
+    C++ and Unreal Engine, it's well worth the investment.
+  starred: true
+  url: https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - cpp
+  - video
+  site_preview: 30e301772605b53288afb5b7abbc5e65.png
+- title: Understanding UI Roles
+  id: understanding-ui-roles
+  description: 'If you''re thinking about getting into UI in game development, the
+    terms that you see can be really confusing. What''s the difference between a UI
+    Designer and UX Designer? What about a Technical UI Designer?
+
+    This is a diagram that the [We Can Fix It In UI](https://www.wecanfixitinui.com/)
+    community has made to show what responsibilities each of those jobs can include.'
+  url: https://onewithmachines.notion.site/Understanding-UI-Roles-b6c82cdac1874f429b8ab1bcbca271f3
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - ui
+  - ux
+  - industry
+  site_preview: 42f5818dfa2e58dae57df256070d4880.png
+- title: How to add Auto-complete entries to the Cheat Console
+  id: add-auto-complete-entries
+  description: The cheat console is a great way to let designers, QA and anyone try
+    out new things within your game. However it's often laborious and error-prone
+    to type out long item names or paths. That's where autocomplete comes in handy!
+  url: https://dev.epicgames.com/community/learning/tutorials/ELje/unreal-engine-how-to-add-new-auto-complete-entries-to-the-cheat-console
+  posted_date: 2023-11-18 00:00:00 +0000
+  tags:
+  - cheat
+  - editor
+  site_preview: d00d4de02c5bb846bf67765e978594e1.png
+- title: Customize Your Unreal Class Icons
+  id: customize-unreal-class-icons
+  description: In the Components view for actors, by default custom components just
+    get a generic component icon. But it's way easier to see which is which at-a-glance
+    by customizing them. Quod Soler shows how!
+  posted_date: 2023-01-11 00:00:00 +0000
+  url: https://www.quodsoler.com/blog/customize-your-unreal-class-icons
+  tags:
+  - cpp
+  - editor
+  site_preview: 2ffc0bb6cf1338be183b8a4ebc67da2d.png
+- title: Change and Compile Blueprints at Runtime
+  id: change-compile-blueprints-runtime
+  description: 'Normally it''s not possible to change and compile Blueprints while
+    the game is running in UnrealEngine.
+
+    However there''s an experimental Project Setting to add classes that are able
+    to be changed and live recompiled.'
+  posted_date: 2023-07-10 00:00:00 +0000
+  tags:
+  - tip
+  - editor
+  - blueprint
+  images:
+  - F0tJSqiagAAp9RX.webp
+- title: How to use JSON Blueprint Utilities Plugin in Unreal Engine 5
+  id: json-blueprint-utilities
+  description: An experimental plugin from Epic that allows Blueprint access to JSON files.
+  url: https://unrealiseasy.com/how-to-use-the-json-blueprint-utilities-plugin/
+  posted_date: 2023-07-29 00:00:00 +0000
+  tags:
+  - plugin
+  - blueprint
+  site_preview: 3bac9f7ab334c3629b8ebe295c4248f0.png
+- title: UEFontViewer
+  id: ue-font-viewer
+  description: FontViewer (Editor Utility) tool, browse and preview font files for
+    styles and localization support.
+  url: https://github.com/DarknessFX/UEFontViewer
+  posted_date: 2023-07-29 00:00:00 +0000
+  tags:
+  - plugin
+  - ui
+  site_preview: 9ab5b0f8bb65f8aca48e90a6a0aca1de.png
+- title: Horde Build System
+  id: horde-build-system
+  description: Slides from DeveloperConf tutorial on Unreal Engine build system
+  url: https://docs.google.com/presentation/d/1jwESZwJeXQq76ESNLO7zroQcFK1CpnO3/edit#slide=id.p38
+  posted_date: 2023-07-29 00:00:00 +0000
+  tags:
+  - build
+  site_preview: 44ec5ac14c0fa93ff527804904cd8db1.png
+- title: Disable Optimization on Files Checked out in Perforce
+  id: disable-optimization-files-checked-out
+  description: 'There''s an Unreal Engine build variable for automatically disabling
+    optimization on all files checked out in Perforce.
+
+    `bAdaptiveUnityDisablesOptimizations`'
+  url: https://docs.unrealengine.com/en-US/build-configuration-for-unreal-engine/
+  posted_date: 2023-07-29 00:00:00 +0000
+  tags:
+  - build
+  - version-control
+  site_preview: 28a7c404bead66468661b8fe28a7debf.png
+- title: Include ini from another ini
+  id: include-ini-from-ini
+  description: 'Today''s Unreal Engine "Wait what? It can do that?": Include an ini
+    file inside another with `#!` and a relative path, e.g. `#!../Windows/WindowsEngine.ini`
+    Thanks to Aquanox in [UnrealSlackers](https://unrealslackers.org/) for this one.'
+  posted_date: 2021-11-22 00:00:00 +0000
+  tags:
+  - tools
+  - build
+- title: Expressive Text Plugin
+  id: expressive-text-plugin
+  description: Great plugin for showing animations and effects on text.
+  url: https://www.unrealengine.com/marketplace/en-US/product/expressive-text
+  posted_date: 2023-07-29 00:00:00 +0000
+  tags:
+  - plugin
+  - marketplace
+  - ui
+  - text
+  site_preview: 5653f7043d80ef1563b311e7bdb30176.png
+- title: Better formatting with `UE_LOGFMT`
+  id: better-formatting-ue-logfmt
+  description: UE_LOGFMT is a new macro introduced in Unreal 5.2 that supports more
+    types. This Twitter thread covers a lot of it.
+  url: https://twitter.com/VesCodes/status/1686102754350002176
+  posted_date: 2023-07-31 00:00:00 +0000
+  tags:
+  - debugging
+  site_preview: 958a492ff8192265cd46d9d4f5259f1c.png
+- title: Proto Animated Text
+  id: proto-animated-text
+  description: Plugin for displaying animated text.
+  url: https://www.unrealengine.com/marketplace/en-US/product/proto-animated-text
+  posted_date: 2023-07-31 00:00:00 +0000
+  tags:
+  - plugin
+  - marketplace
+  - ui
+  - text
+  site_preview: e341fd954f2329f5d321cee5242f992b.png
+- title: Printing and Animating Text Per-Character
+  id: printing-animating-text-per-character
+  description: Tutorial on how to use Unreal's Rich Text Block to make text wiggle.
+  url: https://protowlf.com/unreal/printing-text-in-unreal/
+  posted_date: 2023-01-09 00:00:00 +0000
+  tags:
+  - text
+  - ui
+- title: How to get sublevels
+  id: how-to-get-sublevels
+  description: Twitter thread on how to load all the sublevels contained in an Unreal
+    Map asset.
+  url: https://twitter.com/QuodSoler/status/1687857833121808384
+  posted_date: 2023-08-05 00:00:00 +0000
+  tags:
+  - level
+  - cpp
+  site_preview: a208e841604df9f816b878673ebe1636.png
+- title: The Quest for Very Wide Outlines
+  id: quest-for-very-wide-outlines
+  description: Ben Golus explains how to use the Jump Flood algorithm to create super
+    wide 2D outlines around characters in materials.
+  url: https://bgolus.medium.com/the-quest-for-very-wide-outlines-ba82ed442cd9
+  posted_date: 2020-07-08 00:00:00 +0000
+  tags:
+  - material
+  - math
+  site_preview: c7977a4db235b176132f0fce6b530f7a.png
+- title: Property Watcher
+  id: property-watcher-imgui
+  description: A runtime variable watch window for Unreal Engine using Dear ImGui.
+  url: https://github.com/guitarfreak/PropertyWatcher
+  posted_date: 2021-01-09 00:00:00 +0000
+  tags:
+  - debugging
+  - plugin
+  - cpp
+  site_preview: 232f0a249dfba86b24c20fd5ef0d44f9.png
+- title: My Starred GitHub repos
+  id: starred-github-repos
+  description: A sort-of maintained list of interesting repos on GitHub that I have
+    starred. It's somewhat outdated now that I have this bits page.
+  starred: true
+  url: https://github.com/benui-dev?tab=stars
+  posted_date: 2021-01-09 00:00:00 +0000
+  tags:
+  - cpp
+  - plugin
+  site_preview: e9e6d4b2c265ab64e65f7b37c98dde5e.png
+- title: Tips for Quickly Prototyping | Inside Unreal
+  id: tips-for-quickly-prototyping
+  description: Quickly prototyping stuff
+  url: https://www.youtube.com/watch?v=3iIAcOtPJZg
+  youtube: 3iIAcOtPJZg
+  posted_date: 2022-04-30 00:00:00 +0000
+  tags:
+  - video
+  site_preview: 29209bc510aed8a8605c019381ba6dca.jpg
+- title: Awesome Unreal
+  id: awesome-unreal
+  description: A categorized collection of awesome opensource Unreal Engine 4 and
+    5 repos.
+  url: https://github.com/insthync/awesome-unreal
+  posted_date: 2021-01-09 00:00:00 +0000
+  tags:
+  - plugin
+  - cpp
+  site_preview: 4d09748781200973b32892f2111fdbfa.png
+- title: We Can Fix It In UI
+  id: we-can-fix-it-in-ui
+  description: A Discord for UI professionals.
+  url: http://www.wecanfixitinui.com/
+  posted_date: 2021-01-09 00:00:00 +0000
+  tags:
+  - community
+  site_preview: 8accd82bf09b217265149e3423556b43.png
+- title: Obsidian
+  id: obsidian
+  description: A really useful note-taking tool. It's what I use for all of my notes.
+  url: https://obsidian.md/
+  posted_date: 2023-09-01 00:00:00 +0000
+  tags:
+  - tools
+  site_preview: f18916e4fda284a0673b4b4f67bd554f.png
+- title: Leveraging Dear ImGui in Unreal
+  id: dear-imgui-unreal
+  description: Sharundaar's tutorial on using Dear Imgui is the best.
+  url: https://sharundaar.github.io/leveraging-dearimgui-in-unreal.html
+  posted_date: 2023-09-02 00:00:00 +0000
+  tags:
+  - cpp
+  - tools
+  - editor
+- title: FlowGraph
+  id: flow-graph
+  description: Design-agnostic node system for scripting game's flow in Unreal Engine.
+  url: https://github.com/MothCocoon/FlowGraph
+  posted_date: 2022-03-31 00:00:00 +0000
+  tags:
+  - writing
+  - plugin
+  - editor
+  site_preview: 04e82719e9f61336c94f7189f316fa2b.png
+- title: BeginPlay
+  id: begin-play-video-tutorials
+  description: Begin Play is a series of videos designed for experienced developers
+    who are transitioning from other engines like Unity to Unreal Engine 5. Each video
+    gives a high-level overview of the various features of the engine and how they
+    connect together.
+  url: https://dev.epicgames.com/community/learning/paths/0w/beginplay
+  posted_date: 2022-04-30 00:00:00 +0000
+  tags:
+  - video
+  site_preview: f8a9fa109b241508f562da89242ebf90.png
+- title: Blueprint Assist
+  id: blueprint-assist
+  description: Blueprint Assist means I no longer have to care about dragging around
+    blueprint nodes. I can just hit F and it does it for me. I never manually format
+    my code in C++ why would I do it in BP?
+  starred: true
+  url: https://www.unrealengine.com/marketplace/en-US/product/blueprint-assist
+  posted_date: 2023-05-17 00:00:00 +0000
+  tags:
+  - tools
+  - blueprint
+  - editor
+  - productivity
+  - plugin
+  - marketplace
+  site_preview: da6701ef8d59b4224ff37b3532af4122.png
+- title: clang-tidy for Unreal Engine
+  id: clang-tidy
+  description: Hugely helpful tool for finding common bugs in C++.
+  starred: true
+  url: https://docs.redpoint.games/clang-tidy-for-unreal-engine/
+  posted_date: 2023-05-17 00:00:00 +0000
+  tags:
+  - tools
+  - cpp
+  - productivity
+  - team
+  site_preview: 0a0deee04d8dcba6374385d7ff82bcb8.png
+- title: Node Graph Assistant
+  id: node-graph-assistant
+  description: Node Graph Assistant is another huge productivity-improving tool for
+    Blueprints.
+  url: https://www.unrealengine.com/marketplace/en-US/product/node-graph-assistant/
+  posted_date: 2023-05-17 00:00:00 +0000
+  tags:
+  - tools
+  - blueprint
+  - plugin
+  - marketplace
+  - productivity
+  site_preview: 6e7b2bc1084c031abbf9b5b84f45528c.png
+- title: Property Transfer Tool
+  id: property-transfer-tool
+  description: Looks like a super useful tool for refactoring Blueprint classes, letting
+    you move variables between them.
+  url: https://www.unrealengine.com/marketplace/en-US/product/property-transfer-tool
+  posted_date: 2023-05-17 00:00:00 +0000
+  tags:
+  - tools
+  - blueprint
+  - plugin
+  - marketplace
+  - productivity
+  - editor
+  site_preview: cc1a9959a418dfc0bbfb079e1f7cf446.png
+- title: Sirius Utility Nodes
+  id: sirius-utility-node
+  description: A whole lot of new useful nodes for Blueprint graphs.
+  url: https://www.unrealengine.com/marketplace/en-US/product/sirius-utility-nodes/reviews
+  posted_date: 2023-05-17 00:00:00 +0000
+  tags:
+  - tools
+  - blueprint
+  - plugin
+  - marketplace
+  - editor
+  site_preview: 28c1fceede339acfe1768920151a4ad9.png
+- title: Log Viewer Pro
+  id: log-viewer-pro
+  description: Lets you double-click on a log entry to jump to where it was called.
+  url: https://www.unrealengine.com/marketplace/en-US/product/log-viewer-pro
+  posted_date: 2023-05-17 00:00:00 +0000
+  tags:
+  - debugging
+  - plugin
+  - marketplace
+  - editor
+  site_preview: 443f8d1e81504185473ece389356fc15.png
+- title: Electronic Nodes
+  id: electronic-nodes
+  description: Change the visual style of Blueprint graphs
+  url: https://www.unrealengine.com/marketplace/en-US/product/electronic-nodes
+  posted_date: 2023-05-17 00:00:00 +0000
+  tags:
+  - blueprint
+  - editor
+  - plugin
+  - marketplace
+  site_preview: 6b5f909be9d7847a8486f4e93ee5e046.png
+- title: LE Extended Standard Library
+  id: le-extended-standard-library
+  description: Marketplace plugin that adds a bunch of useful Blueprint nodes.
+  url: https://www.unrealengine.com/marketplace/en-US/product/low-entry-extended-standard-library
+  posted_date: 2023-05-17 00:00:00 +0000
+  tags:
+  - blueprint
+  - editor
+  - plugin
+  - marketplace
+  site_preview: ff899a2ef428272219c18908c04c7e80.png
+- title: Freshly Cooked Tweens
+  id: freshly-cooked-tweens
+  description: Blueprint-compatible tweening library for Unreal Engine.
+  url: https://github.com/jdcook/fresh_cooked_tweens
+  posted_date: 2023-05-17 00:00:00 +0000
+  tags:
+  - ui
+  - blueprint
+  - animation
+  site_preview: f9e7086d3cc62c91a1d20e7963d0bb8d.png
+- title: Where is that print statement coming from?
+  id: find-debug-print-source
+  description: Show where print strings are being called from with the console command
+    `bp.BlamePrintString 1`
+  source: https://twitter.com/t_looman/status/1658383966322188288
+  posted_date: 2023-05-16 00:00:00 +0000
+  tags:
+  - tip
+  - editor
+  - debugging
+- title: 'Unreal Engine Component Visualizers: Unleashing the Power of Editor Debug
+    Visualization'
+  id: component-visualizers-tutorial
+  description: Good debug tools can increase productivity and quality-of-life for
+    team members by a huge amount. Quod Soler's tutorial on creating in-editor component
+    visualizers is perfect for that.
+  url: https://www.quodsoler.com/blog/unreal-engine-component-visualizers-unleashing-the-power-of-editor-debug-visualization
+  posted_date: 2023-05-16 00:00:00 +0000
+  tags:
+  - editor
+  - debugging
+  site_preview: 4ca478ff693eafa877c35c9bd8a5f589.png
+- title: UMG Slate Compendium
+  id: umg-slate-compendium
+  description: Extremely detailed guide for UMG and Slate.
+  starred: true
+  url: https://github.com/YawLighthouse/UMG-Slate-Compendium
+  posted_date: 2023-05-15 00:00:00 +0000
+  tags:
+  - umg
+  - slate
+  - ui
+  - docs
+  site_preview: 7fc5767425fd13f19c43c626b2485d97.png
+- title: Plugin Builder
+  id: plugin-builder
+  description: Adds a tools menu to build plugin with multiple engine versions and
+    compress the built plugin into a zip file that can be submitted to the marketplace.
+  url: https://www.unrealengine.com/marketplace/en-US/product/pluginbuilder
+  posted_date: 2023-05-15 00:00:00 +0000
+  tags:
+  - plugin
+  - marketplace
+  site_preview: 51f6644ebffc51c70614edd0876c0cfc.png
+- title: How to enable debug mode for UMG
+  id: umg-debug-mode
+  description: Make your `UMG.EnableDebugMode 1`
+  posted_date: 2023-05-14 00:00:00 +0000
+  tags:
+  - tip
+  - umg
+  - ui
+  - debugging
+- title: Game UI Database
+  id: game-ui-database
+  description: Reference site with screenshots and videos of a huge number of games.
+    Amazing for seeing how other games do it.
+  posted_date: 2021-03-14 00:00:00 +0000
+  url: https://www.gameuidatabase.com/
+  tags:
+  - ui
+  - ux
+  - docs
+  site_preview: 42ee260420da3e3d4df022c1657b1c56.jpg
+- title: Automatically populate the Details panel group
+  id: editor-category-snippet
+  description: Snippet that checks the metadata Category tag and adds those properties
+    to the Groups buttons at the top of the Details panel.
+  posted_date: 2023-05-06 00:00:00 +0000
+  url: https://gist.github.com/intaxwashere/5895a50aec9958ce080288dd7d66bdae
+  tags:
+  - editor
+  - cpp
+  site_preview: 6c331123567b84e4d29928ddc9682817.png
+- title: Subsystem Browser Plugin
+  id: subsystem-browser-plugin
+  description: Plugin that adds a Subsystem Browser panel for Unreal Engine Editor
+    to explore running subsystems and edit their properties.
+  url: https://github.com/aquanox/SubsystemBrowserPlugin
+  posted_date: 2022-01-14 00:00:00 +0000
+  tags:
+  - plugin
+  - editor
+  site_preview: 3cd49027fc6e2e37e692b606f7a0bdd1.png
+- title: Blueprint Message Log Plugin
+  id: blueprint-message-log-plugin
+  description: Plugin that provides a bridge between Blueprints and editor Message
+    Log functionality.
+  url: https://github.com/aquanox/BlueprintMessageLogPlugin
+  posted_date: 2023-05-06 00:00:00 +0000
+  tags:
+  - plugin
+  - editor
+  - debugging
+  site_preview: 00debde00c50c3aae988099cbda1d1f1.png
+- title: Quick Actions Plugin
+  id: quick-actions-plugin
+  description: Adds a Quick Actions pop-up panel to the editor.
+  url: https://github.com/outoftheboxplugins/QuickActions
+  posted_date: 2022-12-21 00:00:00 +0000
+  tags:
+  - tools
+  - editor
+  - plugin
+  site_preview: 85a5b233aaac41a31b386973545deb5d.png
+- title: UEPlugins_DisableDefault
+  id: ue-plugins-disable-default
+  description: A standalone tool that modifies an Unreal Engine install, changing
+    which plugins are enabled by default. This is super useful if you often create
+    new projects and are tired of disabling a bunch of plugins every time.
+  url: https://github.com/DarknessFX/UEPlugins_DisableDefault
+  posted_date: 2021-11-24 00:00:00 +0000
+  tags:
+  - tools
+  - editor
+  - plugin
+  site_preview: 699503aad383b3ecea8ce299534ed996.png
+- title: Cog Dear ImGui tools
+  id: cog-dear-imgui
+  description: Cog is a set of debug tools for Unreal Engine built on top of Dear
+    ImGui
+  url: https://github.com/arnaud-jamin/Cog
+  posted_date: 2023-10-01 00:00:00 +0000
+  tags:
+  - tools
+  - debugging
+  - plugin
+  site_preview: 50de7eea6eff311b2da0c6d2e816eda9.png
+- title: Advanced Debugging
+  id: ari-arnbjornsson-advanced-debugging
+  description: Incredibly useful tutorial from Ari Arnbjörnsson on advanced debugging
+    techniques. Includes the Widget Reflector, Debug Camera, others.
+  url: https://www.youtube.com/watch?v=JS5N41F4fZQ&t=18173s
+  youtube: JS5N41F4fZQ
+  youtube_time: 18173
+  posted_date: 2023-10-04 00:00:00 +0000
+  tags:
+  - video
+  - debugging
+  site_preview: 681ae79c178e0d2997cd556028b478e0.jpg
+- title: Ghislain Girardot Patreon
+  id: ghislain-girardot-patreon
+  description: Ghislain posts a huge number of practical tools and tutorials on his
+    Patreon; materials, Blueprints, post-processes.
+  url: https://www.patreon.com/GhislainGir
+  posted_date: 2023-09-24 00:00:00 +0000
+  tags:
+  - material
+  site_preview: b235e70126ba2be22123eae9b722f4bf.png
+- title: Text Animation Effects in Unreal Engine
+  id: text-animation-effects
+  description: Steve's tutorial on animating text using the Rich Text Block shows
+    exactly how to achieve wiggly text without needing to write any C++. It just uses
+    the standard Rich Text Block and a few custom materials.
+  url: https://www.stevestreeting.com/2022/09/14/text-animation-effects-in-unreal-engine/
+  posted_date: 2022-09-14 00:00:00 +0000
+  tags:
+  - ui
+  - umg
+  - text
+  - material
+  - animation
+  site_preview: dbee6ab1d46265eaed2b4eeae94c3a70.png
+- title: Unreal Minimum Viable Flecs
+  id: unreal-minimum-viable-flecs
+  description: An example implementation of how to integrate Unreal Engine with the
+    Flecs entity component system.
+  posted_date: 2022-12-24 00:00:00 +0000
+  url: https://github.com/PreyK/Unreal-Minimum-Viable-Flecs
+  tags:
+  - cpp
+  site_preview: 03341c7d6163dac339370086600a2fad.png
+- title: Unreal-Fast-Texture-Dynamic
+  id: unreal-fast-texture-dynamic
+  description: A plugin that simplifies the process of writing to 4K textures in realtime.
+  url: https://github.com/PreyK/Unreal-Fast-Dynamic-Texture
+  posted_date: 2022-11-21 00:00:00 +0000
+  tags:
+  - material
+  - texture
+  site_preview: 697c8c3f6a70ffe42c88fede077a7951.png
+- title: Console Variables Editor
+  id: console-variables-editor
+  description: The Console Variables Editor is a panel that displays information about
+    all the console variables set in the project, and provides a central location
+    to view and modify all the variables.
+  url: https://docs.unrealengine.com/en-US/console-variables-editor/
+  posted_date: 2022-10-20 00:00:00 +0000
+  tags:
+  - docs
+  - debugging
+  - cheat
+  - editor
+  site_preview: 5699f6032b20fb28c2b68364bc2f47bb.png
+- title: How to set up a native source build
+  id: native-source-build
+  description: Whenever customizing Unreal Engine, I want to build only what I need.
+    By setting up an example game project with a source build of the editor, only
+    the parts used will be compiled.
+  posted_date: 2023-06-16 00:00:00 +0000
+  url: https://twevs.github.io/2023/06/19/unreal-engine-how-to-set-up-a-source-build.html
+  tags:
+  - build
+  - editor
+  site_preview: 9233d51f03d6d061886a85169497962b.png
+- title: Slate Icon Browser
+  id: slate-icon-browser
+  description: This small tool lets you browse Unreal Engine's Editor icons/brushes
+    easily, search for specific ones and copy slate code for the selected icon.
+  starred: true
+  posted_date: 2023-08-20 00:00:00 +0000
+  url: https://github.com/sirjofri/SlateIconBrowser
+  tags:
+  - editor
+  - plugin
+  - slate
+  site_preview: 627ebea91e9fe5c2a16ca3c5d0f1c3fe.png
+- title: Unreal Engine C++ Workshop
+  id: unreal-engine-cpp-workshop
+  description: June Rhodes' 5-hour workshop is the perfect programming-focused introduction
+    to Unreal Engine. It starts from early C++ concepts of pointers and references
+    and works all the way through to UObjects, garbage collection and interacting
+    with Blueprints.
+  starred: true
+  posted_date: 2022-11-19 00:00:00 +0000
+  url: https://dev.epicgames.com/community/learning/tutorials/5w4b/unreal-engine-c-workshop
+  tags:
+  - cpp
+  - video
+  site_preview: 020557e31382e8ba94517a68d4669ccc.png
+- title: Reducing Fornite's Power Consumption
+  id: reducing-fortnite-power-consumption
+  description: This tutorial from Epic shares practical tips on how to use console
+    variables to change the max FPS that your game can run in different situations.
+    For example after inactivity, when on battery for laptops.
+  url: https://www.unrealengine.com/en-US/blog/white-paper-reducing-fortnite-s-power-consumption
+  posted_date: 2023-06-13 00:00:00 +0000
+  tags:
+  - cpp
+  - optimization
+  site_preview: 0caab3ab2ef2485a6e6ef2412ac4b609.png
+- title: Using Perforce as Diff Tool
+  id: use-perforce-as-diff-tool
+  description: 'It''s possible to set Perforce to use Unreal as the diff tool for
+    .uasset files in P4V.
+
+    Go to Preferences > Diff. Then add a new file type. Set the Extension to `.uasset`,
+    the Application to point to your local install of `Editor/Binaries/Win64/UnrealEditor.exe`,
+    and the arguments to be `-diff %1 %2 -SkipAssetScan`.'
+  url: https://twitter.com/solessfir/status/1668581195523784705
+  source: https://twitter.com/solessfir/status/1668581195523784705
+  images:
+  - Fyf9n_9XgAINVBD.webp
+  - Fyf9osIWYAQTzcH.webp
+  posted_date: 2022-06-09 00:00:00 +0000
+  tags:
+  - version-control
+  - tools
+  site_preview: 00b714e89cca48b6d65cfd5b302f0705.png
+- title: MDFastBinding
+  id: md-fast-binding
+  description: Plugin that replaces the default _slow_ bindings in UMG widgets with
+    something performant and designer-friendly.
+  url: https://github.com/DoubleDeez/MDFastBinding
+  posted_date: 2023-12-28 00:00:00 +0000
+  tags:
+  - ui
+  - umg
+  - plugin
+  site_preview: c338f74b86db7283ec2299aa7cd66a10.png
+- title: Circle on Touch Material
+  id: circle-grow-material
+  description: Material that does the "circle grows from click location" thing that
+    a lot of touch UIs have.
+  url: https://twitter.com/MMAn_nin/status/1664268341207531523
+  posted_date: 2023-06-01 00:00:00 +0000
+  tags:
+  - material
+  site_preview: 9ace07a58a79b25e4e33d3c57d927fe6.png
+- title: Using Gradient Descent in Blueprints
+  id: gradient-descent-blueprints
+  description: Best fitting plane using Gradient Descent in blueprints. Also available
+    through Ghislain's Patreon.
+  url: https://twitter.com/GhislainGir/status/1663886415837446146
+  posted_date: 2023-05-31 00:00:00 +0000
+  tags:
+  - blueprint
+  - math
+  site_preview: c9ec7ad15c3eb83247d85902f177b838.png
+- title: Declare & Define Native Gameplay Tags in C++
+  id: declare-gameplaytags-cpp
+  description: Utilize these new C++ macros to declare and define Native Gameplay
+    Tags in your project.
+  url: https://www.unrealdirective.com/tip/declare-define-native-gameplay-tags
+  posted_date: 2023-04-20 00:00:00 +0000
+  tags:
+  - cpp
+- title: Making a 9-slice compatible gradient material
+  id: nine-slice-compatible-gradient
+  description: What if you want to make a box with rounded corners, but you want a
+    smooth gradient in the background? This post is in Japanese but putting it through
+    translation software or just looking at the graphs is enough.
+  url: https://historia.co.jp/archives/33412/
+  posted_date: 2023-04-26 00:00:00 +0000
+  tags:
+  - material
+  - ui
+  site_preview: 2db34f843d1d2788d56c65a6585df046.png
+- title: PadCrafter
+  id: padcrafter
+  description: Lets you create and share gamepad control layouts. An amazing way to
+    collaborate with team-members to suggest control schemes in your game.
+  url: https://www.padcrafter.com/
+  posted_date: 2023-05-13 00:00:00 +0000
+  tags:
+  - ui
+  - tools
+  site_preview: 01d5093d22f08880f51c6f4a0a6a6d77.jpg
+- title: Using DataTables to store game data
+  id: using-datatables-store-game-data
+  description: Quod Soler describes how to use Unreal Engine's Data Tables to store
+    data, imported from CSV or JSON, and how to access that data from C++.
+  posted_date: 2023-04-10 00:00:00 +0000
+  url: https://www.quodsoler.com/blog/using-datatables-to-store-game-data
+  tags:
+  - data
+  - editor
+  - cpp
+  site_preview: b4df24446ed5a4b8a97f988b45331fb9.png
+- title: UnrealXistTools
+  id: unreal-xist-tools
+  description: 'A huge selection of useful command-line tools: clean all generated
+    files, migrate'
+  url: https://github.com/XistGG/UnrealXistTools
+  posted_date: 2023-02-19 00:00:00 +0000
+  tags:
+  - tools
+  - build
+  site_preview: 0f5d41a479d533f2560f02065f38ebe2.png
+- title: Hard Reference Finder
+  id: hard-reference-finder
+  description: 'Hard references can really slow down your editor, your game, your
+    life. Omid''s plugin can help solve this.
+
+    Check out his [Twitter thread](https://twitter.com/heyomidk/status/1646372849144446976)
+    explaining how to get started.'
+  url: https://github.com/heyomidk/HardReferenceFinder
+  posted_date: 2023-04-12 00:00:00 +0000
+  tags:
+  - optimization
+  - plugin
+  site_preview: 02c42fc3b6fe91ab60ed83d6050fe1c4.png
+- title: Unreal Engine Console Variables
+  id: unreal-engine-console-variables
+  description: A searchable and exhaustive list of console variables available in
+    Unreal.
+  url: https://www.unrealdirective.com/resource/console-variables
+  posted_date: 2023-02-11 00:00:00 +0000
+  tags:
+  - cheat
+  - debugging
+  site_preview: 9b2e2483b63e4bb1045a2415309775ac.webp
+- title: Multiplayer Network Compendium
+  id: multiplayer-network-compendium
+  description: This is _the_ thing to read when learning about multiplayer in Unreal.
+  url: https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/
+  posted_date: 2023-09-02 00:00:00 +0000
+  tags:
+  - multiplayer
+  - docs
+  site_preview: 2de7c648a5063610553166dc37f6be35.png
+- title: CQTest Testing Plugin
+  id: cqtest-testing-plugin
+  description: Found a plugin within Unreal Engine for extending test automation in
+    Unreal. It's goal is "to add the before/after test abilities, while resetting
+    state between tests automatically."
+  url: https://github.com/EpicGames/UnrealEngine/tree/ue5-main/Engine/Plugins/Tests/CQTest
+  posted_date: 2023-03-13 00:00:00 +0000
+  tags:
+  - testing
+  site_preview: 01833cab828f04f502197952eb59029e.png
+- title: Unreal Post Asset Import Actions
+  id: unreal-post-asset-import-actions
+  description: Three different ways to improve what happens after you import assets
+    into your project. Python, C++, and Blueprint approaches.
+  url: https://ryandowlingsoka.com/unreal/post-asset-import-rules/
+  posted_date: 2023-03-13 00:00:00 +0000
+  tags:
+  - asset
+  - editor
+  - script
+  site_preview: f0a20a0a69de5a476a5a0619b205ca2c.jpg
+- title: A quick dive into Unreal Windows Contextual Commands
+  id: unreal-windows-contextual-commands
+  description: You know the "Launch Game", "Generate Visual Studio Project Files"
+    options that are shown in the right-click context menu in Windows when you click
+    on a .uproject file? How do those get generated? What's going on when they break?
+    Sharundaar dives into it to work out what's going on.
+  url: https://sharundaar.github.io/a-quick-dive-in-unreal-windows-contextual-commands.html
+  posted_date: 2023-03-20 00:00:00 +0000
+  tags:
+  - tools
+  - editor
+  site_preview: 5f51c6a086b2d654ea9e2185163fef9b.png
+- title: Multiplayer Tips & Tricks
+  id: wizardcell-multiplayer-tips-tricks
+  description: WizardCell has a huge number of tips on making a multiplayer game using
+    Unreal Engine.
+  url: https://wizardcell.com/unreal/multiplayer-tips-and-tricks/
+  posted_date: 2023-03-19 00:00:00 +0000
+  tags:
+  - multiplayer
+  site_preview: 4cd84c8bfbb2677176f9e024e25a6057.png
+- title: Show Preview for Scale
+  id: preview-mesh-for-scale
+  description: Hold backslash to summon a preview mesh at your cursor
+  source: https://twitter.com/HighlySpammable/status/1148864557374328833
+  posted_date: 2019-07-10 00:00:00 +0000
+  tags:
+  - tip
+  - level
+- title: Set Where Multiple Windows Spawn
+  id: window-spawn-location
+  description: 'You can set where Play In Editor windows are spawned with the `MultipleInstancePositions`
+    setting.
+
+    This is especially useful if you often test multiplayer and often to spawn multiple
+    windows.
+
+    In the example, Marcus sets up 4 windows to take up a quarter of the screen each
+    with `MultipleInstancePositions=(X=0, Y=0)`.'
+  url: https://twitter.com/RiotNu/status/1634767451027300352
+  posted_date: 2023-03-11 00:00:00 +0000
+  tags:
+  - tip
+  - editor
+  - multiplayer
+  site_preview: faa4843325aca7ffec1a044ebfa5194c.png
+- title: UAsset Browser
+  id: uasset-browser-tool
+  description: When adding things to a project from the Asset Store, it generally
+    dumps them into your project in whatever folder the asset chooses. Instead, UAsset
+    Browser lets you choose where to put it.
+  url: https://www.unrealengine.com/marketplace/en-US/product/uasset-browser
+  posted_date: 2023-03-11 00:00:00 +0000
+  tags:
+  - marketplace
+  - tools
+  - asset
+  site_preview: 45ec4735faed7bd215922838953b9d44.png
+- title: Use the Debug Camera to visually inspect in-world objects
+  id: debug-camera
+  description: The debug camera is incredibly useful for visually inspecting what
+    you are looking at in the editor. The cheat `ToggleDebugCamera` or the semi-colon
+    key can activate it in the editor.
+  url: https://twitter.com/flassari/status/1631925402171056128
+  posted_date: 2023-03-03 00:00:00 +0000
+  tags:
+  - debugging
+  - editor
+  site_preview: 818da214e668a75ff186c0c1300d9a29.png
+- title: Making Stencil Light Material in Unreal Engine
+  id: stencil-lights
+  description: Make lights that look like Wind Waker or cartoon shader stuff.
+  posted_date: 2023-02-23 00:00:00 +0000
+  url: https://protowlf.com/unreal/unreal-stencil-lights/
+  tags:
+  - material
+  - lighting
+- title: How to make a material to show curled book pages
+  id: book-page-material
+  description: YukiYa posted a great shader graph to make curled pages.
+  url: https://twitter.com/ko_yuki_lo/status/1632364616226574336
+  posted_date: 2023-03-05 00:00:00 +0000
+  tags:
+  - material
+  - ui
+  site_preview: d7f7e4371f47ecb6eca72de5ddd7353b.png
+- title: How to make new tabs always open in the same window
+  id: open-location
+  description: 'Every time I install Unreal on a new machine I always make to change
+    Editor Settings > Asset Editor Open Location to "Main Window"
+
+    It stops new windows being opened up as separate tabs, always keeps them docked.'
+  posted_date: 2022-11-28 00:00:00 +0000
+  images:
+  - FBnkc4OUYAkwLR_.webp
+  tags:
+  - editor
+  - tip
+- title: Plastic Merging
+  id: plastic-merging
+  description: 'I found the source of 80% of my merge problems with PlasticSCM! In
+    the Branch Explorer, you can right-click and choose "Merge from this branch..."
+    or "Merge from this branch to..." The first merges locally in your current workspace.
+    The latter merges on the server.
+
+    I was choosing the latter because 🤷‍♂️ It means none of the pending changes are
+    applied locally so you can''t test them. Also no state is saved in your pending
+    changes list so you can lose everything.
+
+    It''s an awful option that should be moved under Advanced merge. Don''t use it!'
+  tags:
+  - version-control
+  - tip
+  posted_date: 2022-11-28 00:00:00 +0000
+  images:
+  - 1597375788776828937-FisC2icaUAADFfN.webp
+- title: What to call boolean-returning functions
+  id: bool-return-function-naming
+  description: 'If you have a function that returns whether an item is sold, according
+    to Unreal Engine code style it should be called `IsSold()`, not `GetIsSold()`.
+
+    Allar''s [Unreal Engine Style Guide](https://github.com/Allar/ue5-style-guide#3313-info-functions-returning-bool-should-ask-questions)
+    explains more.'
+  posted_date: 2022-11-28 00:00:00 +0000
+  tags:
+  - tip
+  - cpp
+- title: How to show TMap entries on the same row in the editor
+  id: forceinlinerow-tmap
+  description: Use `meta=(ForceInlineRow)` to display `TMap<K,V>` entries as a table
+    rather than a bunch of nested expandable entries
+  url: https://benui.ca/unreal/uproperty/#forceinlinerow
+  images:
+  - force-inline-row.webp
+  posted_date: 2022-09-12 00:00:00 +0000
+  tags:
+  - editor
+  - tip
+  site_preview: 5cf9eb6829966814e4e24d9596438891.jpg
+- title: How to Disable Depricated Property Bindings
+  id: disable-property-bindings
+  description: 'If you work with UI in Unreal Engine, make sure you check out Project
+    Settings > Editor > Widget Designer (Team)
+
+    It lets you disable the should-be-deprecated Property Bindings, change what widget
+    is automatically created at the root when you make new UserWidgets, set custom
+    Debug Resolutions, and a bunch of other handy stuff.'
+  posted_date: 2022-11-20 00:00:00 +0000
+  images:
+  - FiDgWZ_WYAI6P-4.webp
+  - FJBmw2PVEAA6Jaf.webp
+  - FJBmw2NUUAE97l6.webp
+  - FJBmw2QUUAAm0I_.webp
+  tags:
+  - tip
+  - ui
+  - umg
+  - editor
+  - blueprint
+- title: Making UIs With C++ in Unreal Engine
+  id: uis-with-cpp-unreal-engine
+  description: I gave a talk on Slate in Unreal Engine as part of JetBrains GameDev
+    Day, and the individual video is now up!
+  url: https://www.youtube.com/watch?v=1n3oIfI7nBM
+  youtube: 1n3oIfI7nBM
+  posted_date: 2022-11-16 00:00:00 +0000
+  tags:
+  - slate
+  - ui
+  - video
+  site_preview: 76a8f3af74285dae54a549dd90dc5d73.jpg
+- title: How Unreal wants you to Make Changes
+  id: apply-instance-changes-to-blueprint
+  description: 'Oh my god I just put two and two together.  So I''ve been fighting
+    to add editor tooling on a BP class rather than a BP instance in a level. As usual
+    with Unreal if something is hard it usually means there''s a preferred workflow
+    that you''re not using.
+
+    So [@Scampleton](https://twitter.com/Scampleton) told me this functionality that
+    as UI-only one-trick I never encountered
+
+    Apply Instance Changes to Blueprint
+
+    I shouldn''t be fighting to add tooling to edit the BP class. Instead I should
+    drag an instance into a level, edit that and apply back to BP. 🤦‍♂️'
+  posted_date: 2022-11-04 00:00:00 +0000
+  images:
+  - FgxIXLSakAAsnYW.webp
+  tags:
+  - tip
+  - blueprint
+- title: Laura's (Mostly) Unreal Blog
+  id: landelare-blog
+  description: Laura (landelare) has a great blog.
+  posted_date: 2022-11-01 00:00:00 +0000
+  url: https://landelare.github.io/
+  tags:
+  - community
+  site_preview: e9ddb965bd1b34dc542e61d240026897.png
+- title: How to make a Python text editor in Unreal
+  id: python-text-editor
+  description: 'I found this really nice tutorial and source code on making a Python
+    text editor within Unreal Engine, including: 🎨Highlighting 📝Autocomplete suggestions
+    📚Jump to online documentation
+
+    It would serve as an amazing jumping-off point for adding support for any scripting
+    language.'
+  url: https://minimaleffort.tech/unreal-python-custom-script-editor/
+  posted_date: 2021-08-06 00:00:00 +0000
+  tags:
+  - editor
+  - script
+  - ui
+  - text
+  - tools
+- title: Advanced UI Templating by Joyrok
+  id: advanced-ui-templating-joyrok
+  description: Watch [@joyrok](https://twitter.com/joyrok)'s amazing Advanced UI Templating
+    talk here! (starts at 6hr 29min)
+  url: https://www.youtube.com/watch?v=FeWtslAEtyc&t=23340s
+  youtube: FeWtslAEtyc
+  youtube_time: 23340
+  posted_date: 2022-10-18 00:00:00 +0000
+  tags:
+  - video
+  - ui
+- title: Blueprint Math Nodes
+  id: blueprint-math-node
+  description: Did you know about Blueprint Math nodes? I didn't!
+  url: https://docs.unrealengine.com/en-US/math-expression-node-in-unreal-engine/
+  posted_date: 2022-10-14 00:00:00 +0000
+  tags:
+  - blueprint
+  - docs
+  - math
+  images:
+  - FfE8v_xaUAECpJ3.webp
+  - FfE8w7IaMAAf1Hr.webp
+- title: Dear ImGui actor inspector
+  id: nakdeyes-unreal-imgui-tools
+  description: Interesting Unreal Engine repo containing Dear ImGui-based tools. I
+    was writing an actor inspector and wondered if anyone else had done the same...
+    turns out yep, someone has, and way better than anything I would ever make.
+  url: https://github.com/nakdeyes/UnrealImGuiTools
+  posted_date: 2022-10-05 00:00:00 +0000
+  tags:
+  - tools
+  - plugin
+  - cpp
+- title: CV Tips
+  id: cv-tips
+  description: 'Here is some of the common feedback I''ve been giving about CV/resumes
+    and portfolios. Note that these are just my opinions, feel free to disagree. These tips are aimed at gamedev programmers. Very strong UK/US/Canada bias for CV/resume.
+    layout.
+
+    # Keep your CV 2 pages at most. Even if you''ve got 20 years'' experience just
+    condense it to the most relevant stuff. The amount of space should match its relevance.
+
+    This is an old version of my CV for reference during the next points.
+
+    # Tailor your CV to the role. Your CV needs to shout that you are a great fit
+    for this role. What parts of your previous experience are perfect for this role?
+    Make those at the top of any lists. Don''t lie, just make it easy to skim-read.
+
+    # Less filler, more concrete facts. Entries under your employment history should
+    be a bullet-point list of **concrete** things that you did in that role. 🛠 What
+    technical parts did *you* work on? 🌟 What was the impact? 👥 How many on the team?
+    Did you manage anyone?
+
+    # Put code online. So they''re interested in your CV, they want to learn more
+    about you! Share code for your gamejam games, plugins, tutorials, example projects
+    online. It can help them gauge your expertise. Link them from a central homepage
+    or GitHub.'
+  posted_date: 2022-04-15 00:00:00 +0000
+  tags:
+  - industry
+  - tip
+- title: Unreal Automation Tool Docs
+  id: unreal-automation-tool-docs
+  description: Really *Really* detailed page documenting all the features of the Unreal
+    Automation tool. Via [@RyanJon2040](https://twitter.com/RyanJon2040)
+  url: https://github.com/botman99/ue4-unreal-automation-tool
+  posted_date: 2021-03-27 00:00:00 +0000
+  tags:
+  - tools
+  - build
+- title: Actor Lifecyle
+  id: actor-lifecycle-docs
+  description: I refer to this at least once a week it seems. Documentation that describes
+    how an actor is created, initialized, marked for removal and then removed.
+  url: https://docs.unrealengine.com/en-US/unreal-engine-actor-lifecycle/
+  posted_date: 2023-11-23 00:00:00 +0000
+  tags:
+  - gameplay
+  - docs
+- title: Blueprint Debug Commands for Visual Studio
+  id: visual-studio-debug-commands
+  description: Ken Kuwano shares some incredibly useful tips on debugging using Visual
+    Studio. The original is in Japanese but this link is a translation. It shows how
+    to do things like print the Blueprint call stack in Visual Studio.
+  url: https://qiita-com.translate.goog/EGJ-Ken_Kuwano/items/eaa7f2d4d381bb531afe?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp
+  posted_date: 2022-06-30 00:00:00 +0000
+  tags:
+  - debugging
+  - blueprint
+  - ide
+- title: WizardCell's Blog
+  id: wizard-cell-blog
+  description: WizardCell has some great stuff on multiplayer, persistent data and
+    spectator mode.
+  url: https://wizardcell.com/
+  posted_date: 2022-06-23 00:00:00 +0000
+  tags:
+  - community
+- title: Simple doom glow effect
+  id: doom-glow
+  description: Glow/bloom effect just using quads, similar to how Doom 3 does it.
+    Code is [shared on Github](https://hollowdilnik.com/2022/06/20/doom-glow.html).
+    Example [thread on Twitter](https://twitter.com/hollowdilnik/status/1538098146588430336).
+    Very useful for cheap glow on VR. Also has [examples on GitHub](https://github.com/hollowdilnik/GlowingQuadExamples)
+  url: https://hollowdilnik.com/2022/06/20/doom-glow.html
+  posted_date: 2022-06-23 00:00:00 +0000
+  tags:
+  - material
+- title: Fixing antialiasing/flickering widgets
+  id: fixing-widget-flickering
+  description: Fixing antialiasing/flickering widgets in Unreal Engine 4. Code is
+    [shared on GitHub](https://github.com/hollowdilnik/filtered-widget)
+  url: https://hollowdilnik.com/2021/01/09/widget-filtering.html
+  posted_date: 2021-01-09 00:00:00 +0000
+  tags:
+  - ui
+  - plugin
+- title: waitfordebugger
+  id: wait-for-debugger
+  description: My most commonly-used command-line argument is `-waitfordebugger`.
+    It makes the game wait until a debugger is connected before continuining start-up.
+    You can use this by creating a .bat file or by adding the "-waitfordebugger" to
+    a Windows shortcut to your .exe.
+  posted_date: 2022-06-18 00:00:00 +0000
+  tags:
+  - debugging
+  - tip
+  images:
+  - FAEZIN5VgAU1XI6.webp
+  - FAEZzQZVEAYLHAx.webp
+  - FAEZ0WxVEAI6qiq.webp
+- title: Wiggly outline 2D shader
+  id: wiggly-outline-2d-shader
+  description: Neat way of making a wiggly outline material.
+  url: https://twitter.com/MMAn_nin/status/1530730495314567168
+  posted_date: 2022-05-28 00:00:00 +0000
+  tags:
+  - material
+- title: How you should design your gameplay data using the Asset Manager and Primary
+    Data Assets
+  id: allar-asset-manager
+  description: Long rambling video that is chock-full of interesting data-driven design
+    tips.
+  url: https://www.youtube.com/watch?v=kHHrDIRSr5A
+  youtube: kHHrDIRSr5A
+  posted_date: 2021-04-10 00:00:00 +0000
+  tags:
+  - video
+  - asset
+  - data
+  - editor
+- title: Splash Damage's Coding Standards
+  id: splash-damage-coding-standards
+  description: Splash Damage has posted their coding standards for both C++ and Blueprints
+    to GitHub.
+  url: https://github.com/splash-damage/coding-standards/
+  posted_date: 2022-08-16 00:00:00 +0000
+  tags:
+  - cpp
+  - blueprint
+  - team
+- title: Batch Rename Tool Tutorial
+  id: batch-rename-tool-tutorial
+  description: I just discovered [@RyanDowlingSoka](https://twitter.com/RyanDowlingSoka)'s
+    amazing 3-part tutorial on making an Unreal Engine batch rename tool. It's a great
+    intro to Editor Utility Widgets as well as how to hook them up to Python?!
+  url: https://www.youtube.com/watch?v=FQO45KTKOhI
+  youtube: FQO45KTKOhI
+  posted_date: 2022-05-20 00:00:00 +0000
+  tags:
+  - video
+  - editor
+  - tools
+  - script
+- title: UE4 Plugins Repo
+  id: ue4-plugins-github-repo
+  description: Semi-official but somewhat outdated plugins from Epic, posted to GitHub.
+    A lot of them haven't been updated in a while but they could still be useful to
+    learn from.
+  url: https://github.com/ue4plugins
+  posted_date: 2019-05-04 00:00:00 +0000
+  tags:
+  - plugin
+  - cpp
+- title: Unreal Engine 4 Loading Screen Example Repo
+  id: ue4-plugin-loading-screen-example
+  description: It's a few years out of date now, but this loading screen template
+    repo could be useful to learn from.
+  url: https://github.com/ue4plugins/LoadingScreen
+  posted_date: 2019-05-04 00:00:00 +0000
+  tags:
+  - plugin
+  - ui
+  - cpp
+- title: Async Loading Screen plugin
+  id: async-loading-screen-plugin
+  description: It seems that every UI engineer has needed to create a loading screen
+    at some point. Truong Bui's async loading plugin is amazing for that. To use directly
+    from Blueprints or to learn from.
+  url: https://github.com/truong-bui/AsyncLoadingScreen
+  posted_date: 2023-09-07 00:00:00 +0000
+  tags:
+  - plugin
+  - cpp
+  - blueprint
+  - ui
+- title: Herr Edgy (Mateo Egey)
+  id: herr-edgy-blog
+  description: Mateo Egey's site is a mixture of tutorial blogs and interesting portfolio
+    work.
+  url: https://herr-edgy.com/
+  posted_date: 2023-09-16 00:00:00 +0000
+  tags:
+  - community
+- title: Extending Tool Menus in the Editor via C++
+  id: extend-tool-menus
+  description: Mateo Egey shows how to add a new entry to an existing menu in the
+    editor.
+  url: https://herr-edgy.com/tutorials/extending-tool-menus-in-the-editor-via-c/
+  posted_date: 2023-09-16 00:00:00 +0000
+  tags:
+  - editor
+  - tools
+  - cpp
+- title: Changing UI Contrast
+  id: change-ui-contrast
+  description: 'It''s possible to change UI contrast in Unreal Engine: Change `GSlateContrast`
+    from C++, or `Slate.Contrast` from the cheat console. Maybe an easy accessibility
+    win to add to your game?'
+  posted_date: 2022-04-15 00:00:00 +0000
+  tags:
+  - tip
+  - slate
+  - ui
+  - accessibility
+- title: Multiplayer Networking & Replication Series
+  id: bryner-toma-networking-video
+  description: Bryner Toma's video series on networking is incredibly clear and useful.
+  url: https://www.youtube.com/watch?v=TEojA3VBXG8&list=PLemTaQ_N519DocM4AqiK08GfsUSnxRPdv&index=1
+  youtube: TEojA3VBXG8
+  posted_date: 2020-12-06 00:00:00 +0000
+  tags:
+  - video
+  - multiplayer
+- title: 'Unreal: Letting translators use gender information'
+  id: gender-information-localization
+  description: A great tutorial on how to add gender info to text so localization
+    can work correctly in languages that require it.
+  url: https://xabk.net/blog/gender-info-in-strings/
+  posted_date: 2023-03-09 00:00:00 +0000
+  tags:
+  - localization
+  - text
+- title: Translation Editor for Unreal Engine 4
+  id: rionix-translation-editor
+  description: It's a little out of date, but this is an interesting standalone tool
+    for editing translation files that are output by Unreal Engine.
+  url: https://github.com/rionix/LocalizationUE4
+  posted_date: 2022-04-01 00:00:00 +0000
+  tags:
+  - localization
+  - tools
+  - text
+  - editor
+- title: Debug Unreal Engine Python using PyCharm
+  id: debug-python-using-pycharm
+  description: How to set breakpoints and step through Python code using PyCharm.
+    Thanks Guillaume
+  url: https://guillaumepastor.com/programming/debug-unreal-engine-python-using-pycharm/
+  posted_date: 2019-05-31 00:00:00 +0000
+  tags:
+  - script
+  - debugging
+- title: UE5 Style Guide
+  id: allar-ue5-style-guide
+  description: Allar's UE5 Style Guide is the industry standard. If you're not sure
+    how to name your assets, variables, functions, it's the perfect place to start.
+  url: https://github.com/Allar/ue5-style-guide
+  posted_date: 2022-03-07 00:00:00 +0000
+  tags:
+  - docs
+  - editor
+- title: Unreal Tips and Best Practices
+  id: ari-arnbjornsson-best-practices
+  description: Huge set of tips from [Ari Arnbjörnsson](https://twitter.com/flassari).
+    If you can read through and remember even half of these you'll be a much better
+    Unreal engineer.
+  url: https://flassari.notion.site/UE-Tips-Best-Practices-3ff4c3297b414a66886c969ff741c5ba
+  posted_date: 2022-11-28 00:00:00 +0000
+  tags:
+  - tip
+  - docs
+  - productivity
+- title: Quick-open Asset in Unreal Engine
+  id: quick-open-shortcut
+  description: Quickly search for and open an asset with Ctrl+P or Shift+Alt+O.
+  images:
+  - FGluOfTUcAEmjqX.webp
+  posted_date: 2022-11-28 00:00:00 +0000
+  tags:
+  - tip
+  - editor
+  - productivity
+- title: Example minimal Unreal repo
+  id: example-minimal-unreal-repo
+  description: Alex Swaim made an example repo for how to create a minimal Unreal
+    program if you're interesting in using it just for Slate and not much else.
+  url: https://github.com/Cidolfas/UnrealTestProgram
+  posted_date: 2022-08-27 00:00:00 +0000
+  tags:
+  - slate
+  - ui
+  - cpp
+- title: Creating Slate Standalone Program
+  id: slate-standalone-program
+  description: This multi-part tutorial on how to create a minimal application that
+    just uses Slate for rendering UI is very interesting.
+  url: https://jiahaoli.org/blog/2023/03/01/using-slate-for-ui-development-and-editor2-simple-slate-standalone-program/
+  posted_date: 2023-03-01 00:00:00 +0000
+  tags:
+  - slate
+  - ui
+  - cpp
+- title: Photosensitive Epilepsy Analysis Tool
+  id: photosensitive-epilepsy-analysis-tool
+  description: Tool for analysing video clips to see if they are likely to trigger epilepsy. Record footage of your game in .avi and then drop it into this tool.
+  posted_date: 2024-05-22 00:00:00 +0000
+  url: https://trace.umd.edu/peat/
+  tags:
+  - accessibility
+  - tools
+- title: Unreal Quickstart Guide
+  id: unreal-quickstart-guide
+  description: |
+    Daniel Torkar collates a bunch of great guidelines for newcomers
+    to Unreal Engine. If you're trying to understand actors, components, the
+    timeline that actors go through (e.g. starting with Begin Play), then this is
+    a great page to start with.
+  url: https://www.torkar.studio/blog/unreal-quickstart-guide
+  posted_date: 2024-08-23 00:00:00 +0000
+  tags:
+  - blueprint
+  - cpp
+- title: 'Behind the Code: Locked On Target'
+  id: psychonauts-target-search
+  description: |
+    A fascinating deep-dive into how the targeting system in Psychonauts 2 was
+    implemented. Even if you are not interested in the gameplay aspect of this,
+    the developer tools and debug visualization is a great example of how to
+    make designers' jobs easier.
+  url: https://www.doublefine.com/news/devin-target-search
+  posted_date: 2024-05-24 00:00:00 +0000
+  tags:
+  - tutorial
+  - gameplay
+- title: Using UVs For Tech Art and UI
+  id: 
+  description: An official tutorial from Epic on how to use UVs in creating materials for UI. 
+  url: https://dev.epicgames.com/community/learning/tutorials/Y4Kb/unreal-engine-using-uvs-for-tech-art-and-ui
+  posted_date: 2024-08-22 00:00:00 +0000
+  tags:
+  - ui
+  - vfx
+  - material
+  - video
+- title: 'Materials and Textures for UI'
+  id: materials-and-textures-for-ui
+  description: |
+    An official tutorial from Epic explaining how to use materials in your UI. Materials really are the way to go these days for crisp and optimized UIs. 
+  posted_date: 2024-08-19 00:00:00 +0000
+  url: https://dev.epicgames.com/community/learning/tutorials/PnvG/unreal-engine-materials-and-textures-for-ui
+  tags:
+  - ui
+  - vfx
+  - material
+  - video
+- title: FString Case Sensitivity
+  id: fstring-case-sensitivity
+  description: |
+    You may have heard that `FString` is case-sensitive and `FName` is not, but that is not the whole story.
+    `operator==` is *case-insensitive*, so the following code will return `true`:
+    ```cpp
+    FString("hello") == FString("HELLO") // I am true
+    ```
+    To add to the confusion, `FString::Equals` defaults to `ESearchCase::CaseSensitive`, so it is case-sensitive:
+    ```cpp
+    FString("hello").Equals(FString("HELLO")) // I am false
+    ```
+  posted_date: 2023-08-22 00:00:00 +0000
+  tags:
+  - cpp
+  - tip
+  - text
+- title: FName Case Sensitivity
+  id: fname-case-sensitivity
+  description: |
+    By default, `FName`s do not preserve case in built versions of your game. So the following is true:
+    ```cpp
+    FName("hello") == FName("HELLO") // true in editor, false in built game
+    ```
+
+    Changing this behaviour requires you to build your own version of the engine. To change the behaviour you can adding the following to your project's `Target.cs` file:
+    ```cs
+    PublicDefines.Add("WITH_CASE_PRESERVING_NAME=1");
+    ```
+  posted_date: 2023-08-22 00:00:00 +0000
+  tags:
+  - cpp
+  - tip
+  - text
+- title: Set C++ Preprocessor Defines Values from Build.cs and Target.cs
+  id: set-cpp-preprocessor-from-build-target
+  old-ids:
+  - set-cpp-preprocessor-from-build
+  posted_date: 2024-08-23 00:00:00 +0000
+  description: |
+    It's possible to set the value of preprocessor defines like `#if SOME_VALUE` through your `MyProject.Build.cs` and `MyProject.Target.cs` files:
+    ```cs
+    // In Build.cs
+    GlobalDefinitions.Add("SOME_VALUE=1");
+    ```
+    ```cs
+    // In Target.cs
+    GlobalDefinitions.Add("SOME_VALUE=1");
+    ```
+  tags:
+  - cpp
+  - tip
+  
+- title: Dr Elliot Blog
+  id: dr-elliot-blog
+  url: https://mrdrelliot.github.io/
+  description: Dr Elliot has some C++ tutorials on `constexpr`, networking and low-level allocations
+  posted_date: 2024-08-24 00:00:00 +0000
+  tags:
+  - community
+  - cpp
+- title: Complete Game Optimization for Unreal Engine 5
+  id: complete-game-optimization
+  url: https://courses.tomlooman.com/p/unrealperformance?coupon_code=LAUNCH50
+  posted_date: 2024-08-26 00:00:00 +0000
+  description: |
+    Tom Looman's full course on optimizing your game is well worth the cost.
+  tags:
+  - tutorial
+  - optimization
+  - cpp
+- title: The design of a translate gizmo
+  id: translate-gizmo-design
+  posted_date: 2023-10-18 00:00:00 +0000
+  url: https://rystorm.com/blog/translate-gizmo-design
+  description: |
+    Robin-Yann Storm works through the problem of improving the UX of a translate gizmo. A must-read for anyone interested in making editor tools that are easy to use.
+  tags:
+  - ux
+  - tools
+  - editor
+- title: Stop libcurl datarouter error messages
+  id: stop-datarouter-errors
+  posted_date: 2025-02-16 00:00:00 +0000
+  description: |
+    How to stop the analytics-related error messages that look like this:
+
+    ```
+    LogHttp: Warning: 00000B26A492B600: request failed, libcurl error: 6 (Couldn't resolve host name)
+    LogHttp: Warning: 00000B26A492B600: libcurl info message cache 0 (Could not resolve host: datarouter.ol.epicgames.com)
+    LogHttp: Warning: 00000B26A492B600: libcurl info message cache 1 (Closing connection)
+    ```
+
+    Add this to `DefaultEditorSettings.ini`:
+
+    ```ini
+    [/Script/UnrealEd.AnalyticsPrivacySettings]
+    bSendUsageData=False
+    bSuppressIndustryPopup=True
+    ```
+  source: joatski
+  tags:
+  - editor
+- title: Change .sln file to match branch name
+  id: sln-match-branch-name
+  posted_date: 2025-02-16 00:00:00 +0000
+  description: |
+    If you work with multiple branches, you can often end up with multiple entries in your 'recently viewed' files all called the same.
+
+    To make their names match the branch name, add this to your `BuildConfiguration.xml`
+
+    ```xml
+    <ProjectFileGenerator>
+      <bPrimaryProjectNameFromFolder>true</bPrimaryProjectNameFromFolder>
+    </ProjectFileGenerator>
+    ```
+  source: joatski
+  tags:
+  - editor
+  - cpp
+  - build
+- title: High-performance container alternatives
+  id: voxelcore-performant-containers
+  posted_date: 2025-02-16 00:00:00 +0000
+  description: |
+    As part of his VoxelPlugin, Phyronnaz has released some performant alternatives to TMap and TSparseArray that are a lot faster in some cases.
+  url: https://github.com/VoxelPlugin/VoxelCore
+  tags:
+  - cpp
+  - plugin
+- title: SteamDeckPlatform Plugin
+  id: steamdeckplatform-plugin
+  posted_date: 2025-02-07 00:00:00 +0000
+  description: |
+    Lets Unreal create separate config files for the SteamDeck, similar to how there are different configs for PS5, Xbox. Great for specifying default graphics options and controls that work great on SteamDeck.
+  url: https://github.com/FeralCatDen/SteamDeckPlatform
+  tags:
+  - optimization
+  - build
+  - plugin
+- title: Custom Thunks Unreal Engine TLDR
+  id: custom-thunk-intax
+  posted_date: 2025-01-15 00:00:00 +0000
+  description: |
+    Explainer on what the Custom Thunk specifier does and how to write your own.
+  url: https://gist.github.com/intaxwashere/e9b1f798427686b46beab2521d7efbcf
+  tags:
+  - cpp
+- title: Fixing Unlit Materials
+  id: protowlf-fixing-unlit-materials
+  posted_date: 2025-02-03 00:00:00 +0000
+  description: |
+    Protowlf explains how to make materials completely unaffected by lighting and exposure settings. Often using just an emissive channel doesn't do the trick.
+  url: https://protowlf.com/unreal/unreal-fixing-unlit-materials/
+  tags:
+  - material
+- title: Unicode Browser Plugin
+  id: ntystudio-unicode-browser-plugin
+  posted_date: 2025-01-14 00:00:00 +0000
+  description: |
+    Plugin that lets you see all characters supported by a particular font. Great for checking whether your font is correctly set-up for localization.
+  url: https://github.com/ntystudio/UnicodeBrowser
+  tags:
+  - editor
+  - localization
+  - plugin
+- title: Unreal Third Party Plugins List
+  id: cade-unreal-third-party-plugins
+  posted_date: 2025-01-21 00:00:00 +0000
+  description: |
+    List of recommended third party plugins for Unreal Engine, curated by Cade.
+  url: https://github.com/CadeEvs/UnrealThirdPartyPlugins/
+  tags:
+  - plugin
+  - documentation
+  - community
+- title: Game Items Plugin
+  id: bohdon-game-items-plugin
+  posted_date: 2025-01-11 00:00:00 +0000
+  description: |
+    Bohdon's Game Items Plugin is not only a super useful tool, it's also a great way to start to learn how to use MVVM in your game.
+  url: https://github.com/bohdon/GameItemsPlugin
+  tags:
+  - plugin
+  - ui
+- title: Package Plugin Batch Script
+  id: benui-package-plugin-batch-script
+  posted_date: 2025-01-11 00:00:00 +0000
+  description: |
+    If you have a plugin and want to build it against multiple versions of Unreal Engine, use this snippet.
+  url: https://gist.github.com/benui-dev/44ec00709a4e647933ce4e81ce17df5f
+  tags:
+  - plugin
+  - build
+- title: Unraveling the DPI Mysteries
+  id: sharundaar-dpi-mysteries
+  posted_date: 2024-12-03 00:00:00 +0000
+  description: |
+    Sharundaar has an excellent deep-dive into how to set up your game to run at many different resolutions, and how DPI is used under the hood in Slate.
+  url: https://sharundaar.github.io/unraveling-the-dpi-mysteries.html
+  tags:
+  - ui
+- title: Stop Unreal Enforcing TObjectPtr
+  id: stop-unreal-enforcing-tobjectptr
+  posted_date: 2024-12-03 00:00:00 +0000
+  description: |
+    If Unreal is requiring you to use TObjectPtr and you don't want it to, add the following to your Target.cs file:
+    ```
+    NativePointerMemberBehaviorOverride = PointerMemberBehavior.AllowAndLog;
+    ```
+  tags:
+  - cpp
+- title: UE5 Vortex UV Distortion Balatro Inspired
+  id: balatro-uv-material
+  url: https://www.giovannichequi.com/work/tutorial-ue5-vortex-uv-distortion-balatro-inspired
+  posted-date: 2025-03-07 00:00:00 +0000
+  description: |
+    Make a cool material that looks like the background of Balatro.
+  tags:
+  - material
+- title: Hook up instance actors through editor customization
+  id: rock-gameplay-events
+  url: https://github.com/brokenrockstudios/RockGameplayEvents
+  posted-date: 2025-03-07 00:00:00 +0000
+  description: |
+    A relatively simple event system for hooking up instanced actors and ability to broadcast events.
+  tags:
+  - gameplay
+  - editor
+- title: Plugin for creating custom editor code activated on keyboard shortcut
+  id: adrien-lucas-keyboard-shortcuts
+  url: https://github.com/Adrien-Lucas/CustomShortcuts
+  posted-date: 2025-03-29 00:00:00 +0000
+  description: |
+    If you want to make a custom editor keyboard shortcut, this plugin helps with that. It lets you define Blueprint code to be run when the keyboard shortcut is pressed.
+  tags:
+  - editor
+  - blueprint
+- title: Game Input Database
+  id: game-input-database
+  url: https://gameinputdatabase.com/
+  posted-date: 2025-03-29 00:00:00 +0000
+  description: |
+    If you want to make a custom editor keyboard shortcut, this plugin helps with that. It lets you define Blueprint code to be run when the keyboard shortcut is pressed.
+  tags:
+  - community
+- title: Game Font Library
+  id: game-font-library
+  url: https://www.gamefontlibrary.com/
+  posted-date: 2025-03-29 00:00:00 +0000
+  tags:
+  - community
+- title: Fancier Ticking in Unreal
+  id: fancier-ticking-in-unreal
+  url: https://voithos.io/articles/fancier-ticking-in-unreal/
+  posted-date: 2025-03-29 00:00:00 +0000
+  description: A detailed article on options available for ticking in Unreal.
+  tags:
+  - cpp
+- title: Async Timing
+  id: async-timing
+  url: https://voithos.io/articles/asynctask-timing/
+  posted-date: 2025-03-29 00:00:00 +0000
+  tags:
+  - cpp

@@ -1,0 +1,20 @@
+<ol class="series">
+	<li>{% if include.current == 1 %}<span class="active">An Introduction to Making UIs in Unreal</span>{% else %}<a href="{% link _unreal/ui-introduction.md %}">An Introduction to Making UIs in Unreal</a>{% endif %}</li>
+
+
+<li>{% if include.current == 2 %}Making UIs in Unreal with C++: Basics{% else %}<a href="{% link _unreal/ui-cpp-basics.md %}">Making UIs in Unreal with C++: Basics</a>{% endif %}
+
+
+<ol>
+<li>{% if include.current == 3 %}Creating C++-based UserWidgets{% else %}<a href="{% link _unreal/ui-cpp-uuserwidget.md %}">Creating C++-based UserWidgets</a>{% endif %}</li>
+
+
+<li>{% if include.current == 4 %}Creating New UMG Widgets{% else %}<a href="{% link _unreal/ui-cpp-uwidget.md %}">Creating New UMG Widgets</a>{% endif %}</li>
+
+<li>{% if include.current == 5 %}Creating New Slate Widgets{% else %}<a href="{% link _unreal/ui-cpp-slate.md %}">Creating New Slate Widgets</a>{% endif %}</li>
+</ol>
+
+</li>
+
+</ol>
+

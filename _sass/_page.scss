@@ -1,0 +1,375 @@
+/* ==========================================================================
+	 SINGLE PAGE/POST
+	 ========================================================================== */
+
+#main {
+	@include clearfix;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	max-width: 100%;
+
+	background-color: $background-color;
+	border-left: 1px solid $border-color;
+	border-right: 1px solid $border-color;
+
+	@include breakpoint($breakpoint-x-large) {
+		max-width: $breakpoint-max-width;
+	}
+}
+
+body {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	min-height: 100vh;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+					flex-direction: column;
+}
+
+.initial-content,
+.search-content {
+	flex: 1 0 auto;
+}
+
+.page {
+	@include breakpoint($breakpoint-medium) {
+		float: right;
+		width: calc(100% - #{$sidebar-width-medium});
+	}
+	@include breakpoint($breakpoint-large) {
+		float: right;
+		width: calc(100% - #{$sidebar-width-large});
+		//padding-right: $sidebar-width-narrow;
+	}
+	@include breakpoint($breakpoint-x-large) {
+		float: right;
+		width: calc(100% - #{$sidebar-width-x-large});
+		//padding-right: $sidebar-width;
+	}
+
+	& > p, & > ul, & > ol {
+		max-width: $max-text-width;
+		hyphens: auto;
+		text-align: justify;
+	}
+
+	&:first-child
+	{
+		margin-top: 0;
+	}
+
+	//.page__inner-wrap {
+		//float: left;
+		//margin-top: 1em;
+		//margin-left: 0;
+		//margin-right: 0;
+		//width: 100%;
+		//clear: both;
+
+		.page__content,
+		.page__meta {
+			position: relative;
+			float: left;
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+			clear: both;
+
+			p, ul, ol {
+				max-width: $max-text-width;
+				hyphens: auto;
+				text-align: justify;
+			}
+			p {
+				margin-bottom: 0.5em;
+			}
+
+
+			blockquote:first-child
+			{
+				margin-top: 0 !important;
+			}
+		}
+	//}
+}
+
+.page__title {
+	margin-top: 0;
+	line-height: 1;
+
+	& + .page__meta {
+		margin-top: -0.5em;
+	}
+}
+
+.page__lead {
+	font-size: $type-size-4;
+}
+
+.page__content {
+	h2 {
+		padding-bottom: 0.5em;
+		border-bottom: 1px solid $border-color;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		scroll-margin-top: 5em; // This means it will skip the header
+		.header-link {
+			position: relative;
+			left: 0.5em;
+			opacity: 0;
+			font-size: 0.8em;
+		}
+
+		&:hover .header-link {
+			opacity: 1;
+		}
+	}
+
+	p,
+	li,
+	dl {
+		font-size: 1em;
+	}
+
+	/* paragraph indents */
+	p {
+		margin: 0;
+	}
+
+	dt {
+		margin-top: 1em;
+		font-weight: bold;
+	}
+
+	dd {
+		margin-left: 1em;
+		font-size: $type-size-6;
+	}
+
+	.small {
+		font-size: $type-size-6;
+	}
+
+	/* blockquote citations */
+	blockquote + .small {
+		margin-top: -1.5em;
+		padding-left: 1.25rem;
+	}
+}
+
+.page__hero {
+	position: relative;
+	//margin-bottom: 2em;
+	border-bottom: 1px solid #51555d;
+	background: $hero-bg;
+	line-height: auto;
+
+	@include clearfix;
+
+	.hero_text
+	{
+		padding: 1em;
+	}
+
+	//max-width: $breakpoint-x-large;
+	h1
+	{
+		font-size: 2em;
+		@include breakpoint($breakpoint-medium) {
+			font-size: 2.5em;
+		}
+		@include breakpoint($breakpoint-large) {
+			font-size: 3em;
+		}
+		line-height: normal;
+		margin: 0;
+		padding: 0;
+
+		// Text shadow doesn't work with gradients
+	}
+	.reveal
+	{
+		height: 64vh;
+		//max-height: $header-height;
+	}
+	.wrapper
+	{
+		max-width: $breakpoint-x-large;
+		min-height: $header-height;
+		border-radius: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: auto;
+		display: block;
+	}
+	.text-only-wrapper
+	{
+		padding: 1em;
+	}
+	.wrapper--inline-image
+	{
+		background-position-x: 90%;
+		background-position-y: -10%;
+		background-repeat: no-repeat;
+	}
+
+	&--overlay {
+		position: relative;
+		margin-bottom: 2em;
+		padding: 3em 0;
+		@include clearfix;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		a {
+			color: #fff;
+		}
+
+		.wrapper {
+			padding-left: 1em;
+			padding-right: 1em;
+
+			@include breakpoint($breakpoint-x-large) {
+				max-width: $breakpoint-x-large;
+			}
+		}
+
+		.page__title,
+		.page__meta,
+		.page__lead {
+			color: #fff;
+			text-shadow: 1px 1px 4px rgba(#000, 0.5);
+		}
+
+		.page__lead {
+			max-width: $breakpoint-medium;
+			margin: 0;
+		}
+
+		.page__title {
+			font-size: $type-size-2;
+
+			@include breakpoint($breakpoint-small) {
+				font-size: $type-size-1;
+			}
+		}
+	}
+}
+
+.page__hero-image {
+	width: 100%;
+	height: auto;
+	-ms-interpolation-mode: bicubic;
+}
+
+
+.hero_image
+{
+	margin: 1em auto;
+	display: block;
+	max-height: 15em;
+	max-width: 40em;
+	filter: drop-shadow(10px 10px 5px #000);
+}
+
+
+.hero_image_transparent
+{
+	max-height: 20em;
+}
+
+
+/*
+	 Page meta
+	 ========================================================================== */
+
+.page__meta {
+	margin-top: 2em;
+	color: $muted-text-color;
+	font-size: $type-size-6;
+
+	p {
+		margin: 0;
+	}
+
+	a {
+		color: inherit;
+	}
+}
+
+.page__meta-title {
+	margin-bottom: 10px;
+	font-size: $type-size-6;
+	text-transform: uppercase;
+}
+
+.page__meta-sep::before {
+	content: "\2022";
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+/*
+	 Related
+	 ========================================================================== */
+
+.page__related {
+	@include clearfix();
+	float: left;
+	margin-top: 2em;
+	padding-top: 1em;
+	border-top: 1px solid $border-color;
+
+	@include breakpoint($breakpoint-large) {
+		float: right;
+		width: calc(100% - #{$sidebar-width-large});
+	}
+
+	@include breakpoint($breakpoint-x-large) {
+		width: calc(100% - #{$sidebar-width-x-large});
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
+.page__related-title {
+	margin-bottom: 10px;
+	font-size: $type-size-6;
+	text-transform: uppercase;
+}
+
+/*
+	 Wide Pages
+	 ========================================================================== */
+
+.wide {
+	.page {
+		@include breakpoint($breakpoint-large) {
+			padding-right: 0;
+		}
+
+		@include breakpoint($breakpoint-x-large) {
+			padding-right: 0;
+		}
+	}
+
+	.page__related {
+		@include breakpoint($breakpoint-large) {
+			padding-right: 0;
+		}
+
+		@include breakpoint($breakpoint-x-large) {
+			padding-right: 0;
+		}
+	}
+}

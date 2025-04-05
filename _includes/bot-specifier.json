@@ -1,0 +1,40 @@
+{% assign entry = include.entry %}
+{%- capture prefix -%}
+{%- if entry.position == "main" -%}
+{{type}}(
+{%- else if entry.position == "meta" -%}
+{{type}}(meta=(
+{%- endif -%}
+{%- endcapture -%}
+{%- capture suffix -%}
+{%- case entry.type -%}
+{%- when "flag" -%}
+)
+{%- when "bool" -%}
+=true)
+{%- when "string" -%}
+="abc")
+{%- when "number" -%}
+=123)
+{%- when "integer" -%}
+=123)
+{%- endcase -%}
+{%- if entry.position == "meta" -%}
+)
+{%- endif -%}
+{%- endcapture -%}
+{%- capture entire_prop -%}
+{{prefix | strip}}{{entry.name | strip}}{{suffix | strip}}
+{%- endcapture -%}
+{{ entry.name }}
+{{ include.specifier }}{{ entire_prop }}
+{%- if entry.comment %}
+"{{ entry.comment | strip }}"
+{%- else -%}
+{%- if entry.documentation -%}
+Docs: {{ entry.documentation.text }}
+{%- else %}
+(No comment or documentation yet...)
+{%- endif -%}
+{%- endif %}
+https://unreal-garden.com/docs/{{ include.specifier | downcase }}/\#{{ entry.name | strip | downcase }}

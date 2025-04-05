@@ -1,0 +1,34 @@
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+
+{% if jekyll.environment == 'production' and site.analytics.provider and page.analytics != false %}
+<script defer data-domain="unreal-garden.com" src="https://plausible.io/js/script.js"></script>
+{% endif %}
+
+{% if page.search %}
+{% if jekyll.environment == "production" %}
+<script src="{{ '/assets/js/lunr/lunr.min.js' | relative_url }}" defer></script>
+{% else %}
+<script src="{{ '/assets/js/lunr/lunr.js' | relative_url }}" defer></script>
+{% endif %}
+<script src="{{ '/assets/js/lunr/lunr-store.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/lunr/lunr-config.js' | relative_url }}" defer></script>
+{% endif %}
+
+{% if page.header.slides %}
+<script src="{{ '/assets/reveal/dist/reveal.js' | relative_url }}"></script>
+<script src="{{ '/assets/reveal/plugin/markdown/markdown.js' | relative_url }}"></script>
+<script src="{{ '/assets/reveal/plugin/notes/notes.js' | relative_url }}"></script>
+<script src="{{ '/assets/reveal/plugin/highlight/highlight.js' | relative_url }}"></script>
+<script>
+	Reveal.initialize({
+		controls: true,
+		controlsTutorial: true,
+		progress: true,
+		history: true,
+		center: true,
+		slideNumber: true,
+		embedded: true,
+		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+	});
+</script>
+{% endif %}

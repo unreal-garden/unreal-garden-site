@@ -1,0 +1,822 @@
+{% assign prefix = "/assets/unreal/slate-gamedevday-2022/" | prepend: site.baseurl %}
+<section
+data-background-color="#4d2d91"
+data-background-image="{{ prefix }}Facebook_1200x630.webp"
+data-background-position="center"
+data-background-size="70%"
+>
+</section>
+<section data-markdown
+data-background-image="{{ site.baseurl }}/assets/benui_logotype-white.svg"
+data-background-size="10%"
+data-background-position="bottom 1em left 1em"
+data-background-opacity="0.3"
+>
+<script type="text/template">
+## Making UIs with<br/>C++ in Unreal Engine
+---
+## How I stopped being<br/><span class="spooky"><span>&#128123;</span><span>t</span><span>e</span><span>r</span><span>r</span><span>i</span><span>f</span><span>i</span><span>e</span><span>d</span></span> of Slate
+---
+### Who am I?
+
+<img src="{{ prefix }}titan-1.webp" class="r-stretch">
+
+UI programmer on [Industries of Titan](https://store.steampowered.com/app/427940/Industries_of_Titan/)
+notes:
+Test
+---
+### Who am I?
+
+<img src="{{ prefix }}benui-site-screenshot.webp" class="r-stretch">
+
+Unreal tutorials at [benui.ca](https://benui.ca)
+notes:
+Website
+---
+
+1. [Unreal UI Tech Overview](#7)
+2. [Slate widget from scratch](#19)
+3. [Wrapping a Slate widget in UMG](#37)
+4. [Questions](#40)
+---
+## 1. Unreal UI Tech Overview
+What is Slate?
+
+What is UMG?
+---
+## All UI in Unreal uses Slate
+
+(in some form)
+---
+<!-- .slide: data-background-image="{{ prefix }}slate-editor-view.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}slate-titan.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}slate-fortnite.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+Slate is a C++ library for making user interfaces
+---
+```cpp [|3-11]
+void SGardenPanel::Construct(const FArguments& InArgs)
+{
+	ChildSlot
+	[
+		SNew(SHorizontalBox)
+		+ SHorizontalBox::Slot()
+		[
+			SAssignNew(PlantButton, SButton)
+			.OnClicked(this, &SGardenPanel::OnPlantClicked)
+		]
+	];
+}
+```
+notes:
+When you think of Slate, you probably think of this odd syntax
+---
+```cpp
+class SLATE_API SButton : public SBorder
+{
+	SLATE_DECLARE_WIDGET(SButton, SBorder)
+
+public:
+	SLATE_BEGIN_ARGS(SButton)
+		: _Content()
+		, _ButtonStyle(&FCoreStyle::Get()
+		  .GetWidgetStyle<FButtonStyle>("Button") )
+		, _ButtonColorAndOpacity(FLinearColor::White)
+		, _IsFocusable(true) { }
+
+		SLATE_DEFAULT_SLOT(FArguments, Content)
+		SLATE_STYLE_ARGUMENT(FButtonStyle, ButtonStyle)
+		SLATE_EVENT(FOnClicked, OnClicked)
+		SLATE_ATTRIBUTE(FSlateColor, ButtonColorAndOpacity)
+		SLATE_ARGUMENT(bool, IsFocusable)
+	SLATE_END_ARGS()
+// ...
+```
+notes:
+Slate class definitions have a lot of macros
+But don't worry, we're going to describe some of them
+
+OK so that's slate, what
+---
+<strike>What is Slate?</strike>
+
+What is UMG?
+---
+UMG is a bridge between Slate and Blueprints
+notes:
+slate was written before Blueprints
+It was written with C++ in mind
+No UObject stuff, no blueprint-friendly stuff
+---
+```cpp [|1,4,7,10|14-16]
+UCLASS()
+class UMG_API UButton : public UContentWidget
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FLinearColor ColorAndOpacity;
+
+	UFUNCTION(BlueprintCallable)
+	void SetColorAndOpacity(FLinearColor InColorAndOpacity);
+
+protected:
+	// Pointer to underlying Slate SButton
+	// wrapped by this UWidget
+	TSharedPtr<SButton> MyButton;
+};
+```
+notes:
+This is a shortened version of UButton's header file
+
+This should be familiar, UObjecs, UFUNCTIONS
+
+Still, notice that it's a wrapper around the slate instance
+---
+UMG is a bridge between Slate and Blueprints
+
+`UButton` wraps `SButton`
+
+`UTextBlock` wraps `STextBlock`
+
+`UThing` wraps `SThing`
+---
+
+## 2. Slate Widget from Scratch
+
+---
+Project source:
+
+[github.com/benui-dev/UE-SlateExample](https://github.com/benui-dev/UE-SlateExample)
+---
+Create a new Slate Widget in Rider
+
+<div class="r-stretch r-stack">
+<img src="{{ prefix }}rider-add-unreal-class.webp" class="fragment fade-out" data-fragment-index="0">
+<img src="{{ prefix }}rider-slate-widget.webp" class="fragment" data-fragment-index="0">
+</div>
+---
+What do we subclass?
+
+<table>
+<tr>
+<th>Parent Class</th>
+<th>Children</th>
+<th>Examples</th>
+</tr>
+<tr>
+<td><code>SLeafWidget</code></td>
+<td>None</td>
+<td><code>SImage</code>, <code>STextBlock</code></td>
+</tr>
+<tr>
+<td><code>SPanel</code></td>
+<td>Many</td>
+<td><code>SOverlay</code>, <code>SHorizontalBox</code></td>
+</tr>
+<tr>
+<td><code>SCompoundWidget</code></td>
+<td>One or more</td>
+<td><code>SBorder</code>, <code>SButton</code></td>
+</tr>
+</table>
+---
+`SExampleWidget.h`
+```cpp [|9-11|13]
+#pragma once
+
+#include "Widgets/SCompoundWidget.h"
+
+class SExampleWidget : public SCompoundWidget
+{
+public:
+	SLATE_BEGIN_ARGS(SExampleWidget)
+		{}
+	SLATE_END_ARGS()
+
+	void Construct(const FArguments& InArgs);
+};
+```
+notes:
+I'm going to hide as little as possible from you
+First we're going to get something very simple showing on-screen,
+then we'll dive deeper into these macros
+
+Hmm weird macros huh
+You need the {} too, that looks odd
+There's also a function called Construct, but it's not virtual or override.
+Weird.
+---
+`SExampleWidget.cpp`
+```cpp
+#include "SExampleWidget.h"
+#include "SlateOptMacros.h"
+
+BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
+
+void SExampleWidget::Construct(const FArguments& InArgs)
+{
+	ChildSlot
+	[
+		SNew(STextBlock)
+		.Text(NSLOCTEXT("Ex", "HelloWorld", "Hello world!"))
+	];
+}
+
+END_SLATE_FUNCTION_BUILD_OPTIMIZATION
+```
+notes:
+BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION is a macro for enabling and disabling optimization based on the build settings
+
+We're adding a new Text Block widget to our Example widget
+and setting it to have some default text
+.Text is a function we're calling, but we'll look into that later
+---
+`BUIHUD.cpp`
+```cpp [|5-6|11-13]
+void ABUIHUD::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// In header, TSharedPtr<SExampleWidget> ExampleWidget
+	ExampleWidget = SNew(SExampleWidget);
+
+	UGameViewportClient* ViewportClient
+		= GetWorld()->GetGameViewport();
+
+	ViewportClient->AddViewportWidgetContent(
+		ExampleWidget.ToSharedRef()
+	);
+}
+```
+notes:
+ABUIHUD has a member variable, TSharedPtr<SExampleWidget>
+---
+<span class="spooky"><span>Y</span><span>a</span><span>y</span><span>!</span></span>
+
+<img src="{{ prefix }}hello-world-slate.webp" class="r-stretch">
+notes:
+Look we are showing hello world, hooray!
+---
+Let's add some arguments
+
+and look into those macros
+notes:
+That was fun, we got something showing on-screen
+Let's see in more depth what's going on here
+---
+`SExampleWidget.h`
+```cpp [11]
+#pragma once
+
+#include "Widgets/SCompoundWidget.h"
+
+class SExampleWidget : public SCompoundWidget
+{
+public:
+	SLATE_BEGIN_ARGS(SExampleWidget)
+		{}
+		SLATE_ARGUMENT(FText, LabelText)
+	SLATE_END_ARGS()
+
+	void Construct(const FArguments& InArgs);
+};
+```
+---
+`SExampleWidget.cpp`
+<!-- .slide: data-ln-start-from="6" -->
+```cpp [11-12|6,13]
+#include "SExampleWidget.h"
+#include "SlateOptMacros.h"
+
+BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
+
+void SExampleWidget::Construct(const FArguments& InArgs)
+{
+	ChildSlot
+	[
+		SNew(STextBlock)
+		// Previously
+		// .Text(NSLOCTEXT("Ex", "HelloWorld", "Hello world!"))
+		.Text(InArgs._LabelText)
+	];
+}
+
+END_SLATE_FUNCTION_BUILD_OPTIMIZATION
+```
+notes:
+So our LabelText argument that we defined in the header
+Is now somehow in our FArguments struct
+But it's named UNDERSCORE LabelText
+
+And we're using it to set the text value of STextBlock
+
+TODO: Animate changing from old to new
+---
+`BUIHUD.cpp`
+```cpp [5-6]
+void ABUIHUD::BeginPlay()
+{
+	Super::BeginPlay();
+
+	MyWidget = SNew(SExampleWidget)
+		.LabelText(NSLOCTEXT("Ex","Params","Yay params!"));
+
+	UGameViewportClient* ViewportClient = GetWorld()
+		->GetGameViewport();
+
+	ViewportClient->AddViewportWidgetContent(
+		MyWidget.ToSharedRef()
+	);
+}
+```
+notes:
+We're setting the argument LabelText from outside 
+that we've called LabelText
+
+We're using it in our Construct function
+
+---
+#### What is actually happening here?
+```cpp [4-7|4,7]
+class SExampleWidget : public SCompoundWidget
+{
+public:
+	SLATE_BEGIN_ARGS(SExampleWidget)
+		{}
+		SLATE_ARGUMENT(FText, LabelText)
+	SLATE_END_ARGS()
+
+	void Construct(const FArguments& InArgs);
+protected:
+	FText LabelText;
+};
+```
+notes:
+Let's look at slate begin args and slate end args
+---
+Macros in `DeclarativeSyntaxSupport.h`
+```cpp
+#define SLATE_BEGIN_ARGS( WidgetType ) \
+	public: \
+	struct FArguments : public TSlateBaseNamedArgs<WidgetType> \
+	{ \
+		typedef FArguments WidgetArgsType; \
+		FORCENOINLINE FArguments()
+```
+```cpp
+#define SLATE_END_ARGS() \
+	};
+```
+notes:
+Let's get rid of the macro gunk and see it more simply
+---
+Cleaned up
+```cpp [|2,3,7]
+public:
+struct FArguments : public TSlateBaseNamedArgs<WidgetType>
+{
+	typedef FArguments WidgetArgsType;
+	FORCENOINLINE FArguments()
+	{} // From outside macro
+};
+```
+notes:
+We're declaring a local struct called FArguments
+Then all the arguments we're listing with , blah are default constructor values to that
+the {} is required as the body to the FArguments constructor
+
+OK what about TSlateBaseNamedArgs
+---
+```cpp [1|7-11]
+/** Provides settings necessary for all widgets. */
+template<typename WidgetType>
+struct TSlateBaseNamedArgs : public FSlateBaseNamedArgs
+{
+	typedef typename WidgetType::FArguments WidgetArgsType;
+
+	SLATE_PRIVATE_ATTRIBUTE_FUNCTION(FText, ToolTipText)
+	SLATE_PRIVATE_ATTRIBUTE_FUNCTION(TSharedPtr<IToolTip>, ToolTip)
+	SLATE_PRIVATE_ATTRIBUTE_FUNCTION(TOptional<EMouseCursor::Type>, Cursor)
+	SLATE_PRIVATE_ATTRIBUTE_FUNCTION(bool, IsEnabled)
+	SLATE_PRIVATE_ATTRIBUTE_FUNCTION(EVisibility, Visibility)
+	SLATE_PRIVATE_ARGUMENT_FUNCTION(bool, ForceVolatile)
+	SLATE_PRIVATE_ARGUMENT_FUNCTION(EWidgetClipping, Clipping)
+	SLATE_PRIVATE_ARGUMENT_FUNCTION(EFlowDirectionPreference, FlowDirectionPreference)
+	SLATE_PRIVATE_ARGUMENT_FUNCTION(float, RenderOpacity)
+	SLATE_PRIVATE_ATTRIBUTE_FUNCTION(TOptional<FSlateRenderTransform>, RenderTransform)
+	SLATE_PRIVATE_ATTRIBUTE_FUNCTION(FVector2D, RenderTransformPivot)
+	SLATE_PRIVATE_ARGUMENT_FUNCTION(FName, Tag)
+	SLATE_PRIVATE_ARGUMENT_FUNCTION(TOptional<FAccessibleWidgetData>, AccessibleParams)
+	SLATE_PRIVATE_ATTRIBUTE_FUNCTION(FText, AccessibleText)
+```
+notes:
+Some of this should look familiar
+It's the default parameters you see in Unreal
+---
+<img src="{{ prefix }}common-attributes.webp" class="r-stretch">
+---
+```cpp
+SLATE_BEGIN_ARGS(SExampleWidget)
+	{}
+SLATE_END_ARGS()
+```
+macros expand to become
+```cpp
+struct FArguments : public TSlateBaseNamedArgs<SExampleWidget>
+{
+	typedef FArguments WidgetArgsType;
+	FORCENOINLINE FArguments()
+	{}
+};
+```
+notes:
+Unpacking the macro gunk, this is what we get
+---
+Argument Macros
+```cpp
+#define SLATE_ARGUMENT( ArgType, ArgName ) \
+		SLATE_PRIVATE_ARGUMENT_VARIABLE( ArgType, ArgName ); \
+		SLATE_PRIVATE_ARGUMENT_FUNCTION ( ArgType, ArgName )
+```
+```cpp
+#define SLATE_PRIVATE_ARGUMENT_VARIABLE( ArgType, ArgName ) \
+		ArgType _##ArgName
+```
+```cpp
+#define SLATE_PRIVATE_ARGUMENT_FUNCTION( ArgType, ArgName ) \
+		WidgetArgsType& ArgName( ArgType InArg ) \
+		{ \
+			_##ArgName = InArg; \
+			return static_cast<WidgetArgsType*>(this)->Me(); \
+		}
+```
+notes: What about arguments?
+---
+```cpp
+SLATE_ARGUMENT(FText, LabelText)
+```
+macro expands to become
+```cpp
+FText _LabelText;
+
+FArguments& LabelText(FText InArg)
+{
+	_LabelText = InArg;
+	return static_cast<WidgetArgsType*>(this)->Me();
+}
+```
+notes:
+For arguments, this is how it expands
+
+Member variable _LabelText
+Function to set the variable also called LabelText
+---
+What you see in source
+```cpp [4-7]
+class SExampleWidget : public SCompoundWidget
+{
+public:
+	SLATE_BEGIN_ARGS(SExampleWidget)
+		{}
+		SLATE_ARGUMENT(FText, LabelText)
+	SLATE_END_ARGS()
+
+	void Construct(const FArguments& InArgs);
+protected:
+	FText LabelText;
+};
+```
+---
+With macros expanded, it becomes
+```cpp [|4-5|10|12-15]
+class SExampleWidget : public SCompoundWidget
+{
+public:
+	struct FArguments
+		: public TSlateBaseNamedArgs<SExampleWidget>
+	{
+		typedef FArguments WidgetArgsType;
+		FORCENOINLINE FArguments()
+		{}
+		FText _LabelText;
+
+		FArguments& LabelText(FText InArg)
+		{
+			_LabelText = InArg;
+			return static_cast<WidgetArgsType*>(this)->Me();
+		}
+	};
+
+	void Construct(const FArguments& InArgs);
+};
+```
+notes:
+Step through these
+
+So it makes a local struct FArguments
+
+Adds a member variable underscore LabelText
+
+Adds a member function LabelText() to set it
+---
+### On to more examples
+
+What do `[` and `+` do here?
+
+```cpp [2,3,5]
+SNew(SHorizontalBox)
++ SHorizontalBox::Slot()
+[
+	SNew(SImage)
+]
+```
+notes:
+These are called slots
+---
+Slate (and so UMG) has concept of slots
+
+Containers control layout of children
+notes:
+Let's do a practical example
+---
+How would you make this?
+
+<img src="{{ prefix }}slate-slot-example.webp" class="r-stretch">
+
+<img src="{{ prefix }}slate-hierarchy-in-umg.webp" class="r-stretch">
+notes:
+How would you make this?
+
+let's do that in Slate
+---
+```cpp [|3-4,23|5|6-9,11|10|12-15,22|16-18,21|19-20|]
+void SExampleComplexWidget::Construct(const FArguments& InArgs)
+{
+	ChildSlot
+	[
+		SNew(SHorizontalBox)
+		+ SHorizontalBox::Slot()
+		.AutoWidth()
+		.Padding(5)
+		[
+			SNew(SImage)
+		]
+		+ SHorizontalBox::Slot()
+		.FillWidth(1.0f)
+		.Padding(10)
+		[
+			SNew(SBox)
+			.MinDesiredWidth(200)
+			[
+				SNew(SButton)
+				.Text(NSLOCTEXT("Ex","Click","Click me"))
+			]
+		]
+	];
+}
+```
+notes:
+The + has been overridden to add a new child to
+---
+<img src="{{ prefix }}slate-slot-example.webp" class="r-stretch">
+---
+### Building a widget iteratively
+notes: instead of declaratively
+---
+<img src="{{ prefix }}list-widget-in-editor.webp" class="r-stretch">
+---
+```cpp
+void SExampleListWidget::Construct(const FArguments& InArgs)
+{
+	ChildSlot
+	[
+		SNew(SVerticalBox)
+		+ SVerticalBox::Slot()
+		[
+			// How can we add N buttons?
+			SNew(SButton)
+		]
+	];
+}
+```
+notes:
+We want to save a ref to our vertical box and populate it later
+---
+```cpp
+SNew(SButton)
+```
+
+```cpp
+// in .h
+TSharedPtr<SButton> LoadGameButton;
+
+// in .cpp
+SAssignNew(LoadGameButton, SButton)
+```
+---
+```cpp [|19]
+#pragma once
+
+#include "Widgets/SCompoundWidget.h"
+
+class SExampleListWidget : public SCompoundWidget
+{
+public:
+	SLATE_BEGIN_ARGS(SExampleListWidget)
+		{}
+		SLATE_ARGUMENT(int32, ButtonCount)
+	SLATE_END_ARGS()
+
+	void Construct(const FArguments& InArgs);
+
+	void RebuildFromData();
+	void SetButtonCount(int32 ButtonCount);
+protected:
+	TSharedPtr<SVerticalBox> ListBox;
+
+	int32 ButtonCount = 0;
+};
+```
+---
+```cpp [|12|15,18-29]
+#include "SExampleListWidget.h"
+#include "SlateOptMacros.h"
+
+BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
+
+void SExampleListWidget::Construct(const FArguments& InArgs)
+{
+	ButtonCount = InArgs._ButtonCount;
+
+	ChildSlot
+	[
+		SAssignNew(ListBox, SVerticalBox)
+	];
+
+	RebuildFromData();
+}
+
+void SExampleListWidget::RebuildFromData()
+{
+	ListBox->ClearChildren();
+	for (int32 i = 0; i < ButtonCount; ++i)
+	{
+		ListBox->AddSlot()
+		[
+			SNew(SButton)
+			.Text(FText::FromString(FString::Printf(TEXT("%d"), i)))
+		];
+	}
+}
+
+void SExampleListWidget::SetButtonCount(int32 InButtonCount)
+{
+	ButtonCount = InButtonCount;
+	
+	RebuildFromData();
+}
+
+END_SLATE_FUNCTION_BUILD_OPTIMIZATION
+```
+---
+<img src="{{ prefix }}list-widget-in-editor.webp" class="r-stretch">
+---
+No more <span class="spooky"><span>&#128123;</span><span>S</span><span>l</span><span>a</span><span>t</span><span>e</span></span>
+---
+UMG is a bridge between Slate and Blueprints
+
+`UExampleWidget` wraps `SExampleWidget`
+---
+`ExampleWidget.h`
+```cpp [|16]
+#pragma once
+
+#include "Components/Widget.h"
+#include "ExampleWidget.generated.h"
+
+UCLASS()
+class UExampleWidget : public UWidget
+{
+	GENERATED_BODY()
+public:
+	virtual void ReleaseSlateResources(
+		bool bReleaseChildren) override;
+
+protected:
+	virtual TSharedRef<SWidget> RebuildWidget() override;
+
+	UPROPERTY(EditAnywhere)
+	FText ExampleText;
+	
+	TSharedPtr<class SExampleWidget> MyExampleWidget;
+};
+```
+---
+`ExampleWidget.cpp`
+```cpp [|4-10|13-19]
+#include "ExampleWidget.h"
+#include "SExampleWidget.h"
+
+TSharedRef<SWidget> UExampleWidget::RebuildWidget()
+{
+	// Creating our custom widget using Slate SNew
+	MyExampleWidget = SNew(SExampleWidget)
+		.LabelText(ExampleText);
+
+	return MyExampleWidget.ToSharedRef();
+}
+
+void UExampleWidget::ReleaseSlateResources(
+	bool bReleaseChildren)
+{
+	Super::ReleaseSlateResources(bReleaseChildren);
+	
+	MyExampleWidget.Reset();
+}
+```
+---
+Create UserWidget Blueprint
+
+<img src="{{ prefix }}create-widget-blueprint.webp" class="r-stretch">
+---
+<!-- .slide: data-background-image="{{ prefix }}umg-example-widget.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+Spawn UserWidget Blueprint
+
+`BUIHUD.h`
+```cpp [|13-15]
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/HUD.h"
+#include "BUIHUD.generated.h"
+
+UCLASS()
+class ABUIHUD : public AHUD
+{
+	GENERATED_BODY()
+
+protected:
+	// TSubclass<T> is greedy-loaded
+	UPROPERTY(EditDefaultsOnly)
+	TSoftClassPtr<UMyUserWidget> WidgetClass;
+};
+```
+---
+`BUIHUD.cpp`
+```cpp [|5-9]
+void ABUIHUD::BeginPlay()
+{
+	Super::BeginPlay();
+
+	UMyUserWidget* Widget = CreateWidget<UMyUserWidget>(
+		GetWorld(),
+		WidgetClass);
+	
+	Widget->AddToViewport();
+}
+```
+---
+<strike>Create basic Slate widget</strike>
+
+
+<strike>Wrap with UMG</strike>
+notes:
+We've only just touched on it but slots are a key part of Unreal UI
+Having multiple children within a widget
+---
+### When to use<br/>Slate vs UMG vs UserWidget?
+---
+<table>
+<tr>
+<td>UserWidget</td>
+<td>Visual editor<br/>Standard widgets</td>
+</tr>
+<tr>
+<td>UMG + Slate</td>
+<td>Custom UMG, probably need a custom Slate class too
+<br/>Performance
+<br/>Complex layout</td>
+</tr>
+</table>
+notes:
+if you have custom umg you will need custom
+talking mostly about C++ here
+---
+## Other references
+
+[Lyra Starter Game](https://unrealengine.com/marketplace/en-US/product/lyra)
+
+[YawLighthouse's UMG Slate Compendium](https://github.com/YawLighthouse/UMG-Slate-Compendium)
+
+[Alessa Baker's Slate Resources](https://github.com/Sythenz/SlateGuide)
+
+---
+## Thanks for listening!
+
+</script>
+</section>

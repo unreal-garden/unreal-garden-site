@@ -1,0 +1,2 @@
+<form class="signup" action="https://tinyletter.com/benui" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/benui', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p>Monthly ben&#x1F331;ui newsletter:</p><p><input type="text" class="email" name="email" id="tlemail"  placeholder="my@email.com" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" class="submit" /></form>
+

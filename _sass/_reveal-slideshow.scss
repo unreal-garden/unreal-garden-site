@@ -1,0 +1,66 @@
+code.hljs table
+{
+	font-size: 1em !important;
+}
+
+code.hljs td
+{
+	font-family: $monospace !important;
+}
+
+.reveal table th, .reveal table td
+{
+	border: none !important;
+}
+
+.reveal
+{
+	ul {
+		list-style: none !important;
+	}
+	ul li::before {
+		content: "\2022";
+		color: #ccc;
+		font-weight: bold;
+		display: inline-block;
+		width: 1em;
+		margin-left: -1em;
+	}
+}
+
+.page__hero .reveal
+{
+	height: 64vh;
+}
+
+.reveal table th, .reveal table td
+{
+	border: none !important;
+}
+
+.reveal ul
+{
+	list-style: none !important;
+}
+
+.reveal ul li::before
+{
+	content: "\2022";
+	color: #ccc;
+	font-weight: bold;
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em;
+}
+
+li.done
+{
+	color: #555;
+	strong
+	{
+		color: #888;
+	}
+	&::before {
+		color: #555 !important;
+	}
+}

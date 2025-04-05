@@ -1,0 +1,112 @@
+@import "mixins";
+
+/* ==========================================================================
+	 STYLE RESETS
+	 ========================================================================== */
+
+* { box-sizing: border-box; }
+
+html {
+	/* apply a natural box layout model to all elements */
+	box-sizing: border-box;
+	background: $background-color url("/assets/icon-white-bg.webp") repeat fixed;
+	font-size: 16px;
+
+	@include breakpoint($breakpoint-medium) {
+		font-size: 18px;
+	}
+
+	@include breakpoint($breakpoint-large) {
+		font-size: 20px;
+	}
+
+	@include breakpoint($breakpoint-x-large) {
+		font-size: 22px;
+	}
+
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+/* Remove margin */
+
+body { margin: 0; }
+
+/* Display HTML5 elements in IE6-9 and FF3 */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+	display: block;
+}
+
+/* Display block in IE6-9 and FF3 */
+
+audio,
+canvas,
+video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+/* Prevents modern browsers from displaying 'audio' without controls */
+
+audio:not([controls]) {
+	display: none;
+}
+
+a {
+	color: $link-color;
+}
+
+/* Apply focus state */
+
+a:focus {
+	@extend %tab-focus;
+}
+
+/* Remove outline from links */
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/* Prevent sub and sup affecting line-height in all browsers */
+
+sub,
+sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+/* img border in anchor's and image quality */
+
+img {
+	/* Responsive images (ensure images don't scale beyond their parents) */
+	max-width: 100%; /* part 1: Set a maximum relative to the parent*/
+	width: auto\9; /* IE7-8 need help adjusting responsive images*/
+	height: auto; /* part 2: Scale the height according to the width, otherwise you get stretching*/
+
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}

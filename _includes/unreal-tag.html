@@ -1,0 +1,19 @@
+{% assign grouped = site.tags[include.tag] | sort: "date" | where: "category":"tutorials" | reverse %}
+
+{%- if grouped.size > 0 -%}
+{%- if site.data.tags[include.tag] -%}
+<h1 id="{{ include.tag | slugify }}">{{ site.data.tags[include.tag].title }}</h1>
+{%- else -%}
+<h1 id="{{ include.tag | slugify }}">{{ include.tag }}</h1>
+{%- endif -%}
+{:.clearboth }
+
+{% assign entries_layout = include.entries_layout | default: 'row' %}
+<div class="entries-{{ entries_layout }}">
+{%- for post in grouped -%}
+  {%- unless post.hidden -%}
+    {% include archive-single.html %}
+  {%- endunless -%}
+{%- endfor -%}
+</div>
+{%- endif -%}

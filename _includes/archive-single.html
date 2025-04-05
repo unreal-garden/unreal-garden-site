@@ -1,0 +1,31 @@
+
+{% comment %}
+Get the teaser image or fallback to the site default teaser image
+{% endcomment %}
+{% if post.header.teaser %}
+  {% capture teaser_image_url %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser_image_url = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% endif %}
+
+<div class="archive__item">
+{% if teaser_image_url %}
+<div class="archive__item-left archive__item-teaser">
+  <a href="{{ post.url | relative_url }}" rel="permalink">
+    <img src="{{ teaser_image_url | relative_url }}" alt="{{ title | strip_html }}">
+  </a>
+</div>
+{% endif %}
+ <div class="archive__item-right">
+ <h2 class="archive__item-title no_toc" itemprop="headline">
+   <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+ </h2>
+ {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+ {% include page__date.html %}
+ {% include tag-list-new.html tags=post.tags %}
+ </div>
+</div>

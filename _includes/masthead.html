@@ -1,0 +1,59 @@
+{% capture logo_path %}{{ site.logo }}{% endcapture %}
+<div class="masthead">
+	<div class="masthead__primary">
+		<div class="header-footer-inner-wrap masthead__inner-wrap">
+			<div class="masthead__menu">
+				<nav id="site-nav">
+					<a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="Unreal Garden logo" width="140"></a>
+					<ul class="visible-links">
+						{%- for link in site.data.navigation.main -%}
+						<li class="masthead__menu-item">
+							<a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
+						</li>
+						{%- endfor -%}
+						<li class="masthead__menu-item">
+							<a href="{% link _pages/search.md %}">
+								<svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+									<path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+								</svg>
+								<p class="screen-reader-text">Search</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		</div>
+		{%- for link in site.data.navigation.main -%}
+			{% assign should_show = false %}
+			{% if link.children %}
+				{% if link.url == page.url %}
+					{% assign should_show = true %}
+				{% else %}
+					{%- for sublink in link.children -%}
+						{% if sublink.url == page.url %}
+							{% assign should_show = true %}
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			{% endif %}
+			{% if should_show %}
+				<div class="masthead__secondary">
+					<div class="header-footer-inner-wrap masthead__inner-wrap">
+						<div class="masthead__menu">
+							<nav id="subsection-nav">
+								<ul class="visible-links">
+									{%- for sublink in link.children -%}
+									<li class="masthead__menu-item">
+										<a href="{{ sublink.url | relative_url }}"{% if sublink.description %} title="{{ sublink.description }}"{% endif %}>{{ sublink.title }}</a>
+									</li>
+									{%- endfor -%}
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		{%- endfor -%}
+	</div>
+</div>

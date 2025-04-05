@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+
+{% include seo.html %}
+
+<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="robots" content="noai, noimageai">
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+{% if page.header.slides %}
+<link rel="stylesheet" href="{{ '/assets/reveal/dist/reveal.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/reveal/dist/theme/benui.css' | relative_url }}" id="theme">
+<link rel="stylesheet" href="{{ '/assets/reveal/plugin/highlight/monokai.css' | relative_url }}">
+{% endif %}
+
+{% if site.head_scripts %}
+  {% for script in site.head_scripts %}
+    <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
+
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<meta content="#4efa82" data-react-helmet="true" name="theme-color" />
+
+<link rel="search" type="application/opensearchdescription+xml" title="{{ site.title }}" href="{{ '/opensearch.xml' | relative_url }}">

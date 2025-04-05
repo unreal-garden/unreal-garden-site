@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+{% if page.header.slides %}
+  {% include page__hero_slides.html %}
+{% elsif page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero_image.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% else %}
+  {% include page__hero.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<div id="main" role="main">
+  {% include toc-wrapper.html %}
+
+  <article class="page {% unless page.toc %}no-toc{% endunless%}" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+    {% if page.author %}<meta itemprop="author" content="{{ page.author }}">{% endif %}
+
+    <!--<div class="page__inner-wrap"> -->
+      <section class="page__content" itemprop="text">
+        {{ content }}
+		{% include inline-logo.html %}
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">Direct Link</a></div>{% endif %}
+      </section>
+
+      {% include tag-list-new.html tags=page.tags %}
+
+      <footer class="page__meta">
+		{% if page.author %}
+  		<p class="page__author"><strong>Written by:</strong> {{ page.author }}</p>
+		{% endif %}
+        {% include page__date.html %}
+	    {% include page__unreal_version.html %}
+      </footer>
+
+      {% if page.share %}{% include social-share.html %}{% endif %}
+    <!-- </div> -->
+  </article>
+</div>

@@ -1,0 +1,186 @@
+all:
+  title: All
+  icon: 🌟
+2d:
+  title: 2D
+  icon: ◻️
+  synonyms: [ sprite, paper ]
+accessibility: 
+  title: Accessibility
+  icon: ♿
+ai:
+  title: AI
+  tooltip: Artificial Intelligence
+  icon: 🧠
+  syonyms: [ behavior ]
+animation:
+  title: Animation
+  icon: 📽️
+art:
+  title: Art
+  icon: 🎨
+asset:
+  title: Asset
+  icon: 📦
+audio:
+  title: Audio
+  icon: 🎶
+blueprint:
+  title: Blueprint
+  icon: 📘
+  synonyms: [ bp, graph ]
+build:
+  title: Build
+  tooltip: Building, cooking
+  synonyms: [ cook, package, packaging ]
+  icon: 🏗️
+cheat:
+  title: Cheat
+  icon: 👾
+community:
+  title: Community
+  icon: 👥
+cpp:
+  title: C++
+  icon: 🌈
+  synonyms: [ cpp ]
+data:
+  title: Data
+  icon: 📊
+  synonyms: [ table, json, yaml ]
+debugging:
+  title: Debugging
+  icon: 🐞
+docs:
+  title: Docs
+  tooltip: Documentation
+  icon: 📚
+  synonyms: [ docs ]
+editor:
+  title: Editor
+  icon: 🪟
+gameplay:
+  title: Gameplay
+  icon: 🏓
+industry:
+  title: Industry
+  icon: 🏭
+input:
+  title: Input
+  icon: 🎮
+level:
+  title: Level
+  icon: 🗺️
+  synonyms: [ map ]
+lighting:
+  title: Lighting
+  icon: 💡
+localization:
+  title: Localization
+  icon: 🀄
+marketplace:
+  title: Marketplace
+  icon: 🛒
+material:
+  title: Material
+  icon: ✨
+  synonyms: [ shader ]
+math:
+  title: Math
+  icon: 📈
+  synonyms: [ algorithm ]
+platform:
+  title: Platform
+  tooltip: Platform-specific considerations
+  icon: 📱
+  synonyms: [ switch, xbox, playstation, iphone, ios, android ]
+multiplayer:
+  title: Multiplayer
+  icon: 🎾
+  synonyms: [ network ]
+optimization:
+  title: Optimization
+  icon: 💨
+  synonyms: [ performance ]
+plugin:
+  title: Plugin
+  icon: 🧩
+productivity:
+  title: Productivity
+  icon: ✋
+qa:
+  title: QA
+  tooltip: Quality Assurance
+  icon: 🔍
+save:
+  title: Save
+  icon: 💾
+  synonym: [ serialization, json, yaml ]
+script:
+  title: Script
+  icon: 📃
+  synonyms: [ python ]
+slate:
+  title: Slate
+  icon: 🧱
+team:
+  title: Team
+  icon: 👥
+tech:
+  title: Tech
+  icon: 🖥
+testing:
+  title: Testing
+  icon: 🔬
+text:
+  title: Text
+  icon: 📄
+texture:
+  title: Texture
+  icon: ️🖼️
+tip:
+  title: Tip
+  icon: 💡
+tools:
+  title: Tools
+  icon: 🛠️
+tutorial:
+  title: Tutorial
+  icon: ❓
+  synonyms: [ how ]
+text:
+  title: Text
+  icon: 🔡
+  synonyms: [ typography, font ]
+ui:
+  title: UI
+  tooltip: User Interface
+  icon: 🖱️
+umg:
+  title: UMG
+  tooltip: Unreal Motion Graphics
+  icon: 🏛️
+ux:
+  title: UX
+  tooltip: user Experience
+  icon: 🖱️
+version-control:
+  title: VCS
+  icon: 🗃️
+  tooltip: Version Control
+  synonyms: [ perforce, plastic, version, control ]
+vfx:
+  title: VFX
+  icon: ✨
+video:
+  title: Video
+  icon: 📺
+ide:
+  title: IDE
+  tooltip: Integrated Development Environment
+  icon: ✍️
+  synonyms: [ visual, studio, vs, rider ]
+writing:
+  title: Writing
+  icon: ✏️
+  synonyms: [ narrative ]

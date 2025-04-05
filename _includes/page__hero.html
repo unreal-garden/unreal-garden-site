@@ -1,0 +1,51 @@
+{% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
+
+{% if page.header.overlay_filter contains "rgba" %}
+  {% capture overlay_filter %}{{ page.header.overlay_filter }}{% endcapture %}
+{% elsif page.header.overlay_filter %}
+  {% capture overlay_filter %}rgba(0, 0, 0, {{ page.header.overlay_filter }}){% endcapture %}
+{% endif %}
+
+{% if page.header.image_description %}
+  {% assign image_description = page.header.image_description %}
+{% else %}
+  {% assign image_description = page.title %}
+{% endif %}
+
+{% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
+
+<div id="page__hero" class="page__hero{% if page.header.overlay_color or page.header.overlay_image %}--overlay{% endif %}">
+	<div class="wrapper hero_text{% if page.header.inline-image %} wrapper--inline-image{%endif%}">
+		{% if page.header.image-transparent %}
+			<img src="{{ page.header.image-transparent }}" class="hero_image_transparent" alt="{{ image_description }}"/>
+		{% else %}
+		{% if page.header.title_formatted.title %}
+			{% if page.header.title_formatted.prefix %}
+				<p class="page__title">{{ page.header.title_formatted.prefix | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+			{% endif %}
+			<h1 id="page-title" class="page__title gradient" itemprop="headline">{{ page.header.title_formatted.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+			{% if page.header.title_formatted.suffix %}
+				<p class="page__title">{{ page.header.title_formatted.suffix | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+			{% endif %}
+		{% else %}
+			<h1 id="page-title" class="page__title gradient" itemprop="headline">
+			{% if paginator and site.paginate_show_page_num %}
+			{{ site.title }}{% unless paginator.page == 1 %} Page {{ paginator.page }}{% endunless %}
+			{% else %}
+			{{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
+			{% endif %}
+			</h1>
+			{% if page.tagline %}
+				<p class="page__lead">{{ page.tagline | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+			{% elsif page.header.show_overlay_excerpt != false and page.excerpt %}
+				<p class="page__lead">{{ page.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+			{% endif %}
+		{% endif %}
+		 {%if page.header.inline-image %}
+		 <div class="hero_image_container">
+		 <img src="{{page.header.inline-image}}" class="hero_image" />
+		 </div>
+		 {% endif %}
+	  {% endif %}
+    </div>
+</div>

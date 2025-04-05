@@ -1,0 +1,11 @@
+<div class="cv-job-entry">
+	<div class="cv-job-header">
+		<h3>{{ include.title }}</h3>
+		<div class="right">
+			<h4><a href="{{include.company-url}}">{{ include.company }}</a>, {{ include.location }}</h4>
+			<h4>{% if include.duration %}
+			<span class="duration">{{ include.duration }}</span>
+			{% endif %}{{ include.start-year }}&ndash;{{ include.end-year }}</h4>
+		</div>
+	</div>
+	<div markdown="1">

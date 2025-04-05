@@ -1,0 +1,80 @@
+.sidebar {
+	@include clearfix();
+	top: 3em;
+	margin-bottom: 1em;
+
+	@include breakpoint($breakpoint-medium) {
+		float: left;
+		width: calc(#{$sidebar-width-medium} - 1em);
+
+		&.sticky {
+			overflow-y: auto;
+			top: 3em;
+			max-height: calc(100vh - #{$nav-height} - 2em);
+		}
+	}
+
+	@include breakpoint($breakpoint-large) {
+		width: calc(#{$sidebar-width-large} - 1em);
+	}
+
+	@include breakpoint($breakpoint-x-large) {
+		width: calc(#{$sidebar-width-x-large} - 1em);
+
+		&.sticky {
+			top: 4em;
+		}
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 0;
+	}
+
+	p,
+	li {
+		font-size: $type-size-6;
+		line-height: 1.5;
+	}
+
+	img {
+		width: 100%;
+
+		&.emoji {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
+
+/*
+.sidebar__right {
+	margin-bottom: 1em;
+
+	@include breakpoint($breakpoint-large) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: $sidebar-width-large;
+		margin-right: -1 * $sidebar-width-large;
+		padding-left: 1em;
+		z-index: 10;
+
+		&.sticky {
+			@include clearfix();
+			position: -webkit-sticky;
+			position: sticky;
+			top: 2em;
+			float: right;
+		}
+	}
+
+	@include breakpoint($breakpoint-x-large) {
+		width: $sidebar-width-x-large;
+		margin-right: -1 * $sidebar-width-x-large;
+	}
+}
+*/

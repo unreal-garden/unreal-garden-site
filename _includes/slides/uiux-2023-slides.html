@@ -1,0 +1,533 @@
+{% assign prefix = "/assets/ux/ux-talk-2023/" | prepend: site.baseurl %}
+<script language="javascript">
+function showClicked(id)
+{
+document.getElementById(id).animate(
+  [
+    { opacity: 1 },
+    { opacity: 0 },
+  ], {
+    duration: 1000,
+    //iterations: one
+  }
+);
+}
+</script>
+
+<section data-markdown>
+<script type="text/template">
+# **Know, Do, Feel**
+### A framework for thinking about UI
+ben<img src="/assets/benui_logo.svg" class="inline-logo" style="height:0.8em;margin:0 0.2em;">ui
+
+March 2023
+</script>
+</section>
+<section data-markdown
+data-background-image="{{ site.baseurl }}/assets/benui_logotype-white.svg"
+data-background-size="10%"
+data-background-position="bottom 1em left 1em"
+data-background-opacity="0.3"
+>
+<script type="text/template">
+### Who am I?
+
+<img src="{{ prefix }}titan-1.webp" class="r-stretch">
+
+Lead programmer on ??? at Brace Yourself Games
+
+Previously UI programmer on [Industries of Titan](https://store.steampowered.com/app/427940/Industries_of_Titan/)
+
+notes:
+Test
+---
+👋
+
+This means shout out your ideas!
+---
+### What can we do with UI?
+
+1. Let players **know** something
+2. Let players **do** something
+3. Let players **feel** something
+
+---
+# 1. Let players<br/>**know** something
+
+notes:
+Conveying information
+---
+### Let players<br/>**know** something
+
+- Individual element
+- Bigger picture
+---
+Your game probably has a lot of information
+```cpp
+string name;
+int health; 
+int coins;
+int flowers_planted;
+```
+---
+Just show the information on the screen!
+
+* Name: Protagonist
+* 5 health
+* 5,259 coins
+* 275,681 flowers planted
+notes:
+What 
+---
+<!-- .slide: data-background-image="{{ prefix }}wow-raid-ui.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+You can end up with this
+---
+So how do we decide what to show the player?
+---
+* **What** do they need to know?
+* **When** do they need to know it?
+* What's **important**, what's not important?
+notes: 
+you are already probably already choosing which information to show
+---
+```cpp
+current_health = 2638;
+max_health = 8880;
+```
+
+* 2638/8880
+* 29.7072072072072125%
+* 💖🖤🖤🖤
+* ████<span style="color:#444;">███████████</span>
+---
+### Concrete example
+* Simple action game (Mario, Spyro)
+* Kid-friendly
+* Relaxed simple play experience
+notes:
+This is how I design stuff
+---
+### Player needs to know
+
+* **What** is their current health as a rough percentage, **when** in an area where they could die
+* **When** They have low health and could die
+* **When** they pick up health
+notes:
+This is how I design stuff
+---
+<ul>
+<li class="done">2638/8880</li>
+<li class="done">29.7072072072072125%</li>
+<li>💖🖤🖤🖤</li>
+<li class="done">████<span style="color:#444;">███████████</span></li>
+</ul>
+---
+
+<table>
+<tr>
+<td>
+💖🖤🖤🖤
+<ul>
+<li>Doesn't require reading numbers</li>
+<li>Understandable at-a-glance</li>
+<li>Clear how many hits the player can take</li>
+<li>Inreasing max health is clear</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Show hearts only <strong>when</strong> in an area with enemies</li>
+<li><strong>When</strong> They have low health <strong>flash remaining heart</strong></li>
+<li><strong>When</strong> they pick up health, <strong>flash the filled heart</strong></li>
+</ul>
+</td>
+</tr>
+</table>
+notes:
+Think who is the game for
+When will they need this inromation
+---
+# Prioritize Information
+
+What do players need to know **first**?
+
+What do players need to know **most often**?
+---
+### How can we<br/>**visually prioritize**<br/>information?
+
+👋
+Note:
+How can you make one thing more visible
+---
+* Contrast
+* Colour
+* Size
+* Position
+* Motion
+---
+### Size
+
+<div class="priority-box">
+<div class="priority"><div class="text">A</div></div>
+<div class="priority size-b"><div class="text">B</div></div>
+<div class="priority"><div class="text">C</div></div>
+<div class="priority"><div class="text">D</div></div>
+</div>
+---
+### Colour
+
+<div class="priority-box">
+<div class="priority colour-b"><div class="text">A</div></div>
+<div class="priority"><div class="text">B</div></div>
+<div class="priority"><div class="text">C</div></div>
+<div class="priority"><div class="text">D</div></div>
+</div>
+---
+### Position
+
+<div class="priority-box">
+<div class="priority"><div class="text">A</div></div>
+<div class="priority position-b"><div class="text">B</div></div>
+<div class="priority"><div class="text">C</div></div>
+<div class="priority"><div class="text">D</div></div>
+</div>
+---
+### Motion
+
+<div class="priority-box">
+<div class="priority"><div class="text">A</div></div>
+<div class="priority"><div class="text">B</div></div>
+<div class="priority"><div class="text">C</div></div>
+<div class="priority motion-b"><div class="text">D</div></div>
+</div>
+---
+Don't make everything high-priority!
+
+<div class="priority-box">
+<div class="priority colour-b"><div class="text">A</div></div>
+<div class="priority motion-b"><div class="text">B</div></div>
+<div class="priority position-b"><div class="text">C</div></div>
+<div class="priority size-b"><div class="text">D</div></div>
+</div>
+
+The key is **relative priority**
+notes:
+Let's talk about a useful framework to use
+---
+Useful framework to use:
+
+_"Building Games That Can Be Understood at a Glance"_ by Zach Gage
+
+([Slides](http://stfj.net/DesigningForSubwayLegibility/)) ([Video](https://www.gdcvault.com/play/1024925/Building-Games-That-Can-Be))
+
+aka "the three reads"
+---
+<!-- .slide: data-background-image="{{ prefix }}subway-legibility-2.0.022.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Imagine you have a poster for a concert
+---
+<!-- .slide: data-background-image="{{ prefix }}subway-legibility-2.0.023.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Person is far away, want to catch their eye first
+---
+<!-- .slide: data-background-image="{{ prefix }}subway-legibility-2.0.024.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Secondary information
+---
+<!-- .slide: data-background-image="{{ prefix }}subway-legibility-2.0.025.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Final information if they're really interested
+---
+<!-- .slide: data-background-image="{{ prefix }}subway-legibility-2.0.026.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+See the progression
+---
+## How to use "the three reads"
+For each piece of information:
+* What is its priority relative to others?
+* Which "read" should it go in?
+* Is it always the same priority?
+---
+### Simple inventory menu
+
+* Name of active menu
+* Items in inventory
+* New items in inventory
+* Selected item name
+* Selected item picture
+* Selected item description
+* Buttons for other menus
+---
+1. Selected item picture
+2. Selected item name
+3. New items in inventory
+4. Name of menu
+5. Items in inventory
+6. Selected item description
+7. Buttons for other menus
+---
+<!-- .slide: data-background-image="{{ prefix }}Bugsnax12312020-012507-56491.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}Overwatch01192022-084219-16414.webp" data-background-size="contain" data-background-opacity="0.1" data-background-position="center" -->
+👋 What do you see first? Second? Third?
+---
+<!-- .slide: data-background-image="{{ prefix }}Overwatch01192022-084219-16414.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}TheLegendofZelda_BreathoftheWild04232020-110110.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}Splatoon204232020-104653.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+
+<ol>
+<li class="done">Let players <strong>know</strong> something</li>
+<li>Let players <strong>do</strong> something</li>
+<li>Let players <strong>feel</strong> something</li>
+</ol>
+---
+# 2. Let players<br/>**do** something
+---
+<!-- .slide: data-background-image="{{ prefix }}button.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Imagine you're entering an elevator for the first time
+---
+<!-- .slide: data-background-image="{{ prefix }}button.webp" data-background-size="contain" data-background-opacity="0.1" data-background-position="center" -->
+
+How do you know that this is **usable**?
+
+How do you know **how** to use this?
+
+👋
+
+Notes:
+Let's talk about a bit of theory
+
+When you see this, how would you interact with this?
+
+How would you know how to interact with it?
+---
+What if we could categorize these?
+---
+<table>
+<tr>
+<td>
+<ul>
+<li>sticks out</li>
+<li>is finger-sized</li>
+<li>has label</li>
+<li>has different colour to surroundings</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>moves when pushed</li>
+<li>sound triggered when pushed</li>
+<li>stops moving after pushed a short distance</li>
+<li>lights up when pressed</li>
+<li>stays lit after release</li>
+<li>elevator starts moving after pressed</li>
+</ul>
+</td>
+</tr>
+</table>
+---
+The button has **an affordance**
+
+> A **potential action** that is made possible by a given object or environment; especially, one that is made **easily discoverable**.
+---
+<!-- .slide: data-background-image="{{ prefix }}henry-co-_Ht9Gs3MZck-unsplash.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}henry-co-_Ht9Gs3MZck-unsplash.webp" data-background-size="contain" data-background-opacity="0.1" data-background-position="center" -->
+👋 What affordances does a door handle have?
+---
+### <span class="affordance-invite">Invite</span>, <span class="affordance-react">React</span>, <span class="affordance-confirm">Confirm</span>
+
+<table>
+<tr>
+<td>
+<ul>
+<li class="affordance-invite">sticks out</li>
+<li class="affordance-invite">is finger-sized</li>
+<li class="affordance-invite">has label</li>
+<li class="affordance-invite">has different colour to surroundings</li>
+</td>
+<td>
+<li class="affordance-react">moves when pushed</li>
+<li class="affordance-react">sound triggered when pushed</li>
+<li class="affordance-react">stops moving after pushed a short distance</li>
+<li class="affordance-react">lights up when pressed</li>
+<li class="affordance-confirm">stays lit after release</li>
+<li class="affordance-confirm">elevator starts moving after pressed</li>
+</ul>
+</td>
+</tr>
+</table>
+---
+
+### <span class="affordance-invite">Invite</span>, <span class="affordance-react">React</span>, <span class="affordance-confirm">Confirm</span>
+<button type="button" class="ux-example ux-example-bad" onclick="showClicked('ux-example-result-bad');">Click me!</button>
+<div id="ux-example-result-bad">Clicked!</div>
+---
+### <span class="affordance-invite">Invite</span>, <span class="affordance-react">React</span>, <span class="affordance-confirm">Confirm</span>
+
+<button type="button" class="ux-example ux-example-good" onclick="showClicked('ux-example-result-good');">Click me!</button>
+<div id="ux-example-result-good">Clicked!</div>
+notes:
+So many games do the first example, you'd be surprised
+Seems obvious for buttons
+---
+<!-- .slide: data-background-image="{{ prefix }}30_Figure1a-3825080037.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+This concept exists outside of UI
+---
+<!-- .slide: data-background-image="{{ prefix }}northgard-hover.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<ol>
+<li class="done">Let players <strong>know</strong> something</li>
+<li class="done">Let players <strong>do</strong> something</li>
+<li>Let players <strong>feel</strong> something</li>
+</ol>
+---
+# 3. Let players<br/>**feel** something
+---
+Letting players be immersed in a world
+---
+<!-- .slide: data-background-image="{{ prefix }}overwatch-no-ui.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Obviously the art style for the game
+---
+<!-- .slide: data-background-image="{{ prefix }}okami.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Obviously the art style for the game
+---
+<!-- .slide: data-background-image="{{ prefix }}Paper-Mario-Color-Splash09072020-051148-2992.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+But also the UI
+---
+<!-- .slide: data-background-image="{{ prefix }}Subnautica01262021-020334-61542.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Simple techy UI
+---
+<!-- .slide: data-background-image="{{ prefix }}Horizon-Zero-Dawn07142020-022556-44364.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+* Shapes
+* Typography
+
+_"Immersing a Creative World into a Usable UI"_ by Steph Chow
+
+([Video](https://www.gdcvault.com/play/1025162/Immersing-a-Creative-World-into)) ([Slides](https://www.gdcvault.com/play/1025340/Immersing-a-Creative-World-into))
+
+---
+[Mario vs Splatoon](https://careerhack.en-japan.com/report/detail/965)
+<img src="{{prefix}}splatoon-ui-1.webp">
+---
+[Mario vs Splatoon](https://careerhack.en-japan.com/report/detail/965)
+<img src="{{prefix}}splatoon-ui-2.webp">
+---
+## Typography
+
+Choose two typefaces
+
+* Display
+* Body
+---
+<!-- .slide: data-background-image="{{ prefix }}display-typefaces.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}body-typefaces.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+
+<table>
+<tr>
+<td>
+Display
+<ul>
+<li>Stylized</li>
+<li>Used for titles</li>
+<li>Designed for larger sizes</li>
+</ul>
+</td>
+<td>
+Body
+<ul>
+<li>Easy to read</li>
+<li>Used for large bodies of text</li>
+<li>Less stylized</li>
+<li>Works at smaller sizes</li>
+<li>Has more weights, styles (bold, italic)</li>
+</ul>
+</td>
+</tr>
+</table>
+
+---
+<!-- .slide: data-background-image="{{ prefix }}splatoon-typefaces.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}splatoon-2-food-menu.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+
+## UI Adding to player experience
+```cpp
+current_health = 2638;
+max_health = 8880;
+```
+notes:
+Let's go back to health bars
+
+Talked about summarizing information for the player
+Also goes into health bar decisions
+---
+<!-- .slide: data-background-image="{{ prefix }}ff7-numbers.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Power creep
+---
+<!-- .slide: data-background-image="{{ prefix }}borderlands-health.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}blood-border.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+notes:
+Clear go/no-go design
+---
+<!-- .slide: data-background-image="{{ prefix }}hat-in-time-health.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<!-- .slide: data-background-image="{{ prefix }}Paper-Mario-Color-Splash_25170.webp" data-background-size="contain" data-background-opacity="1.0" data-background-position="center" -->
+---
+<div class="r-stretch">
+<img src="{{ prefix }}RE3_Fine.webp">
+<br/>
+<img src="{{ prefix }}RE3_Caution.webp">
+<br/>
+<img src="{{ prefix }}RE3_Danger.webp">
+</div>
+Notes:
+Partial info, scarier
+---
+
+<ol>
+<li class="done">Let players <strong>know</strong> something</li>
+<li class="done">Let players <strong>do</strong> something</li>
+<li class="done">Let players <strong>feel</strong> something</li>
+</ol>
+
+---
+
+* **Know:** individual element
+* **Know:** prioritizing information, the three reads
+* **Do:** affordance (invite, react, confirm)
+* **Feel:** shape language
+* **Feel:** typography
+* **Feel:** adding to player experience
+
+---
+## Resources
+
+* [We Can Fix it in UI](https://twitter.com/wecanfixitinui)
+* [Game UI Database](https://www.gameuidatabase.com/)
+* [Interface in Games](https://interfaceingame.com/)
+* [benui.ca](https://benui.ca/ux)
+
+This talk is available at [benui.ca/ux/know-do-feel](https://benui.ca/ux/know-do-feel)
+
+---
+# Questions
+
+</script>
+</section>

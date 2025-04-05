@@ -1,0 +1,264 @@
+/* ==========================================================================
+	 ARCHIVE
+	 ========================================================================== */
+
+.archive__item {
+	display: flex;
+	position: relative;
+	margin-bottom: 2em;
+	flex-direction: column;
+
+	@include breakpoint($breakpoint-small) {
+		flex-direction: row;
+	}
+
+	a {
+		position: relative;
+		//z-index: 10;
+	}
+
+	//a[rel="permalink"] {
+		//position: static;
+	//}
+
+.archive__item-left {
+	flex-grow: 0;
+	flex-shrink: 0;
+	margin-bottom: 1em; 
+	@include breakpoint($breakpoint-small) {
+		// Move margin to horizontal
+		margin-right: 1em; 
+		margin-bottom: 0; 
+		//float: left;
+		//max-height: 200px;
+	}
+	@include breakpoint($breakpoint-medium) {
+		//max-height: 180px;
+	}
+}
+.archive__item-right {
+	 flex-grow: 1;
+}
+}
+
+.archive__item-title {
+	margin-top: 0;
+	margin-bottom: 0.25em;
+	line-height: initial;
+	//overflow: hidden;
+	//text-overflow: ellipsis;
+
+	//a[rel="permalink"]::before {
+		//content: '';
+		//position: absolute;
+		//left: 0;
+		//top: 0;
+		//right: 0;
+		//bottom: 0;
+	//}
+
+	//a + a {
+		//opacity: 0.5;
+	//}
+}
+
+.archive__item-excerpt {
+	margin-top: 0;
+	margin-bottom: 0;
+	//font-size: $type-size-6;
+	overflow-wrap: anywhere;
+
+	& + p {
+		text-indent: 0;
+	}
+
+	a {
+		position: relative;
+	}
+}
+
+.archive__item-teaser {
+	position: relative;
+	border-radius: $border-radius;
+	overflow: hidden;
+
+	@include breakpoint($breakpoint-small) {
+		width: 10em;
+	}
+
+	@include breakpoint($breakpoint-medium) {
+		width: 13em;
+	}
+
+	@include breakpoint($breakpoint-large) {
+		width: 15em;
+	}
+
+	@include breakpoint($breakpoint-x-large) {
+		width: 20em;
+	}
+
+	img {
+		width: 100%;
+		border: 1px solid #51555d;
+		border-radius: $border-radius;
+	}
+}
+
+/*
+	 Grid view
+	 ========================================================================== */
+
+/*
+.archive {
+	.grid__wrapper {
+		// extend grid elements to the right
+
+		@include breakpoint($breakpoint-large) {
+			margin-right: -1 * $sidebar-width-large;
+		}
+
+		@include breakpoint($breakpoint-x-large) {
+			margin-right: -1 * $sidebar-width-x-large;
+		}
+	}
+}
+
+.grid__item {
+	margin-bottom: 2em;
+
+	@include breakpoint($breakpoint-small) {
+		float: left;
+		width: span(5 of 10);
+
+		&:nth-child(2n + 1) {
+			clear: both;
+			margin-left: 0;
+		}
+
+		&:nth-child(2n + 2) {
+			clear: none;
+			margin-left: gutter(of 10);
+		}
+	}
+
+	@include breakpoint($breakpoint-medium) {
+		margin-left: 0;
+		margin-right: 0;
+		width: span(4 of 12);
+
+		&:nth-child(3n + 1) {
+			clear: both;
+			margin-left: 0;
+		}
+
+		&:nth-child(3n + 2) {
+			clear: none;
+			margin-left: gutter(1 of 12);
+		}
+
+		&:nth-child(3n + 3) {
+			clear: none;
+			margin-left: gutter(1 of 12);
+		}
+	}
+
+	.page__meta {
+		margin: 0 0 4px;
+		font-size: 0.6em;
+	}
+
+	.page__meta-sep {
+		display: block;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.archive__item-title {
+		margin-top: 0;
+		font-size: $type-size-5;
+	}
+
+	.archive__item-excerpt {
+		display: none;
+
+		@include breakpoint($breakpoint-medium) {
+			display: block;
+			font-size: $type-size-6;
+		}
+	}
+
+	.archive__item-teaser {
+		@include breakpoint($breakpoint-small) {
+			max-height: 200px;
+		}
+
+		@include breakpoint($breakpoint-medium) {
+			max-height: 180px;
+		}
+	}
+}
+
+.grid__item {
+	.archive__item-teaser
+	{
+		max-height: none;
+	}
+}
+
+@media (min-width: $breakpoint-x-large) {
+	.grid__item
+	{
+		margin-left: 0;
+		margin-right: 0;
+		float: left;
+		width: span(3 of 12);
+
+		&:nth-child(4n + 1) {
+			clear: both;
+			margin-left: 0;
+		}
+
+		&:nth-child(4n + 2) {
+			clear: none;
+			margin-left: gutter(1 of 12);
+		}
+
+		&:nth-child(4n + 3) {
+			clear: none;
+			margin-left: gutter(1 of 12);
+		}
+
+		&:nth-child(4n + 4) {
+			clear: none;
+			margin-left: gutter(1 of 12);
+		}
+	}
+}
+*/
+
+/*
+ Wide Pages
+ ========================================================================== */
+
+.wide {
+	.archive {
+		@include breakpoint($breakpoint-large) {
+			padding-right: 0;
+		}
+
+		@include breakpoint($breakpoint-x-large) {
+			padding-right: 0;
+		}
+	}
+}
+
+/* Place inside a single layout */
+
+.layout--single {
+	.feature__wrapper {
+		display: inline-block;
+	}
+}
