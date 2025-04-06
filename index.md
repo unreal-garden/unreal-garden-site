@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-Welcome to Unreal Garden.🌳 ben ui sprouted into a garden.
+Welcome to Unreal Garden.🌳
 
 {% include inline-logo.html %}
 

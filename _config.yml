@@ -1,8 +1,8 @@
 # Site Settings
-title                    : "unreal&#x1F331;garden"
+title                    : "Unreal&#x1F331;Garden"
 title_separator          : "&#183;"
 subtitle                 : "tutorials and docs"
-name                     : &name "unreal garden" # &name is a YAML anchor which can be *referenced later
+name                     : &name "Unreal Garden" # &name is a YAML anchor which can be *referenced later
 description              : &description "Unreal Engine tutorials site"
 url                      : https://unreal-garden.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -61,6 +61,7 @@ exclude:
   - .jekyll-assets-cache
   - .sass-cache
   - run.bat
+  - update-submodule.bat
   - assets/js/plugins
   - assets/js/vendor
   - Capfile

@@ -1,13 +1,13 @@
 <div class="header-footer-inner-wrap">
 <div class="page__footer-follow">
   <ul class="social-icons">
-		<li><a href="{% link _pages/about.md %}" rel="nofollow noopener noreferrer me">{{ site.data.icons.home }}About</a></li>
-		<li><a href="https://github.com/unreal-garden" rel="nofollow noopener noreferrer me">{{ site.data.icons.github }}GitHub</a></li>
+		<li><a href="{% link about.md %}" rel="nofollow noopener noreferrer me">{{ site.data.icons.home }}About</a></li>
+		<li><a href="https://github.com/unreal-garden/unreal-garden-site" rel="nofollow noopener noreferrer me">{{ site.data.icons.github }}GitHub</a></li>
 		<li><a href="{{ site.discord_url }}" rel="nofollow noopener noreferrer me">{{ site.data.icons.discord }}Discord</a></li>
     <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}">{{ site.data.icons.rss }}Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright"><a href="{% link _pages/about.md %}#license">&copy; {{ site.time | date: '%Y' }} ben{%- include inline-logo.html -%}ui</a>. Made by a human. Logo by <a href="https://www.friendlyhello.com/" rel="nofollow">Valerie Nu&ntilde;ez</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>. Analytics by <a href="https://plausible.io/unreal-garden.com" rel="nofollow">Plausible.io</a>.
+<div class="page__footer-copyright"><a href="{% link about.md %}#license">&copy; {{ site.time | date: '%Y' }} unreal{%- include inline-logo.html -%}garden</a>. Made by humans. Logo by <a href="https://www.friendlyhello.com/" rel="nofollow">Valerie Nu&ntilde;ez</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>. Analytics by <a href="https://plausible.io/unreal-garden.com" rel="nofollow">Plausible.io</a>.
 </div>
 </div>
