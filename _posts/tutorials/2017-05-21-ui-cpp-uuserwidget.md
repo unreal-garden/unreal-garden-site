@@ -127,11 +127,10 @@ title="Blueprint's parent class is shown in the top-right"
 ## Now we Have a C++ Base Class, What Next?
 
 Now your Blueprint Widget has a custom parent C++ class, [we will have the
-benefits mentioned in the previous tutorial]({{ site.baseurl
-}}/unreal/ui-cpp-basics/#why-should-we-use-c), and also:
+benefits mentioned in the previous tutorial]({% link _posts/tutorials/2017-05-21-ui-cpp-basics.md %}#why-should-we-use-c), and also:
 
-* [Control Blueprint-created Widgets from C++]({{site.baseurl}}/unreal/ui-bindwidget)
-* [Dynamically update the Widget's appearance in the editor]({{site.baseurl}}/unreal/ui-synchronize-properties)
+* [Control Blueprint-created Widgets from C++]({% link _posts/tutorials/2017-06-05-ui-bindwidget.md %})
+* [Dynamically update the Widget's appearance in the editor]({% link _posts/tutorials/2017-05-21-ui-synchronize-properties.md %})
 
 
 
@@ -204,6 +203,6 @@ include figure-end.html
 ## Conclusion
 
 The next tutorial in the series covers creating a [C++ subclass of
-`UWidget`]({{site.baseurl}}/unreal/ui-cpp-uwidget),
+`UWidget`]({% link _posts/tutorials/2017-05-21-ui-cpp-uwidget.md %}),
 which will give us the ability to make generic reusable components that do not
 rely on Blueprint subclasses.

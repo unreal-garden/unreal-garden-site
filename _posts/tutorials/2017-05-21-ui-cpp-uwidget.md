@@ -125,5 +125,5 @@ include figure-end.html
 
 
 In the next and final tutorial of the series, we will discuss [how to create
-subclasses of Slate widgets]({{site.baseurl}}/unreal/ui-cpp-slate).
+subclasses of Slate widgets]({% link _posts/tutorials/2017-05-24-ui-cpp-slate.md %}).
 

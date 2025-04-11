@@ -9,7 +9,7 @@ tags:
 ---
 
 This is the final part of a mini-series on creating UIs in Unreal using UMG and Slate.
-Previously we discussed [creating C++-based UserWidgets]({{site.baseurl}}/unreal/ui-cpp-uuserwidget) and [creating new UMG classes]({{site.baseurl}}/unreal/ui-cpp-uwidget).
+Previously we discussed [creating C++-based UserWidgets]({% link _posts/tutorials/2017-05-21-ui-cpp-uuserwidget.md %}) and [creating new UMG classes]({% link _posts/tutorials/2017-05-21-ui-cpp-uwidget.md %}).
 
 Once again we will be implementing a simple button that contains an image and text, but this time we will see how to achieve the same result from Slate.
 

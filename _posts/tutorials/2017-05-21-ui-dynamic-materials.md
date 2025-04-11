@@ -79,7 +79,7 @@ text="Setting up a dynamic material instance in a Blueprint."
 ### In C++
 
 Assuming we have used the [Bindwidget meta property to make our Image widget
-accessible from C++]({{ site.baseurl }}/unreal/ui-bindwidget), we can create
+accessible from C++]({% link _posts/tutorials/2017-06-05-ui-bindwidget.md %}), we can create
 a new Dynamic Material Instance in C++ and assign it to the widget:
 
 {%
@@ -165,6 +165,6 @@ title="UMG Material Animations"
 text="5-step process to create an animation that controls a material parameter."
 %}
 
-* [Applying a material to all children of a widget with RetainerBox]({{ site.baseurl }}/unreal/ui-retainerbox).
-* [Controlling material properties from UMG animations]({{ site.baseurl }}/unreal/ui-animation).
-* [Dynamically updating widget appearance in-editor with `SynchronizeProperties`]({{ site.baseurl }}/unreal/ui-synchronize-properties).
+* [Applying a material to all children of a widget with RetainerBox]({% link _posts/tutorials/2017-05-21-ui-retainerbox.md %}).
+* [Controlling material properties from UMG animations]({% link _posts/tutorials/2017-05-20-ui-animation.md %}).
+* [Dynamically updating widget appearance in-editor with `SynchronizeProperties`]({% link _posts/tutorials/2017-05-21-ui-synchronize-properties.md %}).

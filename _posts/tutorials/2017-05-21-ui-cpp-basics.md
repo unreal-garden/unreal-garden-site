@@ -122,7 +122,7 @@ interfaces with Blueprints.**
 
 I've separated each approach into its own tutorial.
 
-1. [Create a C++ subclass of `UUserWidget`]({{ site.baseurl }}/unreal/ui-cpp-uuserwidget)
-2. [Create a UMG subclass in C++]({{ site.baseurl }}/unreal/ui-cpp-uwidget)
-3. [Create a Slate subclass in C++]({{ site.baseurl }}/unreal/ui-cpp-slate)
+1. [Create a C++ subclass of `UUserWidget`]({% link _posts/tutorials/2017-05-21-ui-cpp-uuserwidget.md %})
+2. [Create a UMG subclass in C++]({% link _posts/tutorials/2017-05-21-ui-cpp-uwidget.md %})
+3. [Create a Slate subclass in C++]({% link _posts/tutorials/2017-05-24-ui-cpp-slate.md %})
 
