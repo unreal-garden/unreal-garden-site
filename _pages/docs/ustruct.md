@@ -15,21 +15,22 @@ header:
   image-transparent: /assets/unreal/ustruct-title-transparent.webp
   teaser: /assets/unreal/ustruct-small.webp
 redirect_from:
+- /unreal/ustruct/
 - /unreal/ustruct
+- /unreal/ustructs/
+- /unreal/ustructs
 - /unreal/struct/
 - /unreal/struct
 - /unreal/structs/
 - /unreal/structs
-- /unreal/ustructs/
-- /unreal/ustructs
+- /ustruct/
+- /ustruct
+- /ustructs/
+- /ustructs
 - /struct/
 - /struct
 - /structs/
 - /structs
-- /ustructs/
-- /ustructs
-- /USTRUCT/
-- /USTRUCT
 ---
 
 Unreal's [USTRUCT Specifiers](https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/GameplayArchitecture/Structs/Specifiers/)

@@ -15,21 +15,22 @@ header:
   image-transparent: /assets/unreal/uinterface-title-transparent.webp
   teaser: /assets/unreal/uinterface-small.webp
 redirect_from:
+- /unreal/uinterface/
+- /unreal/uinterface
+- /unreal/uinterfaces/
+- /unreal/uinterfaces
 - /unreal/interface/
 - /unreal/interface
 - /unreal/interfaces/
 - /unreal/interfaces
-- /unreal/uinterfaces/
-- /unreal/uinterfaces
-- /unreal/uinterface
+- /uinterface/
+- /uinterface
+- /uinterfaces/
+- /uinterfaces
 - /interface/
 - /interface
 - /interfaces/
 - /interfaces
-- /interfaces/
-- /interfaces
-- /UINTERFACE/
-- /UINTERFACE
 ---
 
 Unreal's [UINTERFACE Specifiers](https://docs.unrealengine.com/5.1/en-US/interfaces-in-unreal-engine/)

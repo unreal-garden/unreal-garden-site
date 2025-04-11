@@ -15,6 +15,7 @@ header:
   image-transparent: /assets/unreal/uenum-umeta-title-transparent.webp
   teaser: /assets/unreal/uenum-umeta-small.webp
 redirect_from:
+- /unreal/uenum-umeta/
 - /unreal/uenum-umeta
 - /unreal/enum/
 - /unreal/enum

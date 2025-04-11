@@ -15,19 +15,22 @@ header:
   image-transparent: /assets/unreal/uproperty-title-transparent.webp
   teaser: /assets/unreal/uproperty-small.webp
 redirect_from:
+- /unreal/uproperty/
 - /unreal/uproperty
+- /unreal/uproperties/
+- /unreal/uproperties
 - /unreal/property/
 - /unreal/property
-- /unreal/PROPERTY/
-- /unreal/PROPERTY
-- /PROPERTY/
-- /PROPERTY
-- /property/
-- /property
-- /UPROPERTY/
-- /UPROPERTY
+- /unreal/properties/
+- /unreal/properties
 - /uproperty/
 - /uproperty
+- /uproperties/
+- /uproperties
+- /property/
+- /property
+- /properties/
+- /properties
 ---
 
 Unreal's [Property

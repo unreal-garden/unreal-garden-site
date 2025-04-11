@@ -15,21 +15,22 @@ header:
   image-transparent: /assets/unreal/uparam-title-transparent.webp
   teaser: /assets/unreal/uparam-small.webp
 redirect_from:
+- /unreal/uparam/
+- /unreal/uparam
+- /unreal/uparams/
+- /unreal/uparams
 - /unreal/param/
 - /unreal/param
 - /unreal/params/
 - /unreal/params
-- /unreal/uparams/
-- /unreal/uparams
-- /unreal/uparam
+- /uparam/
+- /uparam
+- /uparams/
+- /uparams
 - /param/
 - /param
 - /params/
 - /params
-- /uparams/
-- /uparams
-- /UPARAM/
-- /UPARAM
 ---
 
 Unreal's UPARAM Specifiers page lists all of the core specifiers and many of

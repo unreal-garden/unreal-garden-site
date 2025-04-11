@@ -15,21 +15,22 @@ header:
   image-transparent: /assets/unreal/ufunction-title-transparent.webp
   teaser: /assets/unreal/ufunction-small.webp
 redirect_from:
+- /unreal/ufunction/
+- /unreal/ufunction
+- /unreal/ufunctions/
+- /unreal/ufunctions
 - /unreal/function/
 - /unreal/function
 - /unreal/functions/
 - /unreal/functions
-- /unreal/ufunctions/
-- /unreal/ufunctions
-- /unreal/ufunction
+- /ufunction/
+- /ufunction
+- /ufunctions/
+- /ufunctions
 - /function/
 - /function
 - /functions/
 - /functions
-- /functions/
-- /functions
-- /UFUNCTION/
-- /UFUNCTION
 ---
 
 Unreal's [UFUNCTION Specifiers](https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/GameplayArchitecture/Functions/)
