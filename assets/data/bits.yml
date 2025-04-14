@@ -1968,7 +1968,7 @@
   description: 'If you have a function that returns whether an item is sold, according
     to Unreal Engine code style it should be called `IsSold()`, not `GetIsSold()`.
 
-    Allar''s [Unreal Engine Style Guide](https://github.com/Allar/ue5-style-guide#3313-info-functions-returning-bool-should-ask-questions)
+    Allar''s [Unreal Engine Style Guide](https://github.com/Allar/ue5-style-guide?tab=readme-ov-file#bp-funcs-naming-bool)
     explains more.'
   posted_date: 2022-11-28 00:00:00 +0000
   tags:
