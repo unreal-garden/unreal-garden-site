@@ -1,9 +1,11 @@
 <div class="header-footer-inner-wrap">
 <div class="page__footer-follow">
   <ul class="social-icons">
-		<li><a href="{% link about.md %}" rel="nofollow noopener noreferrer me">{{ site.data.icons.home }}About</a></li>
-		<li><a href="https://github.com/unreal-garden/unreal-garden-site" rel="nofollow noopener noreferrer me">{{ site.data.icons.github }}GitHub</a></li>
-		<li><a href="{{ site.discord_url }}" rel="nofollow noopener noreferrer me">{{ site.data.icons.discord }}Discord</a></li>
+    <li><a href="{% link about.md %}" rel="nofollow noopener noreferrer me">{{ site.data.icons.home }}About</a></li>
+    <li><a href="https://github.com/unreal-garden/unreal-garden-site" rel="nofollow noopener noreferrer me">{{ site.data.icons.github }}GitHub</a></li>
+    <li><a href="{{ site.discord_url }}" rel="nofollow noopener noreferrer me">{{ site.data.icons.discord }}Discord</a></li>
+    <li><a href="{{ site.mastodon_url }}" rel="nofollow noopener noreferrer me">{{ site.data.icons.mastodon }}Mastodon</a></li>
+    <li><a href="{{ site.bsky_url }}" rel="nofollow noopener noreferrer me">{{ site.data.icons.bsky }}Bsky</a></li>
     <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}">{{ site.data.icons.rss }}Feed</a></li>
   </ul>
 </div>

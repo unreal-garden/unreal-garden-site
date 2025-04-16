@@ -13,7 +13,7 @@ Unreal Garden is a community-run website for Unreal Engine tutorials, documentat
 - Check out the [TODO](#to-do) list, do some of those
 - Write articles or fix existing articles.
 - Create or improve documentation for specifiers.
-- Link your own tutorials by adding an external link
+- Link your own tutorials by adding an external link.
 
 
 ## Running and Testing
@@ -50,6 +50,15 @@ from the command-line:
 git submodule update --remote --merge
 ```
 
+### Updating Bots
+
+There are two bots, one on Bluesky and one on Mastodon that automatically post content, twice a day.
+Their source data is created by /assets/bot-data/bot-bsky.json and bot-mastodon.json, respectively. It must be manually copied to the bot sites for them to link to new articles.
+
+As new content is added to the site, the data used by the bot
+
+- Mastodon: [Cheap Bots, Toot Suite](https://cheapbotstootsweet.com/)
+- Bluesky: [Blue Bots, Done Quick](https://bluebotsdonequick.com/)
 
 ## License
 
@@ -65,9 +74,17 @@ See [LICENSE](https://github.com/unreal-garden/unreal-garden-site/blob/main/LICE
 - [ ] Need custom static teaser/preview screenshots for every page that includes the title text and logo.
   - [ ] Create script that makes static images of each page's header, saves them somewhere. Use the article slug as ID.
   - [ ] Change header matter to point to it, or include them automatically based on slug.
-  - [ ] Existing images should be replaced so they no longer say "benui" in the bottom-left
+  - [ ] Existing images should be replaced so they no longer say "benui" in the bottom-left.
 - [ ] Update bits.yml site preview script to output preview images as compressed .webp and not .png. Some files are large.
 - [ ] Make an Unreal Garden fork of [benui-dev/UE-Specifier-Docs](https://github.com/benui-dev/UE-Specifier-Docs/), change the site to use that.
+- [ ] Update bots to use Unreal Garden.
+- [ ] Create Unreal Garden Mastodon account.
+
+### Bots
+
+- [ ] Create and run bots that automatically post to Bsky/Mastodon/Discord when new content is added to the site.
+- [ ] Refactor bot-bsky.json and bot-mastodon.json to have minimal duplicated code.
+- [ ] Update existing bots to add pictures with posts.
 
 ### Front-End HTML/CSS
 
