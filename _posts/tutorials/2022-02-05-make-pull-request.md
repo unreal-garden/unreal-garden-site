@@ -1,7 +1,6 @@
 ---
 title: "How to make a pull request to Unreal Engine"
 excerpt: "Be the changelist you want to see in the world."
-category: unreal
 date:   2022-02-05 00:00:00 +0000
 tags:
 - cpp

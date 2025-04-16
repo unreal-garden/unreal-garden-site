@@ -1,7 +1,6 @@
 ---
 title: "Using the same callback function for many UButtons"
 excerpt: "Which button was called? Now you can find out!"
-category: unreal
 date:   2022-05-01 00:00:00 +0000
 tags:
 - cpp
