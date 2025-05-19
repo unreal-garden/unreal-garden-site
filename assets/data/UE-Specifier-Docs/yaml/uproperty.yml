@@ -753,10 +753,14 @@ specifiers:
     subgroup: Numeric
     comment: Sets a unit to be shown after the number. For all possible values see the `TEXT` entries in `FParseCandidates` inside [`UnitConversion.cpp`](https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Private/Math/UnitConversion.cpp#L20). Using an unknown value will result in a compile error. Many units have mutliple aliases, for example "Kilometers" and "km" will result in the same unit being used. Units are case-insensitive.
       `Units` also allows users to input in related units. Entering `100f` into a field with `Units="Celsius"` results in `37.77779 °C`.
+      Note that the user may override what units they want to see for each type of measurement in the Units section 
+      of "Editor - Appearance" in the Project Settings, so while you may specify one unit, they may end up viewing it as another;
+      if you want to suppress this, use ForceUnits below.
     images: [ /uproperty/units.jpg, /uproperty/units-conversion.gif ]
     position: meta
     type: string
     utility: 2
+    related: [ ForceUnits ]
     keywords: [ number, editor ]
     examples: [ Engine/Source/Editor/DetailCustomizations/Private/LocalLightComponentDetails.cpp#L42 ]
     samples:
