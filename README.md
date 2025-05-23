@@ -43,8 +43,7 @@ bundle exec jekyll serve
 The repo has an external dependency on
 [unreal-garden/UE-Specifier-Docs](https://github.com/unreal-garden/UE-Specifier-Docs/).
 If changes have been made in that repo, you will need to manually merge them
-into this repo. This can be done using `update-submodule.bat`, or the following
-from the command-line:
+into this repo.
 
 ```
 git submodule update --remote --merge
