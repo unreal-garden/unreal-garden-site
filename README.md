@@ -41,10 +41,9 @@ bundle exec jekyll serve
 ### External Dependencies
 
 The repo has an external dependency on
-[benui-dev/UE-Specifier-Docs](https://github.com/benui-dev/UE-Specifier-Docs/).
+[unreal-garden/UE-Specifier-Docs](https://github.com/unreal-garden/UE-Specifier-Docs/).
 If changes have been made in that repo, you will need to manually merge them
-into this repo. This can be done using `update-submodule.bat`, or the following
-from the command-line:
+into this repo.
 
 ```
 git submodule update --remote --merge
@@ -76,7 +75,6 @@ See [LICENSE](https://github.com/unreal-garden/unreal-garden-site/blob/main/LICE
   - [ ] Change header matter to point to it, or include them automatically based on slug.
   - [ ] Existing images should be replaced so they no longer say "benui" in the bottom-left.
 - [ ] Update bits.yml site preview script to output preview images as compressed .webp and not .png. Some files are large.
-- [ ] Make an Unreal Garden fork of [benui-dev/UE-Specifier-Docs](https://github.com/benui-dev/UE-Specifier-Docs/), change the site to use that.
 - [ ] Update bots to use Unreal Garden.
 - [ ] Create Unreal Garden Mastodon account.
 
