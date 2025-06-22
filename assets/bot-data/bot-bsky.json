@@ -16,69 +16,74 @@ because it's not needed.
 {% if jekyll.environment == "development" %}
 {
 	{% assign all_unreal = "" %}
-
 	{% for entry in site.data.UE-Specifier-Docs.yaml.uproperty.specifiers %}
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="UPROPERTY" entry=entry %}
 	{%- endcapture -%}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
-
 	{% for entry in site.data.UE-Specifier-Docs.yaml.ufunction.specifiers %}
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="UFUNCTION" entry=entry %}
 	{%- endcapture -%}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
-
 	{% for entry in site.data.UE-Specifier-Docs.yaml.uclass.specifiers %}
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="UCLASS" entry=entry %}
 	{%- endcapture -%}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
-
 	{% for entry in site.data.UE-Specifier-Docs.yaml.uenum.specifiers %}
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="UENUM" entry=entry %}
 	{%- endcapture -%}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
-
 	{% for entry in site.data.UE-Specifier-Docs.yaml.ustruct.specifiers %}
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="USTRUCT" entry=entry %}
 	{%- endcapture -%}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
-
   	{%- for post in site.posts -%}
-	{% if post.category == 'tutorials' %}
-{%- capture unreal_content -%}
-{%- if post.header.teaser -%}
-{img {{ site.baseurl }}{{ post.header.teaser }} {{ post.title }}}
-{%- endif -%}
-{{post.title}}
-{%- if post.excerpt %}
-{{ post.excerpt }}
-{% endif -%}
-{{ site.baseurl }}{{ post.url }}{%- endcapture -%}
-	{% assign all_unreal = all_unreal | append: unreal_content | append: "|" %}
-	{% endif %}
+		{% if post.category == 'tutorials' %}
+			{%- capture unreal_content -%}
+				{%- if post.header.teaser -%}
+					{img {{ site.url }}{{ post.header.teaser }} {{ post.title}}}
+				{% else -%}
+					{{post.title}}
+				{%- endif -%}
+				
+				{%- if post.excerpt %}
+					{{ post.excerpt }}
+				{% endif -%}
+				
+				{{ site.url }}{{ post.url }}
+				
+			{%- endcapture -%}
+			{% assign all_unreal = all_unreal | append: unreal_content | append: "|" %}
+		{% endif %}
     {% endfor %}
-
     {%- for bit in site.data.bits -%}
-	{%- capture bit_content -%}{{ bit.description }} {{ bit.url }}{%- endcapture -%}
+	{%- capture bit_content -%}
+		{%- if bit.description -%}
+			{{ bit.description }}
+		{%- else -%}
+			{{ bit.title }}\n
+		{%- endif -%}
+		{%- if bit.url -%}
+			{{ bit.url }}
+		{%- endif -%}
+	{%- endcapture -%}
 	{% assign all_unreal = all_unreal | append: bit_content | append: "|" %}
     {% endfor %}
-
 	{% assign all_array = all_unreal | split: "|" %}
     "origin": [
         "#all{n % {{ all_array.size }}}#\n\\#UnrealEngine"
     ],
     {%- for entry in all_array -%}
-    "all{{forloop.index0}}":{{ entry | jsonify }}{% if forloop.last == false %},{% endif %}
+    "all{{forloop.index0}}":{{ entry | jsonify | replace: "\t", "" | replace: "\\n", "\n" }}{% if forloop.last == false %},{% endif %}
     {% endfor %}
-
 }
 {% endif %}

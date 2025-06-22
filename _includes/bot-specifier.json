@@ -32,7 +32,7 @@
 "{{ entry.comment | strip }}"
 {%- else -%}
 {%- if entry.documentation -%}
-Docs: {{ entry.documentation.text }}
+\nDocs: {{ entry.documentation.text }}
 {%- else %}
 (No comment or documentation yet...)
 {%- endif -%}
