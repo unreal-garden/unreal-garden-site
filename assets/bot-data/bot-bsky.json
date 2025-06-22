@@ -20,30 +20,35 @@ because it's not needed.
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="UPROPERTY" entry=entry %}
 	{%- endcapture -%}
+	{% assign specifier_content = specifier_content | replace: "|" , "ESCAPED_PIPE" %}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
 	{% for entry in site.data.UE-Specifier-Docs.yaml.ufunction.specifiers %}
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="UFUNCTION" entry=entry %}
 	{%- endcapture -%}
+	{% assign specifier_content = specifier_content | replace: "|" , "ESCAPED_PIPE" %}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
 	{% for entry in site.data.UE-Specifier-Docs.yaml.uclass.specifiers %}
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="UCLASS" entry=entry %}
 	{%- endcapture -%}
+	{% assign specifier_content = specifier_content | replace: "|" , "ESCAPED_PIPE" %}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
 	{% for entry in site.data.UE-Specifier-Docs.yaml.uenum.specifiers %}
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="UENUM" entry=entry %}
 	{%- endcapture -%}
+	{% assign specifier_content = specifier_content | replace: "|" , "ESCAPED_PIPE" %}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
 	{% for entry in site.data.UE-Specifier-Docs.yaml.ustruct.specifiers %}
 	{%- capture specifier_content -%}
 	{% include bot-specifier.json specifier="USTRUCT" entry=entry %}
 	{%- endcapture -%}
+	{% assign specifier_content = specifier_content | replace: "|" , "ESCAPED_PIPE" %}
 	{% assign all_unreal = all_unreal | append: specifier_content | append: "|" %}
 	{% endfor %}
   	{%- for post in site.posts -%}
@@ -51,9 +56,8 @@ because it's not needed.
 			{%- capture unreal_content -%}
 				{%- if post.header.teaser -%}
 					{img {{ site.url }}{{ post.header.teaser }} {{ post.title}}}
-				{% else -%}
-					{{post.title}}
 				{%- endif -%}
+				{{ post.title }}
 				
 				{%- if post.excerpt %}
 					{{ post.excerpt }}
@@ -68,9 +72,9 @@ because it's not needed.
     {%- for bit in site.data.bits -%}
 	{%- capture bit_content -%}
 		{%- if bit.description -%}
-			{{ bit.description }}
+			{{ bit.description }}{% unless bit.description contains '\n' %}\n{% endunless %}
 		{%- else -%}
-			{{ bit.title }}\n
+			{{ bit.title }}{% unless bit.title contains '\n' %}\n{% endunless %}
 		{%- endif -%}
 		{%- if bit.url -%}
 			{{ bit.url }}
@@ -83,7 +87,7 @@ because it's not needed.
         "#all{n % {{ all_array.size }}}#\n\\#UnrealEngine"
     ],
     {%- for entry in all_array -%}
-    "all{{forloop.index0}}":{{ entry | jsonify | replace: "\t", "" | replace: "\\n", "\n" }}{% if forloop.last == false %},{% endif %}
+    "all{{forloop.index0}}":{{ entry | jsonify | replace: "\t", "" | replace: "\\n", "\n" | replace: "ESCAPED_PIPE", "|" }}{% if forloop.last == false %},{% endif %}
     {% endfor %}
 }
 {% endif %}
