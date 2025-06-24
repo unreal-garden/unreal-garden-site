@@ -82,4 +82,7 @@ Disallow: /
 User-agent: ai2bot
 Disallow: /
 
+User-agent: BlueBotsDoneQuick
+Allow: /
+
 Sitemap: https://unreal-garden.com/sitemap.xml
