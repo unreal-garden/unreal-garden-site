@@ -8,7 +8,7 @@ url                      : https://unreal-garden.com # the base hostname & proto
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 logo                     : "/assets/unrealgarden_logotype-white.svg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.webp"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-discord_url              : https://discord.unreal-garden.com/
+discord_url              : https://discord.com/invite/QQM3tTw7zQ
 bsky_url                 : https://bsky.app/profile/unreal-garden.com
 mastodon_url             : https://mastodon.gamedev.place/@unrealgarden
 

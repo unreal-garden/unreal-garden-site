@@ -24,7 +24,7 @@ It has some core principles:
 
 ## Discord
 
-There's a [Discord](http://discord.unreal-garden.com/), come hang out, learn and share!
+There's a [Discord](https://discord.com/invite/QQM3tTw7zQ), come hang out, learn and share!
 
 
 ## Contact
@@ -38,7 +38,7 @@ There's a [Discord](http://discord.unreal-garden.com/), come hang out, learn and
 ## How to Help
 
 - Take a look at the [site source code](https://github.com/unreal-garden/unreal-garden-site).
-- Come chat on the [Discord](http://discord.unreal-garden.com/), suggest improvements to the site.
+- Come chat on the [Discord](https://discord.com/invite/QQM3tTw7zQ), suggest improvements to the site.
 - See what's needed in the [TODO section of the README](https://github.com/unreal-garden/unreal-garden-site?tab=readme-ov-file#to-do).
 - Suggest things in the [GitHub Issues](https://github.com/unreal-garden/unreal-garden-site/issues).
 

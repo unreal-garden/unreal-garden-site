@@ -5,7 +5,7 @@ Unreal Garden is a community-run website for Unreal Engine tutorials, documentat
 
 ## Contact
 
-- [Discord](https://discord.unreal-garden.com/)
+- [Discord](https://discord.com/invite/QQM3tTw7zQ)
 
 
 ## Helping Out
