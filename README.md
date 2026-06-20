@@ -27,11 +27,11 @@ Ruby, Jekyll. Tested on Windows. Should work on most platforms.
 
 1. Clone or download a .zip file of the repo.
 ```
-git clone -recurse-submodules https://github.com/unreal-garden/unreal-garden-site.git
+git clone --recurse-submodules https://github.com/unreal-garden/unreal-garden-site.git
 ```
-2. If you haven't cloned with -recurse-submodules, make sure you have submodules synced
+2. If you haven't cloned with --recurse-submodules, make sure you have submodules synced
 ```
-git submodule update  –init  –recursive
+git submodule update -–init -–recursive
 ```
 3. Follow the [Jekyll Quickstart Guide](https://jekyllrb.com/docs/) to install Jekyll.
 
