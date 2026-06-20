@@ -25,8 +25,15 @@ Ruby, Jekyll. Tested on Windows. Should work on most platforms.
 
 ### Installation
 
-1. Clone the repo or download a .zip file of the repo.
-2. Follow the [Jekyll Quickstart Guide](https://jekyllrb.com/docs/) to install Jekyll.
+1. Clone or download a .zip file of the repo.
+```
+git clone -recurse-submodules https://github.com/unreal-garden/unreal-garden-site.git
+```
+2. If you haven't cloned with -recurse-submodules, make sure you have submodules synced
+```
+git submodule update  –init  –recursive
+```
+3. Follow the [Jekyll Quickstart Guide](https://jekyllrb.com/docs/) to install Jekyll.
 
 
 ### Running
